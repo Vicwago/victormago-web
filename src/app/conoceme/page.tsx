@@ -60,11 +60,11 @@ export default function ConozemePage() {
 
       {/* Bio + Photo */}
       <section style={{ padding: 'clamp(60px, 8vw, 100px) clamp(24px, 5vw, 64px)', borderTop: `1px solid ${C.border}`, overflow: 'hidden' }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(48px, 6vw, 96px)', alignItems: 'start' }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 'clamp(48px, 6vw, 96px)', alignItems: 'start' }}>
 
           {/* Photo real */}
           <Reveal>
-            <div style={{ position: 'relative', aspectRatio: '3/4', maxWidth: 380 }}>
+            <div className="photo-frame" style={{ position: 'relative', aspectRatio: '3/4', maxWidth: 380 }}>
               <div style={{ position: 'absolute', inset: 0, border: `1px solid ${C.borderCu}`, zIndex: 2 }} />
               <div style={{ position: 'absolute', top: 14, left: 14, right: -14, bottom: -14, border: `1px solid ${C.border}`, zIndex: 0 }} />
               <div style={{ position: 'absolute', top: -1, left: -1, width: 40, height: 40, borderTop: `3px solid ${C.copper}`, borderLeft: `3px solid ${C.copper}`, zIndex: 3 }} />

@@ -75,7 +75,7 @@ export default function WebinarPage() {
 
       {/* Contenido + Formulario */}
       <section style={{ padding: 'clamp(40px, 6vw, 80px) clamp(24px, 5vw, 64px)', borderTop: `1px solid ${C.border}` }}>
-        <div style={{ maxWidth: 960, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(48px, 6vw, 80px)' }}>
+        <div style={{ maxWidth: 960, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 'clamp(48px, 6vw, 80px)' }}>
 
           {/* Left — info */}
           <Reveal>
@@ -185,7 +185,7 @@ export default function WebinarPage() {
           <Reveal>
             <p style={{ fontFamily: 'var(--font-outfit)', fontSize: 11, fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: C.copper, marginBottom: 40 }}>Quienes ya asistieron</p>
           </Reveal>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', gap: 24 }}>
             {[
               { quote: 'Por fin alguien que explica la IA sin jerga técnica. Aplicable desde el día uno.', name: 'Directora de RRHH · Pyme industrial' },
               { quote: 'El EU AI Act me parecía una montaña imposible. Víctor lo explica en 20 minutos.', name: 'CEO · Empresa de servicios, 45 empleados' },

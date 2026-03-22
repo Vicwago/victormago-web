@@ -123,7 +123,7 @@ export default function EuAiActPage() {
 
       {/* Urgency + Timeline */}
       <section style={{ padding: 'clamp(60px, 8vw, 100px) clamp(24px, 5vw, 64px)', borderTop: `1px solid ${C.border}` }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(40px, 6vw, 80px)', alignItems: 'start' }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 'clamp(40px, 6vw, 80px)', alignItems: 'start' }}>
           <Reveal>
             <div>
               <p style={{ fontFamily: 'var(--font-outfit)', fontSize: 11, fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: C.copper, marginBottom: 16 }}>¿Por qué ahora?</p>
@@ -200,7 +200,7 @@ export default function EuAiActPage() {
             {servicios.map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
                 <div style={{ background: C.bgAlt, border: `1px solid ${C.border}`, padding: 'clamp(28px, 4vw, 40px)' }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(24px, 4vw, 48px)' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: 'clamp(24px, 4vw, 48px)' }}>
                     <div>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: 16, marginBottom: 12 }}>
                         <span style={{ fontFamily: 'var(--font-cormorant)', fontSize: 40, fontWeight: 300, color: C.copper, opacity: 0.4, lineHeight: 1 }}>{s.n}</span>

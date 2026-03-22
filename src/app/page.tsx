@@ -191,6 +191,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
+            className="hero-eyebrow"
             style={{ fontFamily: 'var(--font-outfit)', fontSize: 11, fontWeight: 500, letterSpacing: '0.30em', textTransform: 'uppercase', color: C.copper, marginBottom: 32 }}
           >
             Consultor & Formador de IA · España
@@ -284,7 +285,7 @@ export default function Home() {
               { n: 'EU AI Act', label: 'Especialista certificado' },
               { n: 'AI First', label: 'Metodología propia' },
             ].map((s, i, arr) => (
-              <div key={i} style={{ padding: 'clamp(28px, 4vw, 48px) clamp(16px, 2vw, 24px)', textAlign: 'center', borderRight: i < arr.length - 1 ? `1px solid ${C.border}` : 'none' }}>
+              <div key={i} className="stat-item" style={{ padding: 'clamp(28px, 4vw, 48px) clamp(16px, 2vw, 24px)', textAlign: 'center', borderRight: i < arr.length - 1 ? `1px solid ${C.border}` : 'none' }}>
                 <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(26px, 3vw, 42px)', fontWeight: 500, color: C.copper, letterSpacing: '-0.01em', marginBottom: 8 }}>{s.n}</p>
                 <p style={{ fontFamily: 'var(--font-outfit)', fontSize: 11, fontWeight: 400, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.muted }}>{s.label}</p>
               </div>
@@ -302,11 +303,11 @@ export default function Home() {
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: `linear-gradient(to right, transparent, ${C.borderCu}, transparent)` }} />
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 1, background: `linear-gradient(to right, transparent, ${C.border}, transparent)` }} />
 
-        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(48px, 6vw, 96px)', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 'clamp(48px, 6vw, 96px)', alignItems: 'center', position: 'relative', zIndex: 1 }}>
 
           {/* Victor's real photo */}
           <Reveal delay={0}>
-            <div style={{ position: 'relative', aspectRatio: '3/4', maxWidth: 380 }}>
+            <div className="photo-frame" style={{ position: 'relative', aspectRatio: '3/4', maxWidth: 380 }}>
               {/* Decorative frames */}
               <div style={{ position: 'absolute', inset: 0, border: `1px solid ${C.borderCu}`, zIndex: 2 }} />
               <div style={{ position: 'absolute', top: 14, left: 14, right: -14, bottom: -14, border: `1px solid ${C.border}`, zIndex: 0 }} />
@@ -379,7 +380,7 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 2 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 2 }}>
             {[
               {
                 n: 'I', delay: 0.05,

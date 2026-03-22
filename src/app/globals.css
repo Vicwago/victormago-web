@@ -23,6 +23,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -31,6 +32,12 @@
     font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
   }
 
   ::selection {
@@ -45,5 +52,47 @@
   a {
     text-decoration: none;
     color: inherit;
+  }
+}
+
+/* ── Responsive helpers ── */
+
+/* Stats grid: quitar borderRight en móvil (al wrappear se ve raro) */
+@media (max-width: 600px) {
+  .stat-item {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+  }
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Foto con marco decorativo: centrar en móvil */
+@media (max-width: 768px) {
+  .photo-frame {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 340px !important;
+  }
+}
+
+/* Hero subtitle: evitar desbordamiento con letter-spacing alto */
+@media (max-width: 480px) {
+  .hero-eyebrow {
+    letter-spacing: 0.12em !important;
+    font-size: 10px !important;
+  }
+}
+
+/* Botones CTA en móvil: ancho completo si están solos */
+@media (max-width: 400px) {
+  .cta-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .cta-buttons a,
+  .cta-buttons button {
+    text-align: center;
   }
 }

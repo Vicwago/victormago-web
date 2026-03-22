@@ -214,9 +214,9 @@ export default function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
             style={{
-              background: 'none', border: 'none', padding: '8px 4px',
+              background: 'none', border: 'none', padding: '10px 8px',
               cursor: 'pointer', display: 'flex', flexDirection: 'column',
-              justifyContent: 'center', gap: 5, width: 36, height: 36,
+              justifyContent: 'center', alignItems: 'center', gap: 5, width: 44, height: 44,
             }}
           >
             <span style={{

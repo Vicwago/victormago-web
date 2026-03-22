@@ -111,7 +111,7 @@ export default function ServiciosPage() {
       {/* Service cards — detailed */}
       {servicios.map((s, idx) => (
         <section key={s.id} id={s.id} style={{ borderTop: `1px solid ${C.border}`, background: idx % 2 === 0 ? C.bg : C.bgAlt }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(60px, 8vw, 100px) clamp(24px, 5vw, 64px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(48px, 6vw, 96px)', alignItems: 'center' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(60px, 8vw, 100px) clamp(24px, 5vw, 64px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 'clamp(48px, 6vw, 96px)', alignItems: 'center' }}>
 
             {/* Visual card */}
             <Reveal delay={idx % 2 === 0 ? 0 : 0.1}>

@@ -72,7 +72,7 @@ export default function ContactoPage() {
 
       {/* Form + Info */}
       <section style={{ padding: 'clamp(40px, 6vw, 80px) clamp(24px, 5vw, 64px)', borderTop: `1px solid ${C.border}` }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(48px, 6vw, 80px)' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: 'clamp(48px, 6vw, 80px)' }}>
 
           {/* Left — links */}
           <Reveal>
