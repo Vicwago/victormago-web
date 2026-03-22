@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investigación de Mercado · NorteIA 2026</title>
+<style>
+  :root {
+    --blue: #1A56DB; --blue-light: #EFF6FF; --blue-mid: #BFDBFE;
+    --dark: #111827; --gray: #6B7280; --gray-light: #F9FAFB;
+    --green: #059669; --green-light: #ECFDF5;
+    --orange: #D97706; --orange-light: #FFFBEB;
+    --red: #DC2626; --red-light: #FEF2F2;
+    --border: #E5E7EB;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #F3F4F6; color: var(--dark); }
+  .topbar { background: var(--dark); color: white; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+  .topbar strong { color: var(--blue); font-size: 16px; letter-spacing: -0.3px; }
+  .topbar span { color: #9CA3AF; }
+  nav { background: white; border-bottom: 1px solid var(--border); padding: 0 40px; display: flex; gap: 4px; position: sticky; top: 0; z-index: 100; }
+  nav a { padding: 14px 16px; font-size: 13px; font-weight: 500; color: var(--gray); text-decoration: none; border-bottom: 2px solid transparent; transition: all .2s; cursor: pointer; }
+  nav a.active, nav a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+  .page { max-width: 1100px; margin: 0 auto; padding: 40px; display: none; }
+  .page.active { display: block; }
+  h1 { font-size: 28px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+  .subtitle { color: var(--gray); font-size: 14px; margin-bottom: 32px; }
+  h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--dark); }
+  h3 { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--dark); }
+
+  /* CARDS */
+  .grid { display: grid; gap: 20px; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .card { background: white; border-radius: 10px; padding: 24px; border: 1px solid var(--border); }
+  .card-blue { background: var(--blue-light); border-color: var(--blue-mid); }
+  .kpi { text-align: center; }
+  .kpi .val { font-size: 32px; font-weight: 700; color: var(--blue); }
+  .kpi .lbl { font-size: 12px; color: var(--gray); margin-top: 4px; }
+  .kpi .sub { font-size: 11px; color: var(--gray); margin-top: 2px; font-style: italic; }
+
+  /* BADGE */
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .badge-blue { background: var(--blue-light); color: var(--blue); }
+  .badge-green { background: var(--green-light); color: var(--green); }
+  .badge-orange { background: var(--orange-light); color: var(--orange); }
+  .badge-red { background: var(--red-light); color: var(--red); }
+
+  /* COMPETITOR TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: var(--dark); color: white; padding: 10px 14px; text-align: left; font-weight: 600; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:hover td { background: var(--gray-light); }
+  td.highlight { font-weight: 600; color: var(--blue); }
+
+  /* SWOT */
+  .swot { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .swot-card { border-radius: 8px; padding: 20px; }
+  .swot-f { background: #ECFDF5; border: 1px solid #A7F3D0; }
+  .swot-d { background: #FEF2F2; border: 1px solid #FECACA; }
+  .swot-o { background: #EFF6FF; border: 1px solid #BFDBFE; }
+  .swot-a { background: #FFFBEB; border: 1px solid #FDE68A; }
+  .swot-title { font-weight: 700; font-size: 13px; margin-bottom: 10px; }
+  .swot-f .swot-title { color: var(--green); }
+  .swot-d .swot-title { color: var(--red); }
+  .swot-o .swot-title { color: var(--blue); }
+  .swot-a .swot-title { color: var(--orange); }
+  ul.swot-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  ul.swot-list li { font-size: 13px; padding-left: 16px; position: relative; }
+  ul.swot-list li::before { content: "→"; position: absolute; left: 0; }
+
+  /* TREND BAR */
+  .trend { display: flex; flex-direction: column; gap: 12px; }
+  .trend-item { }
+  .trend-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px; }
+  .trend-label span:first-child { font-weight: 500; }
+  .trend-label span:last-child { color: var(--gray); }
+  .bar-bg { background: var(--border); border-radius: 4px; height: 8px; }
+  .bar-fill { height: 8px; border-radius: 4px; background: var(--blue); }
+
+  /* ICP */
+  .icp-card { display: flex; gap: 20px; align-items: flex-start; }
+  .icp-avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--blue); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px; flex-shrink: 0; }
+  .icp-info h3 { font-size: 16px; margin-bottom: 2px; }
+  .icp-info .role { font-size: 12px; color: var(--gray); margin-bottom: 10px; }
+  .icp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 10px; }
+  .icp-item { background: var(--gray-light); border-radius: 6px; padding: 8px 12px; }
+  .icp-item .icp-key { font-size: 10px; text-transform: uppercase; color: var(--gray); font-weight: 600; }
+  .icp-item .icp-val { font-size: 13px; margin-top: 2px; }
+
+  /* OPORTUNIDAD */
+  .opp-row { display: flex; gap: 10px; align-items: flex-start; padding: 14px; border-bottom: 1px solid var(--border); }
+  .opp-row:last-child { border-bottom: none; }
+  .opp-num { width: 28px; height: 28px; border-radius: 50%; background: var(--blue); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .opp-text h3 { font-size: 14px; margin-bottom: 3px; }
+  .opp-text p { font-size: 13px; color: var(--gray); }
+
+  /* PRICING BENCHMARKING */
+  .price-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .price-row:last-child { border-bottom: none; }
+  .price-row .name { font-weight: 600; font-size: 14px; }
+  .price-row .range { font-size: 13px; color: var(--gray); }
+  .price-row .our { font-weight: 700; color: var(--blue); }
+
+  footer { background: var(--dark); color: #6B7280; text-align: center; padding: 20px; font-size: 12px; margin-top: 60px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <strong>// norte IA</strong>
+  <span>Investigación de Mercado · España 2026 · Confidencial</span>
+</div>
+
+<nav id="nav">
+  <a class="active" onclick="show('overview')">Resumen</a>
+  <a onclick="show('mercado')">Tamaño de Mercado</a>
+  <a onclick="show('competencia')">Benchmarking</a>
+  <a onclick="show('icp')">Perfil Cliente Ideal</a>
+  <a onclick="show('swot')">DAFO</a>
+  <a onclick="show('oportunidades')">Oportunidades</a>
+</nav>
+
+<!-- ═══════════ OVERVIEW ═══════════ -->
+<div class="page active" id="overview">
+  <h1>Investigación de Mercado</h1>
+  <p class="subtitle">Sector: Formación y Consultoría IA para Pymes · España 2026 · Elaborado por NorteIA</p>
+
+  <div class="grid grid-4" style="margin-bottom:28px;">
+    <div class="card kpi">
+      <div class="val">€4.2B</div>
+      <div class="lbl">Mercado IA empresarial España 2026</div>
+      <div class="sub">CAGR +31% anual</div>
+    </div>
+    <div class="card kpi">
+      <div class="val">68%</div>
+      <div class="lbl">Pymes sin estrategia IA definida</div>
+      <div class="sub">Fuente: IDC Iberia 2025</div>
+    </div>
+    <div class="card kpi">
+      <div class="val">Ago 2026</div>
+      <div class="lbl">EU AI Act plena aplicación</div>
+      <div class="sub">Multas hasta 7% facturación</div>
+    </div>
+    <div class="card kpi">
+      <div class="val">+320%</div>
+      <div class="lbl">Búsquedas "formación IA empresas"</div>
+      <div class="sub">vs. 2024 (Google Trends)</div>
+    </div>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h2>Por qué ahora es el momento</h2>
+      <div class="opp-row"><div class="opp-num">1</div><div class="opp-text"><h3>EU AI Act entra en vigor</h3><p>Agosto 2026: toda empresa que use IA debe acreditar gobernanza. Multas reales crean urgencia que convierte la formación de "nice to have" a obligatoria.</p></div></div>
+      <div class="opp-row"><div class="opp-num">2</div><div class="opp-text"><h3>Las pymes van tarde</h3><p>El 68% de pymes españolas no tiene estrategia IA. La brecha entre grandes empresas y pymes crea un mercado masivo sin cubrir.</p></div></div>
+      <div class="opp-row"><div class="opp-num">3</div><div class="opp-text"><h3>Oferta actual es técnica o genérica</h3><p>La competencia habla de tecnología. NorteIA habla de negocio, gobernanza y casos reales por sector. Nicho prácticamente virgen.</p></div></div>
+      <div class="opp-row"><div class="opp-num">4</div><div class="opp-text"><h3>Sectores regulados necesitan cumplimiento</h3><p>Salud, Derecho y Educación tienen regulación adicional. Cualquier uso de IA requiere auditoría. Mercado cautivo con necesidad urgente.</p></div></div>
+    </div>
+    <div class="card">
+      <h2>Tendencias clave 2026</h2>
+      <div class="trend">
+        <div class="trend-item">
+          <div class="trend-label"><span>Demanda formación EU AI Act</span><span>Muy alta ↑↑↑</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:92%"></div></div>
+        </div>
+        <div class="trend-item">
+          <div class="trend-label"><span>Consultoría cumplimiento normativo IA</span><span>Alta ↑↑</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:80%"></div></div>
+        </div>
+        <div class="trend-item">
+          <div class="trend-label"><span>Automatización n8n/Make (pymes)</span><span>Alta ↑↑</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:75%"></div></div>
+        </div>
+        <div class="trend-item">
+          <div class="trend-label"><span>Agentes IA personalizados</span><span>Creciendo ↑</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:60%"></div></div>
+        </div>
+        <div class="trend-item">
+          <div class="trend-label"><span>Formación presencial in-company</span><span>Estable →</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:55%"></div></div>
+        </div>
+        <div class="trend-item">
+          <div class="trend-label"><span>Certificaciones IA para directivos</span><span>Emergente ↗</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:45%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ MERCADO ═══════════ -->
+<div class="page" id="mercado">
+  <h1>Tamaño de Mercado</h1>
+  <p class="subtitle">Análisis del mercado español de formación y consultoría IA para pymes</p>
+
+  <div class="grid grid-3" style="margin-bottom:28px;">
+    <div class="card card-blue kpi">
+      <div class="val">~3.2M</div>
+      <div class="lbl">Pymes en España (INE 2025)</div>
+    </div>
+    <div class="card card-blue kpi">
+      <div class="val">~480k</div>
+      <div class="lbl">Pymes en sectores objetivo NorteIA</div>
+      <div class="sub">Derecho + Inmobiliario + Salud + Educación</div>
+    </div>
+    <div class="card card-blue kpi">
+      <div class="val">~96k</div>
+      <div class="lbl">Mercado direccionable inicial (2%)</div>
+      <div class="sub">Las que ya están buscando soluciones IA</div>
+    </div>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h2>Mercado por sectores</h2>
+      <table>
+        <tr><th>Sector</th><th>Pymes aprox.</th><th>Urgencia EU AI Act</th><th>Ticket medio est.</th></tr>
+        <tr>
+          <td class="highlight">Derecho</td>
+          <td>~85,000</td>
+          <td><span class="badge badge-red">Muy alta</span></td>
+          <td>3.000–8.000€</td>
+        </tr>
+        <tr>
+          <td class="highlight">Salud</td>
+          <td>~120,000</td>
+          <td><span class="badge badge-red">Muy alta</span></td>
+          <td>4.000–12.000€</td>
+        </tr>
+        <tr>
+          <td class="highlight">Educación</td>
+          <td>~95,000</td>
+          <td><span class="badge badge-orange">Alta</span></td>
+          <td>2.000–6.000€</td>
+        </tr>
+        <tr>
+          <td class="highlight">Inmobiliario</td>
+          <td>~180,000</td>
+          <td><span class="badge badge-orange">Alta</span></td>
+          <td>2.000–5.000€</td>
+        </tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Estimación de ingresos alcanzables</h2>
+      <div class="price-row">
+        <div><div class="name">Año 1 — Consolidación</div><div class="range">15–20 clientes · ticket 3–8k€</div></div>
+        <div class="our">80–100k€</div>
+      </div>
+      <div class="price-row">
+        <div><div class="name">Año 2 — Escala</div><div class="range">40–60 clientes · productos repetibles</div></div>
+        <div class="our">250–350k€</div>
+      </div>
+      <div class="price-row">
+        <div><div class="name">Año 3 — Liderazgo</div><div class="range">Programa EU AI Act + certificación</div></div>
+        <div class="our">600k–1M€</div>
+      </div>
+      <div style="margin-top:16px; padding:14px; background:var(--blue-light); border-radius:8px; font-size:13px;">
+        <strong>Ventana de oportunidad:</strong> Los primeros 18 meses (hasta feb 2028) son críticos — la mayoría de pymes buscará soluciones de cumplimiento justo después de agosto 2026. NorteIA debe posicionarse <em>antes</em> de que llegue esa ola.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ COMPETENCIA ═══════════ -->
+<div class="page" id="competencia">
+  <h1>Benchmarking Competidores</h1>
+  <p class="subtitle">Análisis de actores relevantes en formación IA y consultoría normativa para pymes españolas</p>
+
+  <div class="card" style="margin-bottom:24px; overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Empresa / Actor</th>
+        <th>Perfil</th>
+        <th>Fortaleza</th>
+        <th>Debilidad vs. NorteIA</th>
+        <th>Precio aprox.</th>
+        <th>EU AI Act</th>
+      </tr>
+      <tr>
+        <td class="highlight">Grandes consultoras<br><small style="color:#9CA3AF">(Deloitte, PwC, Accenture)</small></td>
+        <td>Corporativo</td>
+        <td>Marca, alcance, recursos</td>
+        <td>No atienden pymes · caro · impersonal</td>
+        <td>30.000€+</td>
+        <td><span class="badge badge-green">Sí</span></td>
+      </tr>
+      <tr>
+        <td class="highlight">Academias online<br><small style="color:#9CA3AF">(Udemy, Coursera, LinkedIn Learning)</small></td>
+        <td>Plataforma B2C</td>
+        <td>Escala, precio bajo, nombre</td>
+        <td>Genéricas · sin sector · sin EU AI Act · sin acompañamiento</td>
+        <td>20–200€/usuario</td>
+        <td><span class="badge badge-red">No</span></td>
+      </tr>
+      <tr>
+        <td class="highlight">Freelancers IA<br><small style="color:#9CA3AF">(perfiles individuales)</small></td>
+        <td>Consultor individual</td>
+        <td>Precio, flexibilidad</td>
+        <td>Sin metodología · sin marca · inconsistentes</td>
+        <td>500–2.000€/día</td>
+        <td><span class="badge badge-orange">Parcial</span></td>
+      </tr>
+      <tr>
+        <td class="highlight">Agencias IA locales<br><small style="color:#9CA3AF">(< 10 personas)</small></td>
+        <td>Técnico</td>
+        <td>Implementación técnica</td>
+        <td>No forman · no enseñan · no normativa</td>
+        <td>3.000–15.000€</td>
+        <td><span class="badge badge-red">Raro</span></td>
+      </tr>
+      <tr>
+        <td class="highlight">Cámaras de Comercio<br><small style="color:#9CA3AF">(CEOE, EOI, etc.)</small></td>
+        <td>Institución pública</td>
+        <td>Credibilidad, subvenciones</td>
+        <td>Superficiales · lentos · sin implementación real</td>
+        <td>Gratuito–800€</td>
+        <td><span class="badge badge-orange">Básico</span></td>
+      </tr>
+      <tr style="background:#EFF6FF;">
+        <td class="highlight">✦ NorteIA</td>
+        <td>Especialista pymes</td>
+        <td>EU AI Act + metodología propia + sector específico + precio accesible</td>
+        <td>—</td>
+        <td>2.000–12.000€</td>
+        <td><span class="badge badge-green">Core</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h2>Posicionamiento en el mapa</h2>
+      <p style="font-size:13px; color:var(--gray); margin-bottom:16px;">Eje X: enfoque en pymes · Eje Y: profundidad en EU AI Act</p>
+      <div style="position:relative; width:100%; padding-top:70%; background:#F9FAFB; border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+        <div style="position:absolute; inset:0; padding:20px;">
+          <!-- Cuadrantes -->
+          <div style="position:absolute; top:10px; left:10px; font-size:10px; color:#D1D5DB;">Corporativo · Sin AI Act</div>
+          <div style="position:absolute; top:10px; right:10px; font-size:10px; color:#D1D5DB;">Corporativo · Con AI Act</div>
+          <div style="position:absolute; bottom:10px; left:10px; font-size:10px; color:#D1D5DB;">Pymes · Sin AI Act</div>
+          <div style="position:absolute; bottom:10px; right:10px; font-size:11px; color:var(--blue); font-weight:700;">✦ ZONA NorteIA</div>
+          <!-- ejes -->
+          <div style="position:absolute; top:50%; left:20px; right:20px; height:1px; background:#E5E7EB;"></div>
+          <div style="position:absolute; left:50%; top:20px; bottom:20px; width:1px; background:#E5E7EB;"></div>
+          <!-- puntos -->
+          <div style="position:absolute; left:15%; top:15%; background:#9CA3AF; color:white; border-radius:50%; width:10px; height:10px;" title="Grandes consultoras"></div>
+          <div style="position:absolute; left:20%; top:20%; font-size:10px; color:#9CA3AF;">Big4</div>
+          <div style="position:absolute; left:25%; top:55%; background:#9CA3AF; color:white; border-radius:50%; width:10px; height:10px;"></div>
+          <div style="position:absolute; left:28%; top:57%; font-size:10px; color:#9CA3AF;">Academias</div>
+          <div style="position:absolute; left:55%; top:40%; background:#9CA3AF; color:white; border-radius:50%; width:10px; height:10px;"></div>
+          <div style="position:absolute; left:58%; top:42%; font-size:10px; color:#9CA3AF;">Freelancers</div>
+          <div style="position:absolute; right:12%; bottom:20%; background:var(--blue); border-radius:50%; width:16px; height:16px; border:3px solid white; box-shadow:0 0 0 2px var(--blue);"></div>
+          <div style="position:absolute; right:5%; bottom:10%; font-size:11px; color:var(--blue); font-weight:700;">NorteIA</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Precio benchmarking por servicio</h2>
+      <div class="price-row">
+        <div><div class="name">Taller IA 1 día (in-company)</div><div class="range">Mercado: 800–3.000€ · Big4: 8.000€+</div></div>
+        <div class="our">NorteIA: 1.500–2.500€</div>
+      </div>
+      <div class="price-row">
+        <div><div class="name">Programa IA 4–6 semanas</div><div class="range">Mercado: 3.000–10.000€</div></div>
+        <div class="our">NorteIA: 4.000–8.000€</div>
+      </div>
+      <div class="price-row">
+        <div><div class="name">Auditoría EU AI Act básica</div><div class="range">Mercado: 2.500–15.000€</div></div>
+        <div class="our">NorteIA: 3.000–6.000€</div>
+      </div>
+      <div class="price-row">
+        <div><div class="name">Consultoría normativa completa</div><div class="range">Mercado: 8.000–40.000€</div></div>
+        <div class="our">NorteIA: 6.000–12.000€</div>
+      </div>
+      <div class="price-row">
+        <div><div class="name">Automatización básica (n8n)</div><div class="range">Mercado: 1.500–8.000€</div></div>
+        <div class="our">NorteIA: 2.000–5.000€</div>
+      </div>
+      <div style="margin-top:12px; font-size:12px; color:var(--gray);">✓ NorteIA se posiciona competitivo vs. agencias locales y muy por debajo de grandes consultoras, con una propuesta de valor claramente diferenciada.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ ICP ═══════════ -->
+<div class="page" id="icp">
+  <h1>Perfil de Cliente Ideal (ICP)</h1>
+  <p class="subtitle">Arquetipos de los decisores en los 4 sectores prioritarios de NorteIA</p>
+
+  <div class="grid grid-2">
+
+    <div class="card">
+      <div class="icp-card">
+        <div class="icp-avatar">⚖️</div>
+        <div class="icp-info">
+          <h3>Marta — Socia Directora</h3>
+          <div class="role">Despacho de abogados · 15–50 empleados · Madrid/Barcelona</div>
+          <span class="badge badge-red">Urgencia alta · EU AI Act</span>
+          <div class="icp-row">
+            <div class="icp-item"><div class="icp-key">Dolor principal</div><div class="icp-val">Clientes preguntan por cumplimiento IA y no saben qué responder</div></div>
+            <div class="icp-item"><div class="icp-key">Motivación de compra</div><div class="icp-val">Evitar multas + posicionarse como despacho innovador</div></div>
+            <div class="icp-item"><div class="icp-key">Objeción típica</div><div class="icp-val">"No tengo tiempo de formarme yo"</div></div>
+            <div class="icp-item"><div class="icp-key">Canal de llegada</div><div class="icp-val">LinkedIn + webinar + boca a boca colegios profesionales</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icp-card">
+        <div class="icp-avatar">🏥</div>
+        <div class="icp-info">
+          <h3>Carlos — Director Médico</h3>
+          <div class="role">Clínica privada / Centro médico · 20–80 empleados · Toda España</div>
+          <span class="badge badge-red">Urgencia muy alta · datos sensibles</span>
+          <div class="icp-row">
+            <div class="icp-item"><div class="icp-key">Dolor principal</div><div class="icp-val">Usa IA en diagnóstico/admin sin saber si cumple RGPD + AI Act</div></div>
+            <div class="icp-item"><div class="icp-key">Motivación de compra</div><div class="icp-val">Protegerse legalmente y mejorar eficiencia clínica</div></div>
+            <div class="icp-item"><div class="icp-key">Objeción típica</div><div class="icp-val">"Ya tenemos asesor jurídico"</div></div>
+            <div class="icp-item"><div class="icp-key">Canal de llegada</div><div class="icp-val">Asociaciones médicas + LinkedIn + referidos</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icp-card">
+        <div class="icp-avatar">🏠</div>
+        <div class="icp-info">
+          <h3>Sergio — CEO Agencia</h3>
+          <div class="role">Agencia inmobiliaria / Promotora · 5–30 empleados</div>
+          <span class="badge badge-orange">Urgencia media-alta · automatización</span>
+          <div class="icp-row">
+            <div class="icp-item"><div class="icp-key">Dolor principal</div><div class="icp-val">Procesos manuales que le roban tiempo: captación, seguimiento, documentación</div></div>
+            <div class="icp-item"><div class="icp-key">Motivación de compra</div><div class="icp-val">Ahorrar tiempo + no quedarse atrás de competidores que ya usan IA</div></div>
+            <div class="icp-item"><div class="icp-key">Objeción típica</div><div class="icp-val">"Esto es muy complicado para mi equipo"</div></div>
+            <div class="icp-item"><div class="icp-key">Canal de llegada</div><div class="icp-val">Instagram / YouTube / ferias sector + web Víctor Mago</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icp-card">
+        <div class="icp-avatar">📚</div>
+        <div class="icp-info">
+          <h3>Ana — Directora de Centro</h3>
+          <div class="role">Centro educativo / Academia privada · 10–60 empleados</div>
+          <span class="badge badge-orange">Urgencia media · transformación pedagógica</span>
+          <div class="icp-row">
+            <div class="icp-item"><div class="icp-key">Dolor principal</div><div class="icp-val">Profesores y alumnos usan IA sin protocolo ni formación</div></div>
+            <div class="icp-item"><div class="icp-key">Motivación de compra</div><div class="icp-val">Liderar la transformación IA del centro antes que la competencia</div></div>
+            <div class="icp-item"><div class="icp-key">Objeción típica</div><div class="icp-val">"El claustro es reticente al cambio"</div></div>
+            <div class="icp-item"><div class="icp-key">Canal de llegada</div><div class="icp-val">LinkedIn + congresos educativos + boca a boca</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════ SWOT ═══════════ -->
+<div class="page" id="swot">
+  <h1>Análisis DAFO</h1>
+  <p class="subtitle">NorteIA — posición estratégica actual</p>
+
+  <div class="swot">
+    <div class="swot-card swot-f">
+      <div class="swot-title">✅ FORTALEZAS</div>
+      <ul class="swot-list">
+        <li>Metodología pedagógica propia — diferencial real vs. competencia</li>
+        <li>Especialización EU AI Act: profundidad que nadie más ofrece a pymes</li>
+        <li>Equipo complementario: creatividad + gestión + marketing + pedagogía</li>
+        <li>Presencia en 4 sectores con casos reales validados</li>
+        <li>Empresa operativa con clientes y proyectos cerrados</li>
+        <li>Web y material de ventas existentes (norteia.es)</li>
+        <li>Posicionamiento temprano antes de agosto 2026</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-d">
+      <div class="swot-title">⚠️ DEBILIDADES</div>
+      <ul class="swot-list">
+        <li>Poca visibilidad: aún no conocidos fuera de red inmediata</li>
+        <li>Proceso de ventas informal y no estructurado</li>
+        <li>Poco tiempo disponible para captación sistemática</li>
+        <li>Sin propuesta comercial tipo ni pipeline definido</li>
+        <li>Marca personal Víctor sin activar en IA (canal pendiente)</li>
+        <li>Solo 2 personas — riesgo de cuello de botella en escalado</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-o">
+      <div class="swot-title">🚀 OPORTUNIDADES</div>
+      <ul class="swot-list">
+        <li>EU AI Act en plena aplicación desde agosto 2026 — demanda obligatoria</li>
+        <li>68% de pymes sin estrategia IA: mercado enorme sin atender</li>
+        <li>Búsquedas de "formación IA" +320% — momento de posicionarse</li>
+        <li>Subvenciones públicas para formación digital (Kit Digital, SEPE)</li>
+        <li>Sectores regulados tienen presupuesto para compliance</li>
+        <li>Marca personal Víctor: canal de captación sin costo</li>
+        <li>Expansión a LATAM con la misma metodología</li>
+        <li>Certificación propia en EU AI Act como producto escalable</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-a">
+      <div class="swot-title">🔺 AMENAZAS</div>
+      <ul class="swot-list">
+        <li>Grandes consultoras lanzarán productos EU AI Act para pymes</li>
+        <li>Saturación de "expertos IA" en LinkedIn — ruido creciente</li>
+        <li>Retraso en aprendizaje del mercado: pymes esperan a última hora</li>
+        <li>Competidores copiarán la metodología si se hace pública sin protección</li>
+        <li>Cambios normativos pueden requerir actualizar formaciones continuamente</li>
+        <li>Dependencia de 1–2 personas clave (socios fundadores)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ OPORTUNIDADES ═══════════ -->
+<div class="page" id="oportunidades">
+  <h1>Oportunidades Prioritarias</h1>
+  <p class="subtitle">Las 6 apuestas estratégicas de mayor impacto para NorteIA en 2026</p>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="opp-row"><div class="opp-num">1</div><div class="opp-text">
+        <h3>Programa EU AI Act para Pymes — Producto Flagship</h3>
+        <p>Un programa de 4–6 semanas in-company con certificado de cumplimiento. Ningún actor lo ofrece de forma accesible. Precio: 5.000–10.000€. Alta replicabilidad por sector.</p>
+        <div style="margin-top:6px;"><span class="badge badge-red">Urgencia: Muy alta</span> <span class="badge badge-blue">Impacto: Alto</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="opp-row"><div class="opp-num">2</div><div class="opp-text">
+        <h3>Marca Personal Víctor Mago como canal de captación</h3>
+        <p>victormago.com + LinkedIn activo con contenido semanal sobre IA práctica. Coste cero. Posiciona a Víctor como referente y deriva leads calificados a NorteIA.</p>
+        <div style="margin-top:6px;"><span class="badge badge-green">Urgencia: Inmediata</span> <span class="badge badge-blue">Impacto: Alto a largo plazo</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="opp-row"><div class="opp-num">3</div><div class="opp-text">
+        <h3>Webinar mensual gratuito como top-of-funnel</h3>
+        <p>"IA y EU AI Act para [sector]" — Webinar mensual gratuito de 60 min. Construcción de lista. Pipeline de ventas sistematizado a partir de asistentes. Bajo coste, alto retorno.</p>
+        <div style="margin-top:6px;"><span class="badge badge-orange">Urgencia: Media</span> <span class="badge badge-blue">Impacto: Medio-alto</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="opp-row"><div class="opp-num">4</div><div class="opp-text">
+        <h3>Alianzas con colegios profesionales y asociaciones</h3>
+        <p>Colegio de Abogados, OMC, CCOO Educación, etc. Son multiplicadores de acceso a cientos de pymes. Un acuerdo puede valer 10–20 clientes directos.</p>
+        <div style="margin-top:6px;"><span class="badge badge-orange">Urgencia: Media</span> <span class="badge badge-green">Impacto: Muy alto</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="opp-row"><div class="opp-num">5</div><div class="opp-text">
+        <h3>Kit Digital / Subvenciones para formación IA</h3>
+        <p>NorteIA puede posicionarse como agente digitalizador o aliarse con uno. Las subvenciones públicas eliminan la fricción de precio en el cliente y aceleran el ciclo de venta.</p>
+        <div style="margin-top:6px;"><span class="badge badge-orange">Urgencia: Media</span> <span class="badge badge-green">Impacto: Alto (elimina fricción precio)</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="opp-row"><div class="opp-num">6</div><div class="opp-text">
+        <h3>Expansión a LATAM con metodología escalada</h3>
+        <p>Colombia, México, Argentina — mismo idioma, sin EU AI Act pero con demanda de formación IA creciente. Producto digital o programa online puede venderse sin presencia física.</p>
+        <div style="margin-top:6px;"><span class="badge badge-blue">Urgencia: Q3/Q4</span> <span class="badge badge-green">Impacto: Muy alto a 2 años</span></div>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<footer>NorteIA · norteia.es · Investigación de Mercado 2026 · Confidencial</footer>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>

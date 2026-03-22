@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0A0907;
+  --bg-card: #0F0D0A;
+  --bg-alt: #131109;
+  --copper: #C4956A;
+  --copper-light: #D4A97A;
+  --orange: #F97316;
+  --white: #F5F0E8;
+  --muted: #7A7060;
+  --muted-light: #9A8E7E;
+  --border: #1E1B14;
+  --border-cu: #2A2318;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--copper);
+    color: var(--bg);
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
