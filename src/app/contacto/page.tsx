@@ -37,7 +37,7 @@ export default function ContactoPage() {
     e.preventDefault()
     setState('submitting')
     try {
-      const res = await fetch('https://formspree.io/f/PLACEHOLDER', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -45,8 +45,7 @@ export default function ContactoPage() {
       if (res.ok) { setState('success'); setForm({ name: '', email: '', empresa: '', mensaje: '' }) }
       else setState('error')
     } catch {
-      setState('success')
-      setForm({ name: '', email: '', empresa: '', mensaje: '' })
+      setState('error')
     }
   }
 
@@ -81,7 +80,7 @@ export default function ContactoPage() {
 
               {[
                 { label: 'LinkedIn', value: 'Víctor Mago', href: 'https://www.linkedin.com/in/victormagoheredia/' },
-                { label: 'Email', value: 'victorwago0@gmail.com', href: 'mailto:victorwago0@gmail.com' },
+                { label: 'Email', value: 'victor@norteia.es', href: 'mailto:victor@norteia.es' },
                 { label: 'NorteIA', value: 'norteia.es', href: 'https://norteia.es' },
               ].map(l => (
                 <a key={l.label} href={l.href} target={l.label !== 'Email' ? '_blank' : undefined} rel="noopener noreferrer" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 0', borderBottom: `1px solid ${C.border}`, textDecoration: 'none', cursor: 'pointer' }}>

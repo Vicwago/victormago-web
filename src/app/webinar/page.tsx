@@ -37,9 +37,8 @@ export default function WebinarPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setState('submitting')
-    // Formspree fallback — replace with Resend API endpoint when ready
     try {
-      const res = await fetch('https://formspree.io/f/PLACEHOLDER', {
+      const res = await fetch('/api/webinar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -47,9 +46,7 @@ export default function WebinarPage() {
       if (res.ok) { setState('success'); setForm({ name: '', email: '', empresa: '' }) }
       else setState('error')
     } catch {
-      // In dev, just show success for demo
-      setState('success')
-      setForm({ name: '', email: '', empresa: '' })
+      setState('error')
     }
   }
 
