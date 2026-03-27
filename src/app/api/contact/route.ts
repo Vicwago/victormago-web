@@ -97,7 +97,7 @@ function emailConfirmacion(name: string, email: string, empresa: string) {
 function emailNotificacionVictor(name: string, email: string, empresa: string, mensaje: string) {
   const now = new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid', dateStyle: 'full', timeStyle: 'short' })
   return {
-    from: 'Web victormago.com <onboarding@resend.dev>',
+    from: 'Web victormago.com <web@norteia.es>',
     to: 'victor@norteia.es',
     subject: `Nuevo lead: ${name}${empresa ? ` - ${empresa}` : ''} - victormago.com`,
     html: `<!DOCTYPE html>
