@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
 
       // Notificación a Victor
       resend.emails.send({
-        from: 'victormago.com <victor@norteia.es>',
+        from: 'Web victormago.com <onboarding@resend.dev>',
         to: 'victor@norteia.es',
         subject: `🎯 Nuevo registro webinar: ${name}${empresa ? ` · ${empresa}` : ''}`,
         html: `<!DOCTYPE html>
