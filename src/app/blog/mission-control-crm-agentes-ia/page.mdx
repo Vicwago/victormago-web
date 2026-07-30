@@ -1,0 +1,59 @@
+import ArticleLayout from '@/components/ArticleLayout'
+import Faq from '@/components/Faq'
+
+export const metadata = {
+  title: 'Así trabaja un CRM con agentes de IA: Mission Control',
+  description:
+    'Documentamos el sistema que usamos en NorteIA: un CRM donde agentes de IA prospectan, contactan y hacen seguimiento de forma casi automática. Con capturas y arquitectura real.',
+  alternates: { canonical: '/blog/mission-control-crm-agentes-ia' },
+}
+
+<ArticleLayout slug="mission-control-crm-agentes-ia">
+
+{/* ═══════════════════════════════════════════════════════════════
+    TODO-VÍCTOR: ARTÍCULO EN ESQUELETO — la pieza "enséñalo, no lo
+    cuentes" del ecosistema. Documenta Mission Control con capturas
+    reales (ocultando datos de clientes) y si grabas un vlog del
+    sistema, el vídeo va aquí con <VideoEmbed id="..." />.
+    ═══════════════════════════════════════════════════════════════ */}
+
+En NorteIA no solo montamos sistemas de IA para clientes. Nosotros trabajamos con uno.
+Se llama Mission Control y es nuestro CRM: la diferencia con un CRM normal es que aquí
+los agentes de IA hacen parte del trabajo comercial por nosotros.
+
+Este artículo lo documenta por dentro. No es un producto que vendo: es la prueba de cómo
+trabajamos.
+
+## Qué hace Mission Control mientras yo estoy en la pista
+
+{/* TODO-VÍCTOR: dictar la lista real — prospección, seguimiento de leads,
+    tareas, facturas, contenido... qué hace cada agente */}
+
+## La arquitectura, sin secretos
+
+{/* TODO-VÍCTOR: decidir con Luis qué se puede enseñar de la arquitectura
+    (React + Supabase + agentes) y con qué nivel de detalle */}
+
+## Los leads de esta web también entran solos
+
+Cada formulario de esta web — el contacto, el PDF de automatizaciones, el webinar —
+entra automáticamente en Mission Control. Nadie copia emails a mano. Esa es la idea
+que intento transmitir a cada cliente: si lo haces más de dos veces por semana y es
+igual las dos veces, no deberías estar haciéndolo tú.
+
+## Qué puedes copiar de esto para tu empresa
+
+{/* TODO-VÍCTOR: dictar 3-4 lecciones aplicables a cualquier pyme */}
+
+<Faq items={[
+  {
+    q: '¿Mission Control se puede comprar?',
+    a: 'No es un producto de catálogo: es nuestro sistema interno. Pero la arquitectura — CRM + agentes de IA + automatización de leads — la montamos adaptada para clientes.',
+  },
+  {
+    q: '¿Cuánta intervención humana necesita?',
+    a: 'Los agentes preparan y ejecutan el trabajo repetitivo; las decisiones comerciales las tomamos las personas. La IA propone, nosotros disponemos.',
+  },
+]} />
+
+</ArticleLayout>

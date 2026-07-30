@@ -1,0 +1,69 @@
+import ArticleLayout from '@/components/ArticleLayout'
+import Faq from '@/components/Faq'
+
+export const metadata = {
+  title: 'Cómo un despacho de procuradores puede automatizar el 70% de su gestión documental',
+  description:
+    'Qué tareas documentales de un despacho de procuradores se pueden automatizar con IA, por dónde empezar y qué resultados esperar. Guía práctica desde casos reales.',
+  alternates: { canonical: '/blog/automatizar-gestion-documental-procuradores' },
+}
+
+<ArticleLayout slug="automatizar-gestion-documental-procuradores">
+
+{/* ═══════════════════════════════════════════════════════════════
+    TODO-VÍCTOR: ARTÍCULO EN ESQUELETO. La estructura está lista
+    para que dictes el contenido de cada sección. Los H2 están
+    pensados para la keyword "IA para despachos de procuradores".
+    ═══════════════════════════════════════════════════════════════ */}
+
+El día de un procurador empieza igual en casi todos los despachos: descargar notificaciones,
+clasificarlas por procedimiento, registrarlas y avisar a quien corresponda. Horas de trabajo
+que no facturan y que una máquina hace mejor.
+
+Trabajo con despachos de procuradores en Galicia y esto es lo que he aprendido automatizando
+esa gestión documental.
+
+## Qué se puede automatizar hoy en un despacho de procuradores
+
+{/* TODO-VÍCTOR: dictar la lista real basada en el caso Sánchez García:
+    recepción de notificaciones, clasificación por procedimiento, registro,
+    avisos a abogados, control de plazos... con el detalle que autorice el cliente */}
+
+- Clasificación automática de notificaciones y documentos entrantes
+- Registro en el sistema de gestión del despacho
+- Avisos automáticos al abogado o al cliente correspondiente
+- Control de plazos con alertas
+
+## Por dónde empezar (sin poner en riesgo nada)
+
+{/* TODO-VÍCTOR: dictar el orden recomendado y los errores típicos que has visto */}
+
+La regla que aplico siempre: se empieza por el proceso más repetitivo y de menor riesgo.
+Nunca por el que toca plazos procesales críticos.
+
+## Qué resultados puede esperar un despacho
+
+{/* TODO-VÍCTOR: métricas reales del caso (horas/semana, % clasificación automática).
+    NO publicar cifras sin verificar. */}
+
+## El caso real
+
+Puedes leer cómo lo hicimos en un despacho de procuradores de A Coruña:
+[el caso de Sánchez García Procuradores](/casos/sanchez-garcia-procuradores).
+
+<Faq items={[
+  {
+    q: '¿La automatización con IA es segura para documentación judicial?',
+    a: 'Sí, si se diseña bien: el sistema clasifica y organiza, pero las decisiones con relevancia procesal siguen pasando por una persona. La IA quita trabajo mecánico, no responsabilidad.',
+  },
+  {
+    q: '¿Hace falta cambiar el software de gestión del despacho?',
+    a: 'Normalmente no. Las automatizaciones se conectan a lo que ya usas: correo, carpetas, tu programa de gestión. Se añade una capa, no se sustituye nada.',
+  },
+  {
+    q: '¿Cuánto tarda en montarse una automatización así?',
+    a: 'Las primeras automatizaciones útiles pueden estar funcionando en pocas semanas. Se empieza por lo más repetitivo y se amplía por fases.',
+  },
+]} />
+
+</ArticleLayout>
