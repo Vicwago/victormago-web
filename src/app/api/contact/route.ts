@@ -1,5 +1,6 @@
 import { Resend } from 'resend'
 import { NextRequest, NextResponse } from 'next/server'
+import { notifyMissionControl } from '@/lib/mission-control'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -52,14 +53,14 @@ function emailConfirmacion(name: string, email: string, empresa: string) {
           <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
               <td style="padding:10px 0;border-bottom:1px solid #1E1B14;">
-                <a href="https://victormago.com/servicios" style="font-size:13px;color:#F5F0E8;text-decoration:none;letter-spacing:0.04em;">
-                  Formación, Consultoría y EU AI Act →
+                <a href="https://victormago.com/casos" style="font-size:13px;color:#F5F0E8;text-decoration:none;letter-spacing:0.04em;">
+                  Casos reales: qué he resuelto y cómo →
                 </a>
               </td>
             </tr>
             <tr>
               <td style="padding:10px 0;border-bottom:1px solid #1E1B14;">
-                <a href="https://victormago.com/servicios/eu-ai-act" style="font-size:13px;color:#F5F0E8;text-decoration:none;letter-spacing:0.04em;">
+                <a href="https://victormago.com/blog/eu-ai-act-pymes" style="font-size:13px;color:#F5F0E8;text-decoration:none;letter-spacing:0.04em;">
                   EU AI Act — Agosto 2026, ¿está preparada tu empresa? →
                 </a>
               </td>
@@ -164,6 +165,9 @@ export async function POST(req: NextRequest) {
       resend.emails.send(emailConfirmacion(name, email, empresa)),
       resend.emails.send(emailNotificacionVictor(name, email, empresa, mensaje)),
     ])
+
+    // Lead → CRM Mission Control (no bloquea la respuesta si falla)
+    await notifyMissionControl({ origen: 'contacto', name, email, empresa, mensaje })
 
     const errors = results.filter(r => r.status === 'rejected')
     if (errors.length === 2) {

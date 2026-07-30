@@ -1,17 +1,68 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════════════
+   SISTEMA DE TOKENS — todo el sitio pinta contra estas variables.
+   Cambiar de dirección visual = cambiar este bloque (o aplicar
+   una clase .theme-* que lo sobreescriba). Ver /direcciones.
+   ═══════════════════════════════════════════════════════════ */
 :root {
+  /* Dirección por defecto: FORO (romana pulida — estética actual) */
   --bg: #0A0907;
-  --bg-card: #0F0D0A;
-  --bg-alt: #131109;
-  --copper: #C4956A;
-  --copper-light: #D4A97A;
-  --orange: #F97316;
-  --white: #F5F0E8;
-  --muted: #7A7060;
-  --muted-light: #9A8E7E;
+  --surface: #0F0D0A;
+  --surface-alt: #131109;
+  --accent: #C4956A;
+  --accent-light: #D4A97A;
+  --cta: #F97316;
+  --cta-text: #ffffff;
+  --text: #F5F0E8;
+  --text-muted: #9A8E7E;
+  --text-faint: #857A6A;
   --border: #1E1B14;
-  --border-cu: #2A2318;
+  --border-accent: #2A2318;
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-outfit), system-ui, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  --radius: 0px;
+}
+
+/* ── Dirección A: PISTA (tenis + sistemas, paleta emparentada con NorteIA) ── */
+.theme-pista {
+  --bg: #050A14;
+  --surface: #0A1120;
+  --surface-alt: #0D1526;
+  --accent: #76C1FF;
+  --accent-light: #A3D6FF;
+  --cta: #76C1FF;
+  --cta-text: #050A14;
+  --text: #F2F6FB;
+  --text-muted: #8FA3BC;
+  --text-faint: #64768D;
+  --border: #14203A;
+  --border-accent: #1D2E52;
+  --font-display: var(--font-grotesk), var(--font-outfit), system-ui, sans-serif;
+  --font-body: var(--font-outfit), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, Consolas, monospace;
+  --radius: 0px;
+}
+
+/* ── Dirección C: HÍBRIDA (base clásica, estructura de pista) ── */
+.theme-hibrida {
+  --bg: #0B0A08;
+  --surface: #100F0C;
+  --surface-alt: #14120E;
+  --accent: #C4956A;
+  --accent-light: #D4A97A;
+  --cta: #76C1FF;
+  --cta-text: #0B0A08;
+  --text: #F5F0E8;
+  --text-muted: #9A8E7E;
+  --text-faint: #857A6A;
+  --border: #1E1B14;
+  --border-accent: #2A2318;
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-outfit), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, Consolas, monospace;
+  --radius: 0px;
 }
 
 @layer base {
@@ -28,8 +79,8 @@
 
   body {
     background: var(--bg);
-    color: var(--white);
-    font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+    color: var(--text);
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -41,23 +92,135 @@
   }
 
   ::selection {
-    background: var(--copper);
+    background: var(--accent);
     color: var(--bg);
   }
 
   button {
     cursor: pointer;
+    font-family: inherit;
   }
 
   a {
     text-decoration: none;
     color: inherit;
   }
+
+  /* Accesibilidad: foco visible en navegación por teclado */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* Accesibilidad: respetar prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ── FAQ con <details> nativo (accesible sin JS) ── */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: clamp(17px, 2vw, 21px);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: '+';
+  color: var(--accent);
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+.faq-item p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  padding-bottom: 24px;
+}
+
+/* ── Prosa de artículos del blog ── */
+.article-prose h2 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 400;
+  color: var(--text);
+  margin: 48px 0 20px;
+  line-height: 1.2;
+}
+.article-prose h3 {
+  font-family: var(--font-display);
+  font-size: clamp(19px, 2.2vw, 24px);
+  font-weight: 500;
+  color: var(--text);
+  margin: 36px 0 14px;
+}
+.article-prose p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+.article-prose ul, .article-prose ol {
+  padding-left: 24px;
+  margin-bottom: 20px;
+}
+.article-prose li {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+.article-prose strong {
+  color: var(--text);
+  font-weight: 500;
+}
+.article-prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.article-prose blockquote {
+  border-left: 2px solid var(--border-accent);
+  padding-left: 20px;
+  margin: 28px 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--accent-light);
 }
 
 /* ── Responsive helpers ── */
-
-/* Stats grid: quitar borderRight en móvil (al wrappear se ve raro) */
 @media (max-width: 600px) {
   .stat-item {
     border-right: none !important;
@@ -68,7 +231,6 @@
   }
 }
 
-/* Foto con marco decorativo: centrar en móvil */
 @media (max-width: 768px) {
   .photo-frame {
     margin: 0 auto;
@@ -77,7 +239,6 @@
   }
 }
 
-/* Hero subtitle: evitar desbordamiento con letter-spacing alto */
 @media (max-width: 480px) {
   .hero-eyebrow {
     letter-spacing: 0.12em !important;
@@ -85,7 +246,6 @@
   }
 }
 
-/* Botones CTA en móvil: ancho completo si están solos */
 @media (max-width: 400px) {
   .cta-buttons {
     flex-direction: column !important;
