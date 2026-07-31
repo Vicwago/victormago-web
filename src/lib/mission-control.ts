@@ -9,7 +9,7 @@
 // esta función no hace nada (y nunca rompe el envío del email).
 
 export type WebLead = {
-  origen: 'contacto' | 'lead-magnet' | 'webinar'
+  origen: 'contacto' | 'lead-magnet' | 'webinar' | 'chat' | 'newsletter'
   name: string
   email: string
   empresa?: string

@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from 'next'
-import Script from 'next/script'
 import { Archivo, Public_Sans, Chivo_Mono } from 'next/font/google'
 import JsonLd from '@/components/JsonLd'
 import ChatWidget from '@/components/ChatWidget'
+import CookieConsent from '@/components/CookieConsent'
 import { SITE_URL, SITE_NAME, DEFAULT_DESCRIPTION, SOCIAL, NAP } from '@/lib/site'
 import './globals.css'
 
@@ -111,17 +111,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         }} />
         {children}
         <ChatWidget />
-        {GA_ID && (
-          <>
-            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
-            <Script id="ga4" strategy="afterInteractive">
-              {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA_ID}');`}
-            </Script>
-          </>
-        )}
+        {/* GA4 solo se carga si el usuario acepta cookies en el banner */}
+        <CookieConsent gaId={GA_ID} />
       </body>
     </html>
   )

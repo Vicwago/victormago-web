@@ -71,9 +71,13 @@ export default function LeadForm({ recurso }: { recurso: string }) {
       >
         {state === 'submitting' ? 'Enviando…' : 'Quiero el PDF →'}
       </button>
-      <p style={{ fontFamily: C.fontBody, fontSize: 11, color: C.muted, lineHeight: 1.6 }}>
-        Sin spam. Solo te escribo cuando tengo algo útil que contarte. Puedes darte de baja cuando quieras.
-      </p>
+      <label style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontFamily: C.fontBody, fontSize: 11.5, fontWeight: 300, color: C.muted, lineHeight: 1.5, cursor: 'pointer' }}>
+        <input type="checkbox" required style={{ marginTop: 2, accentColor: '#2C03F3' }} />
+        <span>
+          Acepto la <a href="/politica-privacidad" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>política de privacidad</a>.
+          Sin spam: solo te escribo cuando tengo algo útil, y puedes darte de baja cuando quieras.
+        </span>
+      </label>
     </form>
   )
 }

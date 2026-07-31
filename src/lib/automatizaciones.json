@@ -1,0 +1,72 @@
+[
+  {
+    "n": "01",
+    "titulo": "Clasificación automática del correo y los documentos que entran",
+    "dolor": "Cada mañana alguien abre el correo, lee cada mensaje, decide de qué va, lo reenvía a quien toca o guarda el adjunto en su carpeta. Media hora al día que nadie factura.",
+    "proceso": [
+      "Conecta tu buzón (Gmail u Outlook) a una herramienta de automatización.",
+      "Cada correo entrante pasa por un paso de IA que lo clasifica: pedido, factura, consulta, urgente, spam comercial.",
+      "Según la categoría: se etiqueta, se reenvía a la persona correcta o se guarda el adjunto en la carpeta del cliente correspondiente.",
+      "Lo que la IA no sabe clasificar con seguridad se queda en una bandeja de \"revisar a mano\" — nunca se pierde nada."
+    ],
+    "herramientas": "n8n (gratis autoalojado) o Make (plan gratis hasta 1.000 operaciones/mes) + un modelo de IA económico para clasificar (céntimos al mes).",
+    "resultado": "El triaje del correo deja de ser una tarea: entras y cada cosa está donde tiene que estar. En un buzón con decenas de correos diarios, esto suele liberar entre 2 y 5 horas a la semana.",
+    "consejo": "Empieza solo con 3-4 categorías. Añadir categorías después es fácil; empezar con quince es la receta para que clasifique mal y dejes de fiarte."
+  },
+  {
+    "n": "02",
+    "titulo": "Registro de datos sin copiar y pegar",
+    "dolor": "Facturas que llegan en PDF y alguien pica en el Excel. Pedidos que entran por WhatsApp y se copian al programa de gestión. El mismo dato, tecleado dos y tres veces, con los errores que eso trae.",
+    "proceso": [
+      "Define el punto de entrada: una carpeta donde caen los PDF, el propio correo, o un formulario.",
+      "Un paso de IA extrae los campos que te interesan: quién, cuánto, fecha, concepto, número de factura.",
+      "Los datos extraídos se escriben solos donde ya trabajas: tu Excel/Google Sheets, tu programa de gestión o tu CRM.",
+      "Cada registro guarda el enlace al documento original para poder comprobar cualquier duda al momento."
+    ],
+    "herramientas": "n8n o Make + IA de extracción de documentos. Si usas Google Sheets, la integración es directa y gratuita.",
+    "resultado": "Se elimina el doble tecleo y, con él, los errores de transcripción. La persona que picaba datos pasa a solo revisar excepciones.",
+    "consejo": "No busques el 100% automático el primer día. Un sistema que extrae bien el 90% y te marca el 10% dudoso ya te está ahorrando casi todo el trabajo."
+  },
+  {
+    "n": "03",
+    "titulo": "Respuestas automáticas a las consultas repetitivas",
+    "dolor": "Horario, precio, disponibilidad, \"¿cómo va lo mío?\". El 70% de las consultas de cualquier negocio son las mismas diez preguntas, y las contesta una persona, una a una, también a las diez de la noche (o no las contesta, y ese cliente se va).",
+    "proceso": [
+      "Reúne las preguntas que de verdad os hacen (revisa el correo y el WhatsApp del último mes: salen solas).",
+      "Monta un asistente que responde SOLO con tu información verificada: tus tarifas, tus horarios, tus servicios. Si no sabe algo, lo dice y pasa la conversación a una persona.",
+      "Publícalo donde te preguntan: la web, y si tu volumen lo justifica, WhatsApp Business.",
+      "Revisa las conversaciones la primera semana y corrige lo que responda regular. A partir de ahí, mantenimiento mínimo."
+    ],
+    "herramientas": "Un asistente conectado a tus datos (RAG). La API de IA cuesta céntimos por conversación; la clave está en el montaje, no en la herramienta.",
+    "resultado": "Respuesta inmediata 24/7 a lo repetitivo y personas atendiendo solo las conversaciones que necesitan criterio. El asistente de esta misma web funciona así.",
+    "consejo": "La regla de oro: el asistente nunca inventa. Mejor un \"eso te lo confirma Víctor mañana\" que un dato inventado que te cueste un cliente."
+  },
+  {
+    "n": "04",
+    "titulo": "Avisos y seguimientos a clientes sin perseguirlos a mano",
+    "dolor": "El presupuesto que enviaste y nadie contestó. La cita de mañana que el cliente olvidó. El \"te llamo la semana que viene\" que nunca llega. El seguimiento comercial muere porque depende de que alguien se acuerde.",
+    "proceso": [
+      "Define los momentos de contacto: recordatorio de cita 24h antes, seguimiento de presupuesto a los 3 y a los 7 días, aviso de renovación, felicitación o revisión anual.",
+      "Redacta una plantilla honesta para cada momento (dos líneas; nada de parrafadas comerciales).",
+      "La automatización vigila tu agenda/CRM/hoja de cálculo y envía cada mensaje cuando toca, por email o WhatsApp.",
+      "Si el cliente responde, la conversación vuelve a una persona; la máquina solo abre la puerta."
+    ],
+    "herramientas": "n8n o Make + tu calendario y tu lista de clientes (aunque sea un Google Sheets). Para WhatsApp: WhatsApp Business API o el envío manual asistido si el volumen es bajo.",
+    "resultado": "Ningún seguimiento se olvida. Solo con recuperar una parte de los presupuestos que hoy mueren en silencio, esta automatización se paga sola muchas veces.",
+    "consejo": "El recordatorio de cita es el mejor punto de partida: es el que menos molesta, el que más se agradece y el que reduce plantones desde la primera semana."
+  },
+  {
+    "n": "05",
+    "titulo": "Control de plazos y tareas con alertas",
+    "dolor": "Plazos que viven en la cabeza de una persona, en post-its o en un Excel que hay que acordarse de abrir. Cuando esa persona está de vacaciones, el sistema de plazos también.",
+    "proceso": [
+      "Centraliza los plazos en un único sitio: una hoja de cálculo o tu herramienta de gestión, con fecha, responsable y estado.",
+      "La automatización revisa esa lista cada día y calcula qué vence en 7, 3 y 1 días.",
+      "Envía la alerta a quien corresponda por el canal que uséis (email, WhatsApp, Slack), y repite si nadie marca la tarea como hecha.",
+      "Los plazos críticos escalan: si el responsable no reacciona, el aviso sube a la segunda persona definida."
+    ],
+    "herramientas": "n8n o Make + Google Sheets/tu gestor de tareas. Es la automatización más sencilla de las cinco: no necesita IA, solo disciplina de calendario.",
+    "resultado": "El control de plazos deja de depender de la memoria de nadie. En sectores donde un plazo perdido cuesta dinero (o un expediente), esta es la automatización más rentable de la lista.",
+    "consejo": "La pieza clave es el escalado: la alerta que insiste y sube de nivel. Un aviso único que se pierde entre 40 correos no es un sistema de plazos."
+  }
+]

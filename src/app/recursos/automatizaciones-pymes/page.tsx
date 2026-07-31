@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Reveal from '@/components/Reveal'
 import LeadForm from '@/components/LeadForm'
 import { C } from '@/lib/theme'
+import { automatizaciones } from '@/lib/automatizaciones'
 
 export const metadata: Metadata = {
   title: '5 automatizaciones que cualquier pyme puede montar esta semana',
@@ -63,13 +64,65 @@ export default function RecursoPymesPage() {
         </div>
       </section>
 
-      <section style={{ borderTop: `1.5px solid ${C.border}`, background: C.bgAlt, padding: 'clamp(48px, 6vw, 72px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
-        <p style={{ fontFamily: C.fontBody, fontSize: 14.5, fontWeight: 300, color: C.mutedLight, marginBottom: 16 }}>
-          ¿Quieres ver cómo funciona en una empresa real?
-        </p>
-        <Link href="/casos" style={{ fontFamily: C.fontMono, fontSize: 13, letterSpacing: '0.12em', textTransform: 'uppercase', color: C.copper, textDecoration: 'none' }}>
-          Ver los casos →
-        </Link>
+      {/* ── Contenido completo en abierto (SEO/AEO): las 5 desarrolladas ── */}
+      <section style={{ borderTop: `1.5px solid ${C.border}`, padding: 'clamp(64px, 8vw, 110px) clamp(24px, 5vw, 64px)' }}>
+        <div style={{ maxWidth: 780, margin: '0 auto' }}>
+          <Reveal>
+            <h2 style={{ fontFamily: C.fontDisplay, fontWeight: 750, fontSize: 'clamp(26px, 3.6vw, 40px)', letterSpacing: '-0.02em', lineHeight: 1.05, marginBottom: 12 }}>
+              Las cinco, al detalle<span style={{ color: C.copper }}>.</span>
+            </h2>
+            <p style={{ fontFamily: C.fontBody, fontSize: 15, fontWeight: 300, color: C.mutedLight, lineHeight: 1.75, marginBottom: 'clamp(36px, 5vw, 56px)', maxWidth: '58ch' }}>
+              Aquí lo tienes todo en abierto — el PDF es lo mismo, maquetado para guardar y compartir.
+              Si al leerlas piensas "esto en mi empresa", ya sabes dónde está la{' '}
+              <Link href="/contacto" style={{ color: C.copper, textDecoration: 'underline', textUnderlineOffset: 3 }}>llamada de 20 minutos</Link>.
+            </p>
+          </Reveal>
+
+          {automatizaciones.map(a => (
+            <Reveal key={a.n}>
+              <article style={{ borderTop: `1.5px solid ${C.border}`, padding: 'clamp(28px, 4vw, 44px) 0' }}>
+                <p style={{ fontFamily: C.fontMono, fontSize: 13, color: C.copper, marginBottom: 12 }}>{a.n} /</p>
+                <h3 style={{ fontFamily: C.fontDisplay, fontWeight: 700, fontSize: 'clamp(20px, 2.6vw, 28px)', letterSpacing: '-0.015em', lineHeight: 1.15, marginBottom: 14 }}>
+                  {a.titulo}
+                </h3>
+                <p style={{ fontFamily: C.fontBody, fontSize: 15, fontWeight: 300, color: C.mutedLight, lineHeight: 1.8, marginBottom: 20, maxWidth: '62ch' }}>
+                  {a.dolor}
+                </p>
+
+                <p style={{ fontFamily: C.fontMono, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: C.muted, marginBottom: 10 }}>Cómo se monta</p>
+                <ol style={{ paddingLeft: 22, marginBottom: 20 }}>
+                  {a.proceso.map((p, i) => (
+                    <li key={i} style={{ fontFamily: C.fontBody, fontSize: 14.5, fontWeight: 300, color: C.mutedLight, lineHeight: 1.75, marginBottom: 8, maxWidth: '60ch' }}>{p}</li>
+                  ))}
+                </ol>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: 14, marginBottom: 18 }}>
+                  <div style={{ background: C.bgCard, border: `1.5px solid ${C.border}`, borderRadius: 'var(--radius-card)', padding: '18px 20px' }}>
+                    <p style={{ fontFamily: C.fontMono, fontSize: 10.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: C.copper, marginBottom: 8 }}>Herramientas</p>
+                    <p style={{ fontFamily: C.fontBody, fontSize: 13.5, fontWeight: 300, color: C.mutedLight, lineHeight: 1.65 }}>{a.herramientas}</p>
+                  </div>
+                  <div style={{ background: C.bgCard, border: `1.5px solid ${C.border}`, borderRadius: 'var(--radius-card)', padding: '18px 20px' }}>
+                    <p style={{ fontFamily: C.fontMono, fontSize: 10.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: C.copper, marginBottom: 8 }}>Qué puedes esperar</p>
+                    <p style={{ fontFamily: C.fontBody, fontSize: 13.5, fontWeight: 300, color: C.mutedLight, lineHeight: 1.65 }}>{a.resultado}</p>
+                  </div>
+                </div>
+
+                <p style={{ fontFamily: C.fontBody, fontSize: 13.5, fontWeight: 300, color: C.mutedLight, lineHeight: 1.7, borderLeft: 'none', background: 'color-mix(in srgb, var(--accent) 6%, transparent)', border: `1.5px solid ${C.borderCu}`, borderRadius: 'var(--radius-card)', padding: '14px 18px', maxWidth: '62ch' }}>
+                  <strong style={{ color: C.white, fontWeight: 600 }}>Consejo de pista:</strong> {a.consejo}
+                </p>
+              </article>
+            </Reveal>
+          ))}
+
+          <div style={{ borderTop: `1.5px solid ${C.border}`, paddingTop: 'clamp(32px, 4vw, 48px)', textAlign: 'center' }}>
+            <p style={{ fontFamily: C.fontBody, fontSize: 14.5, fontWeight: 300, color: C.mutedLight, marginBottom: 16 }}>
+              ¿Quieres ver cómo funciona en una empresa real?
+            </p>
+            <Link href="/casos" style={{ fontFamily: C.fontMono, fontSize: 13, letterSpacing: '0.12em', textTransform: 'uppercase', color: C.copper, textDecoration: 'none' }}>
+              Ver los casos →
+            </Link>
+          </div>
+        </div>
       </section>
 
       <Footer />

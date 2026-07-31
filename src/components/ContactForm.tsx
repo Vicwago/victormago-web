@@ -81,6 +81,13 @@ export default function ContactForm() {
         />
       </div>
 
+      <label style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontFamily: C.fontBody, fontSize: 12, fontWeight: 300, color: C.muted, lineHeight: 1.5, cursor: 'pointer' }}>
+        <input type="checkbox" required style={{ marginTop: 2, accentColor: '#2C03F3' }} />
+        <span>
+          He leído y acepto la <a href="/politica-privacidad" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>política de privacidad</a>.
+        </span>
+      </label>
+
       {state === 'error' && (
         <p style={{ fontFamily: C.fontBody, fontSize: 13, color: C.orange }}>
           No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme a victor@norteia.es.

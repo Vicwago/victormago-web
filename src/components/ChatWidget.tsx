@@ -12,6 +12,16 @@ const SALUDO: Msg = {
 const FALLBACK =
   'Ahora mismo no puedo responder por aquí. Escríbele directamente a Víctor en victormago.com/contacto o reserva 20 minutos gratis — te contesta en menos de 24 h.'
 
+// Convierte rutas internas (/contacto, /casos/...) en enlaces clicables
+function linkify(text: string): React.ReactNode[] {
+  const parts = text.split(/(\/(?:contacto|casos|blog|recursos|sobre-mi)(?:\/[\w-]+)*)/g)
+  return parts.map((part, i) =>
+    part.startsWith('/')
+      ? <a key={i} href={part} style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: 2, fontWeight: 600 }}>{part}</a>
+      : part
+  )
+}
+
 // Chat asistente flotante (equivalente al "Asistente de Luis" de salgadoia.com).
 export default function ChatWidget() {
   const [open, setOpen] = useState(false)
@@ -31,6 +41,16 @@ export default function ChatWidget() {
     setMsgs(next)
     setInput('')
     setBusy(true)
+
+    // Si el visitante deja su email, avisamos a Víctor con la conversación
+    const emailMatch = text.match(/[\w.+-]+@[\w-]+\.[\w.]{2,}/)
+    if (emailMatch) {
+      fetch('/api/chat-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailMatch[0], transcript: next.slice(1) }),
+      }).catch(() => {})
+    }
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
@@ -39,7 +59,9 @@ export default function ChatWidget() {
       })
       if (res.ok) {
         const { reply } = await res.json()
-        setMsgs(m => [...m, { role: 'assistant', content: reply || FALLBACK }])
+        // Por si el modelo cuela markdown, lo limpiamos a texto plano
+        const plano = (reply || FALLBACK).replace(/\*\*([^*]+)\*\*/g, '$1').replace(/^#+\s*/gm, '')
+        setMsgs(m => [...m, { role: 'assistant', content: plano }])
       } else {
         setMsgs(m => [...m, { role: 'assistant', content: FALLBACK }])
       }
@@ -104,7 +126,7 @@ export default function ChatWidget() {
                 fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 300, lineHeight: 1.6,
                 whiteSpace: 'pre-wrap',
               }}>
-                {m.content}
+                {m.role === 'assistant' ? linkify(m.content) : m.content}
               </div>
             ))}
             {busy && (

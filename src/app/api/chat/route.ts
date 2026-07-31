@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { CONOCIMIENTO } from '@/lib/conocimiento'
 
 // Asistente de la web (como el de salgadoia.com) — usa la API de Claude.
 // TODO-VÍCTOR: añadir ANTHROPIC_API_KEY en Vercel (Settings → Environment
@@ -18,8 +19,12 @@ Reglas:
 - Tu objetivo: resolver la duda y proponer la llamada gratuita de 20 minutos → enlace: /contacto
 - Recurso gratuito si encaja: PDF "5 automatizaciones para pymes" → /recursos/automatizaciones-pymes
 - NO inventes precios, plazos, clientes ni resultados concretos. Si preguntan precio: "depende del proceso; en la llamada de 20 min Víctor te lo concreta sin compromiso".
-- NO des información de clientes de Víctor.
-- Si piden algo fuera de tema, redirige amablemente a lo que hace Víctor.`
+- NO des información de clientes de Víctor más allá de lo publicado en los casos.
+- Si piden algo fuera de tema, redirige amablemente a lo que hace Víctor.
+- Los enlaces internos escríbelos como ruta (ej: /casos, /contacto) — el widget los hace clicables.
+- TEXTO PLANO SIEMPRE: nada de markdown, ni asteriscos, ni almohadillas, ni listas con guiones. Frases y párrafos normales.
+
+${CONOCIMIENTO}`
 
 export async function POST(req: NextRequest) {
   const key = process.env.ANTHROPIC_API_KEY

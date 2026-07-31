@@ -23,8 +23,8 @@ export const posts: Post[] = [
       'Guía práctica para despachos de procuradores: qué tareas documentales se pueden automatizar con IA, por dónde empezar y qué resultados esperar.',
     fecha: '2026-07-31',
     keywords: ['IA para despachos de procuradores', 'automatizar LexNET', 'automatización despacho procuradores'],
-    imagen: '/service-formacion.webp',
-    imagenAlt: 'Estatua clásica de Atenea con un flujo de palabras luminosas en la mano',
+    imagen: '/blog/automatizar-gestion-documental-procuradores.png',
+    imagenAlt: 'Portada: automatizar el 70% de la gestión documental de un despacho',
     borrador: true,
   },
   {
@@ -34,8 +34,8 @@ export const posts: Post[] = [
       '15 años enseñando a jugadores a anticiparse. Esta es la historia de cómo esa misma habilidad se convirtió en mi trabajo con la inteligencia artificial.',
     fecha: '2026-07-31',
     keywords: ['IA para entrenadores de tenis', 'consultor IA A Coruña', 'marca personal IA'],
-    imagen: '/estatua-tenista.webp',
-    imagenAlt: 'Estatua de mármol con raqueta de tenis vintage y pintura azul eléctrico',
+    imagen: '/blog/de-la-pista-de-tenis-a-la-ia.png',
+    imagenAlt: 'Portada: de la pista de tenis a la consultoría de IA',
     borrador: true,
   },
   {
@@ -45,8 +45,8 @@ export const posts: Post[] = [
       'Lo que el Reglamento europeo de IA exige hoy a tu pyme (sí, ya hay obligaciones vigentes), qué llega el 2 de agosto de 2026 y qué aplazó el Digital Omnibus.',
     fecha: '2026-07-31',
     keywords: ['EU AI Act pymes qué hacer', 'reglamento IA 2026', 'alfabetización IA artículo 4'],
-    imagen: '/service-eu-ai-act.webp',
-    imagenAlt: 'Balanza de justicia equilibrando tecnología y una esfera de luz',
+    imagen: '/blog/eu-ai-act-pymes.png',
+    imagenAlt: 'Portada: EU AI Act, qué te obliga ya y qué llega el 2 de agosto de 2026',
     borrador: true,
   },
   {
@@ -56,8 +56,8 @@ export const posts: Post[] = [
       'Documentamos el sistema que usamos en NorteIA: un CRM donde agentes de IA prospectan, contactan y hacen seguimiento de forma casi automática.',
     fecha: '2026-07-31',
     keywords: ['CRM con agentes IA', 'automatizar prospección con IA', 'agentes IA empresa'],
-    imagen: '/service-consultoria.webp',
-    imagenAlt: 'Estatua clásica sosteniendo una tablet con una red neuronal holográfica',
+    imagen: '/blog/mission-control-crm-agentes-ia.png',
+    imagenAlt: 'Portada: así trabaja un CRM con agentes de IA',
     borrador: true,
   },
 ]
