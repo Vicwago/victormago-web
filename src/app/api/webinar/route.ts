@@ -1,9 +1,11 @@
 import { Resend } from 'resend'
 import { NextRequest, NextResponse } from 'next/server'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Inicialización perezosa: evita que el build falle en entornos sin la clave
+const getResend = () => new Resend(process.env.RESEND_API_KEY || 're_missing_key')
 
 export async function POST(req: NextRequest) {
+  const resend = getResend()
   try {
     const { name, email, empresa = '' } = await req.json()
 

@@ -2,7 +2,8 @@ import { Resend } from 'resend'
 import { NextRequest, NextResponse } from 'next/server'
 import { notifyMissionControl } from '@/lib/mission-control'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Inicialización perezosa: evita que el build falle en entornos sin la clave
+const getResend = () => new Resend(process.env.RESEND_API_KEY || 're_missing_key')
 
 // TODO-VÍCTOR: cuando el PDF esté maquetado, subirlo a public/recursos/
 // con este nombre (o cambiar la constante).
@@ -80,6 +81,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Falta el email' }, { status: 400 })
     }
 
+    const resend = getResend()
     const results = await Promise.allSettled([
       resend.emails.send(emailEntrega(name, email)),
       resend.emails.send(emailAvisoVictor(name, email, recurso)),

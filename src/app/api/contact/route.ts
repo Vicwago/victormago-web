@@ -2,7 +2,9 @@ import { Resend } from 'resend'
 import { NextRequest, NextResponse } from 'next/server'
 import { notifyMissionControl } from '@/lib/mission-control'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Inicialización perezosa: evita que el build falle en entornos sin la clave
+// (p. ej. previews de Vercel). En runtime sin clave, el envío falla controlado.
+const getResend = () => new Resend(process.env.RESEND_API_KEY || 're_missing_key')
 
 // ─── Email al usuario que contacta ──────────────────────────────────────────
 function emailConfirmacion(name: string, email: string, empresa: string) {
@@ -161,6 +163,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Faltan campos requeridos' }, { status: 400 })
     }
 
+    const resend = getResend()
     const results = await Promise.allSettled([
       resend.emails.send(emailConfirmacion(name, email, empresa)),
       resend.emails.send(emailNotificacionVictor(name, email, empresa, mensaje)),
