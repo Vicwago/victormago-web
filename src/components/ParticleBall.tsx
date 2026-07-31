@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react'
 // las partículas huyen del cursor. La costura de la bola va en azul claro.
 // Rendimiento: pausa fuera de viewport (IO), DPR limitado, ~1300 puntos.
 // Accesibilidad: con prefers-reduced-motion queda estática (sin rotar ni reaccionar).
-export default function ParticleBall({ className, style }: { className?: string; style?: React.CSSProperties }) {
+export default function ParticleBall({ className, style, light = false }: { className?: string; style?: React.CSSProperties; light?: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -62,8 +62,10 @@ export default function ParticleBall({ className, style }: { className?: string;
     const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting })
     io.observe(canvas)
 
-    const cream = '245, 243, 235'
-    const blue = '118, 193, 255'
+    // Sobre azul: partículas crema + costura azul claro.
+    // Sobre papel (light): partículas tinta + costura azul eléctrico.
+    const cream = light ? '20, 18, 42' : '245, 243, 235'
+    const blue = light ? '44, 3, 243' : '118, 193, 255'
 
     const draw = () => {
       ctx.clearRect(0, 0, w, h)

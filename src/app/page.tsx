@@ -9,6 +9,7 @@ import LeadForm from '@/components/LeadForm'
 import ParticleBall from '@/components/ParticleBall'
 import ScoreBoard from '@/components/ScoreBoard'
 import Tilt from '@/components/Tilt'
+import ProductShowcase, { type Producto } from '@/components/ProductShowcase'
 import { casosDestacados } from '@/lib/casos'
 import { DEFAULT_DESCRIPTION, CTA_LABEL, ctaHref, CAL_URL } from '@/lib/site'
 
@@ -89,6 +90,34 @@ const faqs = [
   {
     q: '¿Cómo es la primera reunión?',
     a: 'Una llamada de 20 minutos, gratis y sin compromiso. Me cuentas cómo trabajáis y te digo qué automatizaría primero. Sin jerga técnica y sin venta agresiva.',
+  },
+]
+
+// ─── VITRINA: productos propios ─────────────────────────────────────────────
+// TODO-VÍCTOR: capturas de cada producto en public/productos/ y añadirlas al
+// array `imagenes` (la tarjeta pasa a abrir la galería automáticamente).
+const productos: Producto[] = [
+  {
+    tag: 'SaaS',
+    nombre: 'CoachDesk',
+    texto: 'Software para entrenadores de tenis, hecho por un entrenador de tenis: alumnos, clases y seguimiento sin hojas de cálculo.',
+    imagenes: [],
+    href: '/casos/coachdesk-saas-tenis',
+  },
+  {
+    tag: 'Herramienta',
+    nombre: 'Faro',
+    texto: 'Auditoría con IA de la presencia digital de negocios locales: detecta qué falla en tu web, tu ficha de Google y tu reputación antes de que te cueste clientes.',
+    imagenes: [],
+    href: null,
+    estado: 'En desarrollo',
+  },
+  {
+    tag: 'Sistema interno',
+    nombre: 'Mission Control',
+    texto: 'Nuestro CRM con agentes de IA: prospecta, hace seguimiento y documenta el trabajo comercial casi solo. Lo usamos cada día en NorteIA.',
+    imagenes: [],
+    href: '/blog/mission-control-crm-agentes-ia',
   },
 ]
 
@@ -192,29 +221,56 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Estatua: el tenista clásico manchado de azul NorteIA */}
+            {/* La bola de partículas junto al nombre (petición de Mariana) */}
             <div className="rise rise-3" style={{ position: 'relative' }}>
-              <div className="drift-slow" style={{ position: 'relative', maxWidth: 520, marginLeft: 'auto' }}>
-                <Tilt>
-                  <Image
-                    src="/estatua-tenista.webp"
-                    alt="Estatua clásica de mármol con una raqueta de tenis vintage y pintura azul eléctrico"
-                    width={1200}
-                    height={1600}
-                    priority
-                    sizes="(max-width: 900px) 70vw, 520px"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      display: 'block',
-                      WebkitMaskImage: 'radial-gradient(ellipse 78% 88% at 50% 42%, black 62%, transparent 97%)',
-                      maskImage: 'radial-gradient(ellipse 78% 88% at 50% 42%, black 62%, transparent 97%)',
-                    }}
-                  />
-                </Tilt>
-              </div>
+              <Tilt max={5}>
+                <div style={{ position: 'relative', width: 'min(100%, 520px)', aspectRatio: '1', marginLeft: 'auto' }}>
+                  <ParticleBall light />
+                </div>
+              </Tilt>
             </div>
           </div>
+        </div>
+      </section>
+
+      <hr className="tramline" />
+
+      {/* ══════════ CONFÍAN EN MÍ ══════════ */}
+      <section style={{ padding: 'clamp(44px, 6vw, 72px) clamp(24px, 5vw, 64px)' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <Reveal>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--text-faint)', textAlign: 'center', marginBottom: 34 }}>
+              Confían en mí
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'clamp(32px, 6vw, 80px)', flexWrap: 'wrap' }}>
+              <figure style={{ textAlign: 'center' }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logos/icpc.webp" alt="Ilustre Colegio de Procuradores de A Coruña" className="trust-logo" style={{ height: 64 }} />
+                <figcaption style={{ fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 300, color: 'var(--text-faint)', marginTop: 10 }}>
+                  Ilustre Colegio de Procuradores<br />de A Coruña
+                </figcaption>
+              </figure>
+              <figure style={{ textAlign: 'center' }}>
+                <a href="https://www.sanchezgarciaprocuradores.com/" target="_blank" rel="noopener noreferrer">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/logos/sanchez.png" alt="Sánchez García Procuradores" className="trust-logo-invert" style={{ height: 34 }} />
+                </a>
+                <figcaption style={{ fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 300, color: 'var(--text-faint)', marginTop: 10 }}>
+                  Sánchez García<br />Procuradores
+                </figcaption>
+              </figure>
+              <figure style={{ textAlign: 'center' }}>
+                <a href="https://tenismarineda.net/" target="_blank" rel="noopener noreferrer">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/logos/marineda.webp" alt="Escuela de Tenis Marineda" className="trust-logo" style={{ height: 48 }} />
+                </a>
+                <figcaption style={{ fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 300, color: 'var(--text-faint)', marginTop: 10 }}>
+                  Escuela de Tenis<br />Marineda
+                </figcaption>
+              </figure>
+              {/* TODO-VÍCTOR: más logos cuando confirmes cuáles (mismo patrón) */}
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -361,6 +417,26 @@ export default function Home() {
               {/* TODO-VÍCTOR: testimonio real con nombre cuando lo tengas */}
             </p>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ══════════ PUNTO 04 · VITRINA (productos propios) ══════════ */}
+      <section style={{ position: 'relative', padding: 'clamp(80px, 11vw, 130px) clamp(24px, 5vw, 64px)', background: 'var(--surface-alt)' }}>
+        <span className="punto-label">Punto 04 · Vitrina</span>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <Reveal>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 20, marginBottom: 'clamp(36px, 5vw, 56px)' }}>
+              <div>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 16 }}>
+                  Lo que construyo
+                </p>
+                <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '118%', fontWeight: 750, fontSize: 'clamp(30px, 4.6vw, 58px)', lineHeight: 1.02, letterSpacing: '-0.025em' }}>
+                  No solo lo cuento:<br />lo fabrico<span style={{ color: 'var(--accent)' }}>.</span>
+                </h2>
+              </div>
+            </div>
+          </Reveal>
+          <ProductShowcase productos={productos} />
         </div>
       </section>
 

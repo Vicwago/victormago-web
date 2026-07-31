@@ -8,6 +8,9 @@ export type Post = {
   descripcion: string
   fecha: string // ISO — fecha de publicación
   keywords: string[]
+  /** Portada del artículo (ruta en /public). Alt descriptivo aparte. */
+  imagen: string
+  imagenAlt: string
   /** true mientras el contenido esté en esqueleto pendiente de Víctor */
   borrador: boolean
 }
@@ -20,6 +23,8 @@ export const posts: Post[] = [
       'Guía práctica para despachos de procuradores: qué tareas documentales se pueden automatizar con IA, por dónde empezar y qué resultados esperar.',
     fecha: '2026-07-31',
     keywords: ['IA para despachos de procuradores', 'automatizar LexNET', 'automatización despacho procuradores'],
+    imagen: '/service-formacion.webp',
+    imagenAlt: 'Estatua clásica de Atenea con un flujo de palabras luminosas en la mano',
     borrador: true,
   },
   {
@@ -29,6 +34,8 @@ export const posts: Post[] = [
       '15 años enseñando a jugadores a anticiparse. Esta es la historia de cómo esa misma habilidad se convirtió en mi trabajo con la inteligencia artificial.',
     fecha: '2026-07-31',
     keywords: ['IA para entrenadores de tenis', 'consultor IA A Coruña', 'marca personal IA'],
+    imagen: '/estatua-tenista.webp',
+    imagenAlt: 'Estatua de mármol con raqueta de tenis vintage y pintura azul eléctrico',
     borrador: true,
   },
   {
@@ -38,6 +45,8 @@ export const posts: Post[] = [
       'Lo que el Reglamento europeo de IA exige hoy a tu pyme (sí, ya hay obligaciones vigentes), qué llega el 2 de agosto de 2026 y qué aplazó el Digital Omnibus.',
     fecha: '2026-07-31',
     keywords: ['EU AI Act pymes qué hacer', 'reglamento IA 2026', 'alfabetización IA artículo 4'],
+    imagen: '/service-eu-ai-act.webp',
+    imagenAlt: 'Balanza de justicia equilibrando tecnología y una esfera de luz',
     borrador: true,
   },
   {
@@ -47,6 +56,8 @@ export const posts: Post[] = [
       'Documentamos el sistema que usamos en NorteIA: un CRM donde agentes de IA prospectan, contactan y hacen seguimiento de forma casi automática.',
     fecha: '2026-07-31',
     keywords: ['CRM con agentes IA', 'automatizar prospección con IA', 'agentes IA empresa'],
+    imagen: '/service-consultoria.webp',
+    imagenAlt: 'Estatua clásica sosteniendo una tablet con una red neuronal holográfica',
     borrador: true,
   },
 ]

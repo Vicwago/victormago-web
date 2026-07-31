@@ -7,8 +7,12 @@ export type Caso = {
   slug: string
   /** Nombre real del cliente — SOLO uso interno, no se renderiza. */
   cliente: string
-  /** Nombre público (anonimizado salvo producto propio). Es lo que se muestra. */
+  /** Nombre público (anonimizado salvo autorización expresa). Es lo que se muestra. */
   alias: string
+  /** Web pública del cliente — solo si Víctor autorizó mostrar la relación. */
+  web: string | null
+  /** Logo en /public/logos — solo con autorización. */
+  logo: string | null
   sector: string
   titulo: string
   resumen: string
@@ -27,7 +31,10 @@ export const casos: Caso[] = [
   {
     slug: 'sanchez-garcia-procuradores',
     cliente: 'Sánchez García Procuradores',
-    alias: 'Despacho de procuradores',
+    // Autorizado por Víctor (31/07/2026): nombre, logo y web visibles
+    alias: 'Sánchez García Procuradores',
+    web: 'https://www.sanchezgarciaprocuradores.com/',
+    logo: '/logos/sanchez.png',
     sector: 'Legal · A Coruña',
     titulo: 'Automatización de la gestión documental de un despacho de procuradores',
     resumen:
@@ -53,6 +60,8 @@ export const casos: Caso[] = [
     slug: 'fincastyle-asesor-inmobiliario',
     cliente: 'Fincastyle',
     alias: 'Inmobiliaria con asesor virtual',
+    web: null,
+    logo: null,
     sector: 'Inmobiliario · Galicia',
     titulo: 'Un asesor virtual que responde como el mejor comercial de la inmobiliaria',
     resumen:
@@ -77,6 +86,8 @@ export const casos: Caso[] = [
     slug: 'coachdesk-saas-tenis',
     cliente: 'CoachDesk',
     alias: 'CoachDesk',
+    web: null,
+    logo: null,
     sector: 'Producto propio · SaaS',
     titulo: 'CoachDesk: software para entrenadores de tenis, hecho por un entrenador de tenis',
     resumen:
@@ -102,6 +113,8 @@ export const casos: Caso[] = [
     slug: 'tulook-estilistas',
     cliente: 'Tulook Estilistas',
     alias: 'Salón de estilismo',
+    web: null,
+    logo: null,
     sector: 'Comercio local · A Coruña',
     titulo: 'IA para un negocio local: menos gestión, más tiempo con el cliente',
     resumen:
@@ -127,6 +140,8 @@ export const casos: Caso[] = [
     slug: 'nova-galega-de-danza',
     cliente: 'Nova Galega de Danza',
     alias: 'Compañía de danza',
+    web: null,
+    logo: null,
     sector: 'Cultura · Galicia',
     titulo: 'IA en el sector cultural: tecnología al servicio de la danza',
     resumen:

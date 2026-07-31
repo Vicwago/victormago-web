@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Reveal from '@/components/Reveal'
@@ -36,18 +37,26 @@ export default function BlogPage() {
           {ordenados.map((post, i) => (
             <Reveal key={post.slug} delay={Math.min(i * 0.06, 0.2)}>
               <Link href={`/blog/${post.slug}`} style={{ display: 'block', textDecoration: 'none' }}>
-                <article style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: 'clamp(28px, 4vw, 40px)' }}>
-                  <p style={{ fontFamily: C.fontBody, fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.muted, marginBottom: 12 }}>
-                    {new Date(post.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}
-                    {post.borrador && ' · Borrador'}
-                  </p>
-                  <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(21px, 2.6vw, 28px)', fontWeight: 500, color: C.white, lineHeight: 1.25, marginBottom: 12 }}>
-                    {post.titulo}
-                  </h2>
-                  <p style={{ fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.mutedLight, lineHeight: 1.7, marginBottom: 18 }}>
-                    {post.descripcion}
-                  </p>
-                  <span style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.copper }}>Leer →</span>
+                <article style={{
+                  background: C.bgCard, border: `1.5px solid ${C.border}`, borderRadius: 'var(--radius-card)', overflow: 'hidden',
+                  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', alignItems: 'stretch',
+                }}>
+                  <div style={{ position: 'relative', minHeight: 200 }}>
+                    <Image src={post.imagen} alt={post.imagenAlt} fill sizes="(max-width: 768px) 92vw, 420px" style={{ objectFit: 'cover' }} />
+                  </div>
+                  <div style={{ padding: 'clamp(24px, 3.5vw, 36px)' }}>
+                    <p style={{ fontFamily: C.fontMono, fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.muted, marginBottom: 12 }}>
+                      {new Date(post.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}
+                      {post.borrador && ' · Borrador'}
+                    </p>
+                    <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 700, letterSpacing: '-0.015em', color: C.white, lineHeight: 1.2, marginBottom: 12 }}>
+                      {post.titulo}
+                    </h2>
+                    <p style={{ fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.mutedLight, lineHeight: 1.7, marginBottom: 18 }}>
+                      {post.descripcion}
+                    </p>
+                    <span style={{ fontFamily: C.fontMono, fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.copper }}>Leer →</span>
+                  </div>
                 </article>
               </Link>
             </Reveal>

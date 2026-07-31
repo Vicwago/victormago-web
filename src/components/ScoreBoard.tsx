@@ -32,7 +32,7 @@ export default function ScoreBoard() {
   return (
     <div aria-hidden style={{
       position: 'fixed',
-      right: 'clamp(14px, 2.5vw, 32px)',
+      left: 'clamp(14px, 2.5vw, 32px)',
       bottom: 'clamp(14px, 2.5vw, 32px)',
       zIndex: 90,
       display: 'flex',

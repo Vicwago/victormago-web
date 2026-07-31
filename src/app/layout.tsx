@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { Archivo, Public_Sans, Chivo_Mono } from 'next/font/google'
 import JsonLd from '@/components/JsonLd'
+import ChatWidget from '@/components/ChatWidget'
 import { SITE_URL, SITE_NAME, DEFAULT_DESCRIPTION, SOCIAL, NAP } from '@/lib/site'
 import './globals.css'
 
@@ -109,6 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           ],
         }} />
         {children}
+        <ChatWidget />
         {GA_ID && (
           <>
             <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />

@@ -72,7 +72,14 @@ export default async function CasoPage({ params }: { params: Promise<{ slug: str
               ← Todos los casos
             </Link>
           </nav>
-          <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: C.copper, marginBottom: 16 }}>{caso.sector}</p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap', marginBottom: 16 }}>
+            <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: C.copper }}>{caso.sector}</p>
+            {caso.web && (
+              <a href={caso.web} target="_blank" rel="noopener noreferrer" style={{ fontFamily: C.fontMono, fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: C.mutedLight, textDecoration: 'underline', textUnderlineOffset: 3 }}>
+                Cliente real: visitar su web ↗
+              </a>
+            )}
+          </div>
           <h1 style={{ fontFamily: C.fontDisplay, fontWeight: 750, fontSize: 'clamp(28px, 4.5vw, 50px)', lineHeight: 1.06, letterSpacing: '-0.025em', color: C.white, marginBottom: 18 }}>
             {caso.titulo}
           </h1>

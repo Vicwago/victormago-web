@@ -407,6 +407,32 @@
   color: var(--text);
 }
 
+/* ── Logos de confianza (grises → color al pasar) ── */
+.trust-logo {
+  height: 52px;
+  width: auto;
+  filter: grayscale(1);
+  opacity: 0.72;
+  mix-blend-mode: multiply;
+  transition: filter 0.3s, opacity 0.3s;
+}
+.trust-logo:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+/* Logos en negativo (blancos): invertir para fondo claro */
+.trust-logo-invert {
+  height: 44px;
+  width: auto;
+  filter: invert(1) grayscale(1) contrast(1.1);
+  opacity: 0.72;
+  transition: filter 0.3s, opacity 0.3s;
+}
+.trust-logo-invert:hover {
+  filter: invert(1);
+  opacity: 1;
+}
+
 /* ── Marcador de scroll: ocultar en pantallas muy pequeñas ── */
 @media (max-width: 560px) {
   .scoreboard { display: none !important; }

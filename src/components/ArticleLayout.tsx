@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CtaButton from '@/components/CtaButton'
@@ -57,9 +58,12 @@ export default function ArticleLayout({ slug, children }: { slug: string; childr
               <h1 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(30px, 4.5vw, 50px)', fontWeight: 400, lineHeight: 1.15, color: C.white, marginBottom: 16 }}>
                 {post.titulo}
               </h1>
-              <p style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(16px, 1.9vw, 20px)', fontStyle: 'italic', color: C.mutedLight, lineHeight: 1.6 }}>
+              <p style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(16px, 1.9vw, 20px)', fontStyle: 'italic', color: C.mutedLight, lineHeight: 1.6, marginBottom: 28 }}>
                 {post.descripcion}
               </p>
+              <div style={{ position: 'relative', aspectRatio: '16/9', borderRadius: 'var(--radius-card)', overflow: 'hidden', border: `1.5px solid ${C.border}` }}>
+                <Image src={post.imagen} alt={post.imagenAlt} fill sizes="(max-width: 768px) 92vw, 720px" style={{ objectFit: 'cover' }} priority />
+              </div>
             </header>
           )}
 
