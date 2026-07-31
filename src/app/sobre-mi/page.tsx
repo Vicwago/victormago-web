@@ -54,8 +54,8 @@ export default function SobreMiPage() {
         <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 80% 20%, ${mix(6)} 0%, transparent 55%)`, pointerEvents: 'none' }} />
         <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative' }}>
           <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.28em', textTransform: 'uppercase', color: C.copper, marginBottom: 20 }}>Sobre mí</p>
-          <h1 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 400, lineHeight: 1.1, color: C.white, marginBottom: 24 }}>
-            De la pista de tenis<br /><em style={{ fontStyle: 'italic', color: C.copper }}>a la consultoría de IA.</em>
+          <h1 style={{ fontFamily: C.fontDisplay, fontWeight: 750, fontSize: 'clamp(34px, 5.5vw, 66px)', lineHeight: 1.02, letterSpacing: '-0.03em', color: C.white, marginBottom: 24 }}>
+            De la pista de tenis<br /><span style={{ color: C.copper }}>a la IA en producción.</span>
           </h1>
           <p style={{ fontFamily: C.fontBody, fontSize: 'clamp(15px, 1.7vw, 17px)', fontWeight: 300, color: C.mutedLight, lineHeight: 1.75, maxWidth: 560 }}>
             No vengo de la ingeniería. Vengo de quince años enseñando a la gente a anticiparse.
@@ -98,7 +98,7 @@ export default function SobreMiPage() {
             <Reveal key={i} delay={0.05}>
               <div style={{ marginBottom: 'clamp(48px, 6vw, 72px)', maxWidth: 680 }}>
                 <p style={{ fontFamily: C.fontMono, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: C.copper, marginBottom: 12 }}>{cap.etapa}</p>
-                <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(26px, 3.2vw, 38px)', fontWeight: 400, color: C.white, lineHeight: 1.2, marginBottom: 20 }}>{cap.titulo}</h2>
+                <h2 style={{ fontFamily: C.fontDisplay, fontWeight: 750, fontSize: 'clamp(24px, 3.2vw, 36px)', letterSpacing: '-0.02em', color: C.white, lineHeight: 1.1, marginBottom: 20 }}>{cap.titulo}</h2>
                 {cap.parrafos.map((p, j) => (
                   <p key={j} style={{ fontFamily: C.fontBody, fontSize: 16, fontWeight: 300, color: C.mutedLight, lineHeight: 1.85, marginBottom: 18 }}>{p}</p>
                 ))}
@@ -111,8 +111,8 @@ export default function SobreMiPage() {
       {/* CTA */}
       <section style={{ borderTop: `1px solid ${C.border}`, background: C.bgAlt, padding: 'clamp(64px, 8vw, 96px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
         <Reveal>
-          <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 400, color: C.white, lineHeight: 1.15, marginBottom: 20 }}>
-            ¿Vemos qué jugada<br /><em style={{ fontStyle: 'italic', color: C.copper }}>te está llegando?</em>
+          <h2 style={{ fontFamily: C.fontDisplay, fontWeight: 750, fontSize: 'clamp(28px, 4vw, 46px)', letterSpacing: '-0.025em', color: C.white, lineHeight: 1.05, marginBottom: 20 }}>
+            ¿Vemos qué jugada<br /><span style={{ color: C.copper }}>te está llegando?</span>
           </h2>
           <p style={{ fontFamily: C.fontBody, fontSize: 15, fontWeight: 300, color: C.mutedLight, marginBottom: 36 }}>
             20 minutos, gratis. Me cuentas cómo trabajáis y te digo qué automatizaría primero.

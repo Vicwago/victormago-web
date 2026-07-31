@@ -22,8 +22,8 @@ export default function BlogPage() {
       <section style={{ padding: 'clamp(120px, 15vh, 160px) clamp(24px, 5vw, 64px) clamp(48px, 6vw, 72px)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.28em', textTransform: 'uppercase', color: C.copper, marginBottom: 20 }}>Blog</p>
-          <h1 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 400, lineHeight: 1.1, color: C.white, marginBottom: 24 }}>
-            IA aplicada,<br /><em style={{ fontStyle: 'italic', color: C.copper }}>sin humo.</em>
+          <h1 style={{ fontFamily: C.fontDisplay, fontWeight: 750, fontSize: 'clamp(34px, 5.5vw, 66px)', lineHeight: 1.02, letterSpacing: '-0.03em', color: C.white, marginBottom: 24 }}>
+            IA aplicada,<br /><span style={{ color: C.copper }}>sin humo.</span>
           </h1>
           <p style={{ fontFamily: C.fontBody, fontSize: 'clamp(15px, 1.7vw, 17px)', fontWeight: 300, color: C.mutedLight, lineHeight: 1.75, maxWidth: 560 }}>
             Lo que aprendo automatizando empresas reales, contado para que lo puedas aplicar.

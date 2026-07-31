@@ -45,6 +45,68 @@
   color: var(--text);
 }
 
+/* Sección "drench" azul: el color ES la superficie */
+.section-blue {
+  --bg: #2C03F3;
+  --surface: #3A16F5;
+  --surface-alt: #2502D1;
+  --accent: #F5F3EB;
+  --accent-light: #76C1FF;
+  --cta: #F5F3EB;
+  --cta-text: #2C03F3;
+  --text: #F5F3EB;
+  --text-muted: #CFC8FF;
+  --text-faint: #A79CFB;
+  --border: rgba(245, 243, 235, 0.28);
+  --border-accent: rgba(245, 243, 235, 0.45);
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ── Movimiento al scroll (scroll-driven animations, con fallback) ── */
+@supports (animation-timeline: view()) {
+  .drift-slow {
+    animation: drift-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+  }
+  .drift-fast {
+    animation: drift-up-far linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+  }
+  .tilt-in {
+    animation: tilt-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+    transform-origin: center 80%;
+  }
+  .scale-in {
+    animation: grow linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 70%;
+  }
+}
+@keyframes drift-up {
+  from { transform: translateY(60px); }
+  to { transform: translateY(-60px); }
+}
+@keyframes drift-up-far {
+  from { transform: translateY(120px); }
+  to { transform: translateY(-120px); }
+}
+@keyframes tilt-up {
+  from { opacity: 0.2; transform: perspective(900px) rotateX(14deg) translateY(40px); }
+  to { opacity: 1; transform: perspective(900px) rotateX(0deg) translateY(0); }
+}
+@keyframes grow {
+  from { opacity: 0; transform: scale(0.92) translateY(30px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .drift-slow, .drift-fast, .tilt-in, .scale-in { animation: none; }
+}
+
 @layer base {
   * {
     box-sizing: border-box;
@@ -343,6 +405,18 @@
   font-weight: 600;
   font-size: 19px;
   color: var(--text);
+}
+
+/* ── Hero: apilar en móvil ── */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-grid > div:last-child {
+    order: -1;
+    max-width: 320px;
+    margin: 0 auto;
+  }
 }
 
 /* ── Responsive helpers heredados ── */

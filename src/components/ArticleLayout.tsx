@@ -69,13 +69,13 @@ export default function ArticleLayout({ slug, children }: { slug: string; childr
 
           {/* CTA lead magnet al final de cada artículo (estructura del brief) */}
           <div style={{ marginTop: 'clamp(48px, 6vw, 72px)', padding: 'clamp(28px, 4vw, 40px)', background: 'var(--surface)', border: `1px solid ${C.borderCu}` }}>
-            <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(20px, 2.5vw, 26px)', fontWeight: 500, color: C.white, lineHeight: 1.3, marginBottom: 10 }}>
-              5 automatizaciones que cualquier despacho puede montar esta semana
+            <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(20px, 2.5vw, 26px)', fontWeight: 750, letterSpacing: '-0.015em', color: C.white, lineHeight: 1.25, marginBottom: 10 }}>
+              5 automatizaciones que cualquier pyme puede montar esta semana
             </h2>
             <p style={{ fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.mutedLight, lineHeight: 1.7, marginBottom: 20 }}>
               PDF gratuito y directo al grano. Déjame tu email y te lo mando ahora.
             </p>
-            <LeadForm recurso="automatizaciones-procuradores" />
+            <LeadForm recurso="automatizaciones-pymes" />
           </div>
 
           <div style={{ marginTop: 40, textAlign: 'center' }}>

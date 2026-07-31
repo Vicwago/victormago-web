@@ -22,8 +22,8 @@ export default function CasosPage() {
       <section style={{ padding: 'clamp(120px, 15vh, 160px) clamp(24px, 5vw, 64px) clamp(48px, 6vw, 72px)' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.28em', textTransform: 'uppercase', color: C.copper, marginBottom: 20 }}>Casos</p>
-          <h1 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 400, lineHeight: 1.1, color: C.white, marginBottom: 24 }}>
-            Qué he resuelto<br /><em style={{ fontStyle: 'italic', color: C.copper }}>y cómo.</em>
+          <h1 style={{ fontFamily: C.fontDisplay, fontWeight: 750, fontSize: 'clamp(34px, 5.5vw, 66px)', lineHeight: 1.02, letterSpacing: '-0.03em', color: C.white, marginBottom: 24 }}>
+            Qué he resuelto<br /><span style={{ color: C.copper }}>y cómo.</span>
           </h1>
           <p style={{ fontFamily: C.fontBody, fontSize: 'clamp(15px, 1.7vw, 17px)', fontWeight: 300, color: C.mutedLight, lineHeight: 1.75, maxWidth: 560 }}>
             Cada caso sigue el mismo esquema: el problema, lo que construimos y el resultado.
@@ -44,7 +44,7 @@ export default function CasosPage() {
                 }}>
                   <div>
                     <p style={{ fontFamily: C.fontBody, fontSize: 10, fontWeight: 500, letterSpacing: '0.2em', textTransform: 'uppercase', color: C.muted, marginBottom: 12 }}>{caso.sector}</p>
-                    <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 500, color: C.white, lineHeight: 1.2, marginBottom: 10 }}>{caso.cliente}</h2>
+                    <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 700, letterSpacing: '-0.015em', color: C.white, lineHeight: 1.2, marginBottom: 10 }}>{caso.alias}</h2>
                     <p style={{ fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.mutedLight, lineHeight: 1.7 }}>{caso.resumen}</p>
                   </div>
                   <div style={{ justifySelf: 'end' }}>

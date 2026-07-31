@@ -36,7 +36,7 @@ export default function Footer() {
                   {l.label}
                 </Link>
               ))}
-              <Link href="/recursos/automatizaciones-procuradores" style={{ fontFamily: C.fontBody, fontSize: 13, color: C.mutedLight, textDecoration: 'none', letterSpacing: '0.04em' }}>
+              <Link href="/recursos/automatizaciones-pymes" style={{ fontFamily: C.fontBody, fontSize: 13, color: C.mutedLight, textDecoration: 'none', letterSpacing: '0.04em' }}>
                 Recursos gratis
               </Link>
             </div>

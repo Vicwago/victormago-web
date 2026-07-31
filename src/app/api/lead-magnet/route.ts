@@ -6,14 +6,14 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 // TODO-VÍCTOR: cuando el PDF esté maquetado, subirlo a public/recursos/
 // con este nombre (o cambiar la constante).
-const PDF_URL = 'https://victormago.com/recursos/5-automatizaciones-procuradores.pdf'
+const PDF_URL = 'https://victormago.com/recursos/5-automatizaciones-pymes.pdf'
 
 function emailEntrega(name: string, email: string) {
   const firstName = (name || '').split(' ')[0] || 'hola'
   return {
     from: 'Víctor Mago <victor@norteia.es>',
     to: email,
-    subject: 'Tu PDF: 5 automatizaciones para tu despacho',
+    subject: 'Tu PDF: 5 automatizaciones para tu empresa',
     html: `<!DOCTYPE html>
 <html lang="es">
 <head><meta charset="UTF-8"></head>
@@ -29,8 +29,8 @@ function emailEntrega(name: string, email: string) {
         <tr><td style="padding:28px 0 0;">
           <p style="margin:0 0 20px;font-size:22px;font-weight:300;color:#F5F0E8;">Aquí tienes, ${firstName}.</p>
           <p style="margin:0 0 28px;font-size:15px;font-weight:300;color:#9A8E7E;line-height:1.75;">
-            Estas son las <strong style="color:#F5F0E8;">5 automatizaciones que cualquier despacho de
-            procuradores puede montar esta semana</strong>. Nada teórico: cada una está explicada
+            Estas son las <strong style="color:#F5F0E8;">5 automatizaciones que cualquier pyme
+            puede montar esta semana</strong>. Nada teórico: cada una está explicada
             con el proceso, la herramienta y el resultado que puedes esperar.
           </p>
           <p style="margin:0 0 32px;">
@@ -74,7 +74,7 @@ function emailAvisoVictor(name: string, email: string, recurso: string) {
 
 export async function POST(req: NextRequest) {
   try {
-    const { name = '', email, recurso = 'automatizaciones-procuradores' } = await req.json()
+    const { name = '', email, recurso = 'automatizaciones-pymes' } = await req.json()
 
     if (!email) {
       return NextResponse.json({ error: 'Falta el email' }, { status: 400 })

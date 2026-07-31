@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const caso = getCaso(slug)
   if (!caso) return {}
   return {
-    title: `${caso.cliente} — caso de automatización con IA`,
+    title: `${caso.alias} — caso de automatización con IA`,
     description: caso.resumen,
     alternates: { canonical: `/casos/${caso.slug}` },
     openGraph: { title: caso.titulo, description: caso.resumen, type: 'article' },
@@ -59,7 +59,7 @@ export default async function CasoPage({ params }: { params: Promise<{ slug: str
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
           { '@type': 'ListItem', position: 2, name: 'Casos', item: `${SITE_URL}/casos` },
-          { '@type': 'ListItem', position: 3, name: caso.cliente, item: `${SITE_URL}/casos/${caso.slug}` },
+          { '@type': 'ListItem', position: 3, name: caso.alias, item: `${SITE_URL}/casos/${caso.slug}` },
         ],
       }} />
       <Navbar />
@@ -73,7 +73,7 @@ export default async function CasoPage({ params }: { params: Promise<{ slug: str
             </Link>
           </nav>
           <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: C.copper, marginBottom: 16 }}>{caso.sector}</p>
-          <h1 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(30px, 4.5vw, 52px)', fontWeight: 400, lineHeight: 1.15, color: C.white, marginBottom: 18 }}>
+          <h1 style={{ fontFamily: C.fontDisplay, fontWeight: 750, fontSize: 'clamp(28px, 4.5vw, 50px)', lineHeight: 1.06, letterSpacing: '-0.025em', color: C.white, marginBottom: 18 }}>
             {caso.titulo}
           </h1>
           <p style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(17px, 2vw, 21px)', fontStyle: 'italic', color: C.mutedLight, lineHeight: 1.6 }}>
@@ -104,7 +104,7 @@ export default async function CasoPage({ params }: { params: Promise<{ slug: str
           {caso.youtubeId && (
             <Reveal>
               <div style={{ marginBottom: 'clamp(40px, 5vw, 56px)' }}>
-                <VideoEmbed id={caso.youtubeId} title={`Vídeo del caso ${caso.cliente}`} />
+                <VideoEmbed id={caso.youtubeId} title={`Vídeo del caso: ${caso.alias}`} />
               </div>
             </Reveal>
           )}
@@ -144,7 +144,7 @@ export default async function CasoPage({ params }: { params: Promise<{ slug: str
               <Link key={o.slug} href={`/casos/${o.slug}`} style={{ textDecoration: 'none' }}>
                 <article style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: '28px 26px', height: '100%' }}>
                   <p style={{ fontFamily: C.fontBody, fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: C.muted, marginBottom: 10 }}>{o.sector}</p>
-                  <h3 style={{ fontFamily: C.fontDisplay, fontSize: 20, fontWeight: 500, color: C.white, lineHeight: 1.25, marginBottom: 10 }}>{o.cliente}</h3>
+                  <h3 style={{ fontFamily: C.fontDisplay, fontSize: 20, fontWeight: 700, letterSpacing: '-0.015em', color: C.white, lineHeight: 1.25, marginBottom: 10 }}>{o.alias}</h3>
                   <span style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.copper }}>Leer →</span>
                 </article>
               </Link>

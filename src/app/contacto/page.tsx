@@ -21,8 +21,8 @@ export default function ContactoPage() {
       {/* Header */}
       <section style={{ padding: 'clamp(120px, 15vh, 160px) clamp(24px, 5vw, 64px) clamp(48px, 6vw, 72px)', textAlign: 'center' }}>
         <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.28em', textTransform: 'uppercase', color: C.copper, marginBottom: 20 }}>Contacto</p>
-        <h1 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(38px, 6vw, 72px)', fontWeight: 400, lineHeight: 1.1, color: C.white, marginBottom: 20 }}>
-          Hablemos
+        <h1 style={{ fontFamily: C.fontDisplay, fontWeight: 800, fontSize: 'clamp(38px, 6vw, 72px)', lineHeight: 1.02, letterSpacing: '-0.03em', textTransform: 'uppercase', color: C.white, marginBottom: 20 }}>
+          Hablemos<span style={{ color: C.copper }}>.</span>
         </h1>
         <p style={{ fontFamily: C.fontBody, fontSize: 15, fontWeight: 300, color: C.mutedLight, lineHeight: 1.7, maxWidth: 480, margin: '0 auto' }}>
           20 minutos, gratis y sin compromiso. Me cuentas cómo trabajáis y te digo

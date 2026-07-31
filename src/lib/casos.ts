@@ -5,7 +5,10 @@
 
 export type Caso = {
   slug: string
+  /** Nombre real del cliente — SOLO uso interno, no se renderiza. */
   cliente: string
+  /** Nombre público (anonimizado salvo producto propio). Es lo que se muestra. */
+  alias: string
   sector: string
   titulo: string
   resumen: string
@@ -24,7 +27,8 @@ export const casos: Caso[] = [
   {
     slug: 'sanchez-garcia-procuradores',
     cliente: 'Sánchez García Procuradores',
-    sector: 'Legal · Procuradores',
+    alias: 'Despacho de procuradores',
+    sector: 'Legal · A Coruña',
     titulo: 'Automatización de la gestión documental de un despacho de procuradores',
     resumen:
       'Un despacho de procuradores que pasaba horas cada día moviendo notificaciones y documentos a mano. Automatizamos el circuito para que el equipo trabaje sobre información ya organizada.',
@@ -48,7 +52,8 @@ export const casos: Caso[] = [
   {
     slug: 'fincastyle-asesor-inmobiliario',
     cliente: 'Fincastyle',
-    sector: 'Inmobiliario',
+    alias: 'Inmobiliaria con asesor virtual',
+    sector: 'Inmobiliario · Galicia',
     titulo: 'Un asesor virtual que responde como el mejor comercial de la inmobiliaria',
     resumen:
       'Un asistente con IA (RAG) que responde a los interesados con la información real de cada inmueble, a cualquier hora, sin inventarse nada.',
@@ -71,7 +76,8 @@ export const casos: Caso[] = [
   {
     slug: 'coachdesk-saas-tenis',
     cliente: 'CoachDesk',
-    sector: 'Deporte · SaaS',
+    alias: 'CoachDesk',
+    sector: 'Producto propio · SaaS',
     titulo: 'CoachDesk: software para entrenadores de tenis, hecho por un entrenador de tenis',
     resumen:
       'Quince años en la pista me enseñaron lo que un entrenador necesita de verdad. CoachDesk es esa experiencia convertida en software: gestión de alumnos y clases sin pelearse con hojas de cálculo.',
@@ -95,7 +101,8 @@ export const casos: Caso[] = [
   {
     slug: 'tulook-estilistas',
     cliente: 'Tulook Estilistas',
-    sector: 'Comercio local',
+    alias: 'Salón de estilismo',
+    sector: 'Comercio local · A Coruña',
     titulo: 'IA para un negocio local: menos gestión, más tiempo con el cliente',
     resumen:
       'La IA no es solo para grandes empresas. Con Tulook demostramos que un salón de estilismo puede automatizar su gestión diaria sin presupuesto de multinacional.',
@@ -119,7 +126,8 @@ export const casos: Caso[] = [
   {
     slug: 'nova-galega-de-danza',
     cliente: 'Nova Galega de Danza',
-    sector: 'Cultura',
+    alias: 'Compañía de danza',
+    sector: 'Cultura · Galicia',
     titulo: 'IA en el sector cultural: tecnología al servicio de la danza',
     resumen:
       'La cultura también pierde horas en gestión. Con Nova Galega de Danza aplicamos IA en un sector donde casi nadie la está aprovechando todavía.',
