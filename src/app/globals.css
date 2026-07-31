@@ -407,6 +407,11 @@
   color: var(--text);
 }
 
+/* ── Marcador de scroll: ocultar en pantallas muy pequeñas ── */
+@media (max-width: 560px) {
+  .scoreboard { display: none !important; }
+}
+
 /* ── Hero: apilar en móvil ── */
 @media (max-width: 900px) {
   .hero-grid {

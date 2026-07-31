@@ -36,3 +36,5 @@ geometría de pista (líneas de cal, pasillo de dobles, marcador) — nunca una 
 ## Restricciones
 Presupuesto 0 €. Google Fonts. Un solo CTA primario: "Reserva 20 min gratis".
 No inventar métricas ni testimonios (TODO-VÍCTOR).
+CONFIDENCIAL: no mencionar clientes identificables en ninguna vista pública —
+ni el colegio profesional (ICPC) ni nombres de despachos. Solo sectores genéricos.

@@ -6,6 +6,9 @@ import Footer from '@/components/Footer'
 import Reveal from '@/components/Reveal'
 import Faq from '@/components/Faq'
 import LeadForm from '@/components/LeadForm'
+import ParticleBall from '@/components/ParticleBall'
+import ScoreBoard from '@/components/ScoreBoard'
+import Tilt from '@/components/Tilt'
 import { casosDestacados } from '@/lib/casos'
 import { DEFAULT_DESCRIPTION, CTA_LABEL, ctaHref, CAL_URL } from '@/lib/site'
 
@@ -130,6 +133,7 @@ export default function Home() {
   return (
     <div style={{ background: 'var(--bg)', minHeight: '100vh', color: 'var(--text)' }} className="paper-grain">
       <Navbar />
+      <ScoreBoard />
 
       {/* ══════════ PUNTO 00 · SAQUE ══════════ */}
       <section style={{ position: 'relative', minHeight: '96vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
@@ -191,21 +195,23 @@ export default function Home() {
             {/* Estatua: el tenista clásico manchado de azul NorteIA */}
             <div className="rise rise-3" style={{ position: 'relative' }}>
               <div className="drift-slow" style={{ position: 'relative', maxWidth: 520, marginLeft: 'auto' }}>
-                <Image
-                  src="/estatua-tenista.webp"
-                  alt="Estatua clásica de mármol con una raqueta de tenis vintage y pintura azul eléctrico"
-                  width={1200}
-                  height={1600}
-                  priority
-                  sizes="(max-width: 900px) 70vw, 520px"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block',
-                    WebkitMaskImage: 'radial-gradient(ellipse 78% 88% at 50% 42%, black 62%, transparent 97%)',
-                    maskImage: 'radial-gradient(ellipse 78% 88% at 50% 42%, black 62%, transparent 97%)',
-                  }}
-                />
+                <Tilt>
+                  <Image
+                    src="/estatua-tenista.webp"
+                    alt="Estatua clásica de mármol con una raqueta de tenis vintage y pintura azul eléctrico"
+                    width={1200}
+                    height={1600}
+                    priority
+                    sizes="(max-width: 900px) 70vw, 520px"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      display: 'block',
+                      WebkitMaskImage: 'radial-gradient(ellipse 78% 88% at 50% 42%, black 62%, transparent 97%)',
+                      maskImage: 'radial-gradient(ellipse 78% 88% at 50% 42%, black 62%, transparent 97%)',
+                    }}
+                  />
+                </Tilt>
               </div>
             </div>
           </div>
@@ -257,6 +263,10 @@ export default function Home() {
         <span className="punto-label" style={{ color: 'var(--text-faint)' }}>Punto 02 · Anticipación</span>
         {/* Línea de cal cruzando el azul */}
         <div aria-hidden className="drift-slow" style={{ position: 'absolute', left: '8%', right: '8%', top: 90, height: 1.5, background: 'rgba(245,243,235,0.25)' }} />
+        {/* Bola de tenis de partículas: reacciona al cursor */}
+        <div aria-hidden style={{ position: 'absolute', right: 'clamp(-140px, -4vw, 0px)', top: '4%', width: 'clamp(300px, 42vw, 640px)', aspectRatio: '1', pointerEvents: 'auto', opacity: 0.95 }}>
+          <ParticleBall />
+        </div>
 
         <div style={{ maxWidth: 1120, margin: '0 auto', position: 'relative' }}>
           <Reveal>
@@ -345,8 +355,8 @@ export default function Home() {
 
           <Reveal delay={0.15}>
             <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 14.5, color: 'var(--text-muted)', lineHeight: 1.7, marginTop: 'clamp(28px, 4vw, 40px)', maxWidth: '68ch' }}>
-              Trabajo con el colegio profesional de los procuradores de A Coruña, despachos legales,
-              inmobiliarias y comercios de Galicia. Los proyectos los ejecuto con{' '}
+              Trabajo con despachos legales, inmobiliarias, comercios y proyectos culturales
+              de Galicia. Los proyectos los ejecuto con{' '}
               <a href="https://norteia.es" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: 3 }}>NorteIA</a>.
               {/* TODO-VÍCTOR: testimonio real con nombre cuando lo tengas */}
             </p>
