@@ -1,23 +1,30 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import { Cormorant_Garamond, Outfit } from 'next/font/google'
+import { Archivo, Public_Sans, Chivo_Mono } from 'next/font/google'
 import JsonLd from '@/components/JsonLd'
 import { SITE_URL, SITE_NAME, DEFAULT_DESCRIPTION, SOCIAL, NAP } from '@/lib/site'
 import './globals.css'
 
-// Pesos reducidos (antes 5+itálicas): menos payload de fuentes
-const cormorant = Cormorant_Garamond({
+// Sistema "El punto": Archivo variable (display, con eje de anchura),
+// Public Sans (cuerpo), Chivo Mono (marcador y etiquetas)
+const archivo = Archivo({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-cormorant',
+  axes: ['wdth'],
+  variable: '--font-archivo',
   display: 'swap',
 })
 
-const outfit = Outfit({
+const publicSans = Public_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  variable: '--font-outfit',
+  weight: ['300', '400', '600'],
+  variable: '--font-public',
+  display: 'swap',
+})
+
+const chivoMono = Chivo_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-chivo',
   display: 'swap',
 })
 
@@ -59,7 +66,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${cormorant.variable} ${outfit.variable}`}>
+    <html lang="es" className={`${archivo.variable} ${publicSans.variable} ${chivoMono.variable}`}>
       <body>
         <JsonLd data={{
           '@context': 'https://schema.org',

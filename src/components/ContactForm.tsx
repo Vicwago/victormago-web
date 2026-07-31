@@ -91,8 +91,8 @@ export default function ContactForm() {
         type="submit"
         disabled={state === 'submitting'}
         style={{
-          fontFamily: C.fontBody, fontSize: 12, fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase',
-          background: C.orange, color: C.ctaText, padding: '15px 40px', border: 'none',
+          fontFamily: C.fontBody, fontSize: 15, fontWeight: 600,
+          background: C.orange, color: C.ctaText, padding: '15px 40px', border: 'none', borderRadius: 999,
           opacity: state === 'submitting' ? 0.6 : 1,
         }}
       >

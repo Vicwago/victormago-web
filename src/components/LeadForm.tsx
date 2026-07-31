@@ -47,7 +47,7 @@ export default function LeadForm({ recurso }: { recurso: string }) {
           placeholder="Tu nombre"
           value={name}
           onChange={e => setName(e.target.value)}
-          style={{ flex: '1 1 140px', background: 'var(--bg)', border: `1px solid ${C.border}`, padding: '13px 16px', fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.white }}
+          style={{ flex: '1 1 140px', background: 'var(--bg)', border: `1.5px solid ${C.border}`, borderRadius: 10, padding: '13px 16px', fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.white }}
         />
         <input
           type="email"
@@ -56,7 +56,7 @@ export default function LeadForm({ recurso }: { recurso: string }) {
           placeholder="tu@email.com"
           value={email}
           onChange={e => setEmail(e.target.value)}
-          style={{ flex: '2 1 200px', background: 'var(--bg)', border: `1px solid ${C.border}`, padding: '13px 16px', fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.white }}
+          style={{ flex: '2 1 200px', background: 'var(--bg)', border: `1.5px solid ${C.border}`, borderRadius: 10, padding: '13px 16px', fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.white }}
         />
       </div>
       {state === 'error' && (
@@ -67,7 +67,7 @@ export default function LeadForm({ recurso }: { recurso: string }) {
       <button
         type="submit"
         disabled={state === 'submitting'}
-        style={{ fontFamily: C.fontBody, fontSize: 12, fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', background: C.orange, color: C.ctaText, padding: '14px 32px', border: 'none', opacity: state === 'submitting' ? 0.6 : 1 }}
+        style={{ fontFamily: C.fontBody, fontSize: 15, fontWeight: 600, background: C.orange, color: C.ctaText, padding: '14px 32px', border: 'none', borderRadius: 999, opacity: state === 'submitting' ? 0.6 : 1 }}
       >
         {state === 'submitting' ? 'Enviando…' : 'Quiero el PDF →'}
       </button>

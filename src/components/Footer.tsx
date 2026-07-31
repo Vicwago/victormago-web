@@ -19,8 +19,8 @@ export default function Footer() {
 
           {/* Brand + NAP */}
           <div>
-            <p style={{ fontFamily: C.fontDisplay, fontSize: 22, fontWeight: 600, letterSpacing: '0.12em', color: C.white, marginBottom: 8 }}>
-              VICTOR <span style={{ color: C.copper }}>MAGO</span>
+            <p style={{ fontFamily: C.fontDisplay, fontStretch: '125%' as never, fontSize: 21, fontWeight: 800, letterSpacing: '-0.02em', textTransform: 'uppercase', color: C.white, marginBottom: 8 }}>
+              Víctor Mago<span style={{ color: C.copper }}>.</span>
             </p>
             <p style={{ fontFamily: C.fontBody, fontSize: 12, color: C.muted, letterSpacing: '0.08em', lineHeight: 1.6 }}>
               Consultor de IA y automatización<br />{NAP.locality}, {NAP.region} (España)
@@ -54,8 +54,8 @@ export default function Footer() {
         </div>
 
         {/* NorteIA — enlace explícito del brief */}
-        <div style={{ borderTop: `1px solid ${C.border}`, padding: '20px 0', textAlign: 'center' }}>
-          <a href={SOCIAL.norteia} target="_blank" rel="noopener noreferrer" style={{ fontFamily: C.fontDisplay, fontSize: 17, fontStyle: 'italic', color: C.copper, textDecoration: 'none' }}>
+        <div style={{ borderTop: `1.5px solid ${C.border}`, borderBottom: `1.5px solid ${C.border}`, padding: '18px 0', textAlign: 'center', marginBottom: 4 }}>
+          <a href={SOCIAL.norteia} target="_blank" rel="noopener noreferrer" style={{ fontFamily: C.fontMono, fontSize: 13, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.copper, textDecoration: 'none' }}>
             Los proyectos los ejecuto con NorteIA →
           </a>
         </div>

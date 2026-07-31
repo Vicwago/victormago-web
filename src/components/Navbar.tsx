@@ -56,8 +56,8 @@ export default function Navbar() {
         transition: 'all 0.4s ease',
       }}>
         <Link href="/" onClick={closeMobile} style={{ textDecoration: 'none' }}>
-          <span style={{ fontFamily: C.fontDisplay, fontSize: 20, fontWeight: 600, letterSpacing: '0.12em', color: C.white }}>
-            VICTOR <span style={{ color: C.copper }}>MAGO</span>
+          <span style={{ fontFamily: C.fontDisplay, fontStretch: '125%' as never, fontSize: 19, fontWeight: 800, letterSpacing: '-0.02em', textTransform: 'uppercase', color: C.white }}>
+            Víctor Mago<span style={{ color: C.copper }}>.</span>
           </span>
         </Link>
 
@@ -81,9 +81,9 @@ export default function Navbar() {
               href={ctaHref()}
               {...(ctaExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               style={{
-                fontFamily: C.fontBody, fontSize: 11, fontWeight: 500,
-                letterSpacing: '0.14em', textTransform: 'uppercase',
-                background: C.orange, color: C.ctaText, padding: '9px 20px',
+                fontFamily: C.fontBody, fontSize: 14, fontWeight: 600,
+                background: C.orange, color: C.ctaText, padding: '10px 24px',
+                borderRadius: 999,
                 textDecoration: 'none', transition: 'opacity 0.2s',
               }}
               onMouseEnter={(e: React.MouseEvent<HTMLElement>) => (e.currentTarget.style.opacity = '0.85')}
@@ -149,9 +149,9 @@ export default function Navbar() {
               onClick={closeMobile}
               style={{
                 display: 'block', textAlign: 'center',
-                fontFamily: C.fontBody, fontSize: 12, fontWeight: 500,
-                letterSpacing: '0.18em', textTransform: 'uppercase',
+                fontFamily: C.fontBody, fontSize: 15, fontWeight: 600,
                 background: C.orange, color: C.ctaText, padding: '16px 32px',
+                borderRadius: 999,
                 textDecoration: 'none',
               }}>
               {CTA_LABEL} →

@@ -4,12 +4,10 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Reveal from '@/components/Reveal'
-import CtaButton from '@/components/CtaButton'
 import Faq from '@/components/Faq'
 import LeadForm from '@/components/LeadForm'
-import { C, mix } from '@/lib/theme'
 import { casosDestacados } from '@/lib/casos'
-import { DEFAULT_DESCRIPTION } from '@/lib/site'
+import { DEFAULT_DESCRIPTION, CTA_LABEL, ctaHref, CAL_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Víctor Mago — Consultor de IA y automatización en A Coruña',
@@ -17,22 +15,45 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 }
 
-// ─── Qué resuelvo: lenguaje de cliente, no de ingeniero ─────────────────────
-const resuelvo = [
+// ─── 01 LECTURA: qué resuelvo, en lenguaje de cliente ───────────────────────
+const lecturas = [
   {
+    n: '01',
     titulo: 'Tu equipo pierde horas en tareas repetitivas',
     texto:
       'Copiar datos de un correo a un Excel. Clasificar documentos. Responder por enésima vez la misma pregunta. Automatizo ese circuito completo para que tu gente trabaje en lo que de verdad aporta.',
   },
   {
+    n: '02',
     titulo: 'Te llegan más consultas de las que puedes atender',
     texto:
-      'Clientes que preguntan a las diez de la noche y compradores que no esperan. Monto asistentes que responden con tu información real — y solo con tu información real — a cualquier hora.',
+      'Clientes que preguntan a las diez de la noche y compradores que no esperan. Monto asistentes que responden con tu información real, y solo con tu información real, a cualquier hora.',
   },
   {
+    n: '03',
     titulo: 'La IA te suena a obligación, no a ventaja',
     texto:
       'El EU AI Act ya está aquí y tu equipo todavía no la usa bien. Formo a equipos sin perfil técnico para que la IA les ahorre trabajo desde la primera semana, cumpliendo la norma.',
+  },
+]
+
+// ─── 02 ANTICIPACIÓN: el método, de la pista al sistema ─────────────────────
+const principios = [
+  {
+    titulo: 'Leo antes de golpear',
+    texto: 'Primero entiendo cómo trabajáis de verdad. Sin diagnóstico no hay sistema: hay humo.',
+  },
+  {
+    titulo: 'Repetición hasta que sale sola',
+    texto: 'Una automatización buena es como un golpe entrenado: funciona igual el día que nadie la mira.',
+  },
+  {
+    titulo: 'Sistemas que funcionan el lunes',
+    texto: 'Nada de proyectos eternos. Lo que monto se usa la semana siguiente o no lo monto.',
+  },
+  {
+    titulo: 'El proyecto lo ejecuta NorteIA',
+    texto: 'Yo leo el negocio y traduzco; mi equipo construye. Tú tienes un solo interlocutor: yo.',
   },
 ]
 
@@ -63,200 +84,330 @@ const faqs = [
   },
 ]
 
+const tickerFrases = [
+  'La bola llega: o la esperas o corres detrás de ella',
+  'Sistemas que funcionan el lunes por la mañana',
+  'El Art. 4 del EU AI Act ya está en vigor',
+  'Sin humo, sin slides eternas',
+  '15 años enseñando a anticiparse',
+]
+
+// ─── SVG: media pista de tenis (líneas de cal) + arco de bola ───────────────
+function CourtSvg({ night = false }: { night?: boolean }) {
+  const line = night ? 'var(--chalk)' : 'var(--text)'
+  return (
+    <svg viewBox="0 0 560 640" fill="none" aria-hidden style={{ width: '100%', height: 'auto', display: 'block' }}>
+      {/* Pista (media, vista cenital): dobles, individuales, cajones de saque */}
+      <g stroke={line} strokeWidth="2" opacity={night ? 0.5 : 0.16}>
+        <rect x="40" y="40" width="480" height="560" />            {/* dobles */}
+        <line x1="95" y1="40" x2="95" y2="600" />                  {/* pasillo izq */}
+        <line x1="465" y1="40" x2="465" y2="600" />                {/* pasillo dcha */}
+        <line x1="95" y1="330" x2="465" y2="330" />                {/* línea de saque */}
+        <line x1="280" y1="330" x2="280" y2="600" />               {/* línea central */}
+        <line x1="280" y1="40" x2="280" y2="58" />                 {/* marca central */}
+      </g>
+      {/* Red (banda superior) */}
+      <line x1="16" y1="40" x2="544" y2="40" stroke={line} strokeWidth="4" opacity={night ? 0.7 : 0.3} />
+      {/* Arco de la bola: el saque que cruza la pista */}
+      <path
+        className="ball-arc"
+        d="M 60 620 C 180 300, 340 180, 530 96"
+        stroke="var(--accent)"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeDasharray="2 14"
+      />
+      <circle cx="530" cy="96" r="9" fill="var(--accent)" />
+    </svg>
+  )
+}
+
 export default function Home() {
   const destacados = casosDestacados()
+  const ctaExternal = Boolean(CAL_URL)
+
   return (
-    <div style={{ background: C.bg, minHeight: '100vh', color: C.white }}>
+    <div style={{ background: 'var(--bg)', minHeight: '100vh', color: 'var(--text)' }} className="paper-grain">
       <Navbar />
 
-      {/* ══════════ HERO — el gancho que nadie más tiene ══════════ */}
-      <section style={{ position: 'relative', minHeight: '92vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 20% 20%, ${mix(7)} 0%, transparent 55%), radial-gradient(ellipse at 85% 80%, ${mix(5)} 0%, transparent 50%)`, pointerEvents: 'none' }} />
+      {/* ══════════ PUNTO 00 · SAQUE ══════════ */}
+      <section style={{ position: 'relative', minHeight: '94vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+        <span className="punto-label">Punto 00 · Saque</span>
 
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: 1000, margin: '0 auto', padding: 'clamp(120px, 16vh, 160px) clamp(24px, 5vw, 64px) 80px' }}>
-          <p className="hero-eyebrow" style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.30em', textTransform: 'uppercase', color: C.copper, marginBottom: 32 }}>
-            Consultor de IA y automatización · A Coruña
+        {/* Pista al fondo, sangrando por la derecha */}
+        <div aria-hidden style={{ position: 'absolute', right: 'clamp(-180px, -8vw, -40px)', top: '50%', transform: 'translateY(-46%)', width: 'clamp(320px, 44vw, 620px)', pointerEvents: 'none' }}>
+          <CourtSvg />
+        </div>
+
+        <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: 1180, margin: '0 auto', padding: 'clamp(110px, 14vh, 150px) clamp(24px, 5vw, 64px) 90px' }}>
+          <p className="rise rise-1" style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 'clamp(20px, 3vh, 34px)' }}>
+            Consultor de IA · A Coruña — Galicia — España
           </p>
 
-          <h1 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(38px, 6.5vw, 76px)', fontWeight: 400, lineHeight: 1.08, color: C.white, marginBottom: 28, letterSpacing: '-0.02em', maxWidth: 900 }}>
-            Durante 15 años enseñé a jugadores de tenis a <em style={{ fontStyle: 'italic', color: C.copper }}>anticiparse</em>.
-            <br />
-            Ahora enseño a las empresas a hacer lo mismo con la IA.
+          <h1 className="rise rise-2" style={{
+            fontFamily: 'var(--font-display)',
+            fontStretch: '125%',
+            fontWeight: 800,
+            fontSize: 'clamp(56px, 10.5vw, 148px)',
+            lineHeight: 0.94,
+            letterSpacing: '-0.035em',
+            textTransform: 'uppercase',
+            color: 'var(--text)',
+            marginBottom: 'clamp(24px, 3.5vh, 40px)',
+            maxWidth: '9ch',
+          }}>
+            Víctor<br />Mago<span style={{ color: 'var(--accent)' }}>.</span>
           </h1>
 
-          <p style={{ fontFamily: C.fontBody, fontSize: 'clamp(15px, 1.7vw, 18px)', fontWeight: 300, color: C.mutedLight, lineHeight: 1.75, maxWidth: 560, marginBottom: 44 }}>
-            Automatizo procesos y formo equipos en A Coruña. Sin humo, sin slides eternas:
-            sistemas que funcionan el lunes por la mañana.
+          <div className="rise rise-3" style={{ marginBottom: 'clamp(24px, 3.5vh, 36px)' }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 'clamp(16px, 1.9vw, 20px)', color: 'var(--accent)', marginBottom: 6 }}>
+              Consultor de IA y automatización.
+            </p>
+            <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(15px, 1.8vw, 19px)', color: 'var(--text)', marginBottom: 6 }}>
+              Cofundador de NorteIA.
+            </p>
+            <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(15px, 1.8vw, 19px)', color: 'var(--text)' }}>
+              Entrenador de tenis.
+            </p>
+          </div>
+
+          <p className="rise rise-4" style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(15px, 1.7vw, 18px)', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '44ch', marginBottom: 'clamp(32px, 4.5vh, 48px)' }}>
+            15 años enseñando a jugadores a anticiparse. Ahora enseño lo mismo a las empresas,
+        con sistemas que funcionan el lunes por la mañana.
           </p>
 
-          <div className="cta-buttons" style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-            <CtaButton />
-            <Link href="/casos" style={{ fontFamily: C.fontBody, fontSize: 12, fontWeight: 400, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.white, border: `1px solid ${C.border}`, padding: '15px 36px', textDecoration: 'none' }}>
-              Ver casos reales →
-            </Link>
+          <div className="rise rise-5 cta-buttons" style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center' }}>
+            {ctaExternal
+              ? <a className="btn-primary" href={ctaHref()} target="_blank" rel="noopener noreferrer">{CTA_LABEL}</a>
+              : <Link className="btn-primary" href={ctaHref()}>{CTA_LABEL}</Link>}
+            <a className="btn-ghost" href="#lectura">Sigue el punto ↓</a>
           </div>
         </div>
       </section>
 
-      {/* ══════════ PRUEBA SOCIAL ══════════ */}
-      <section style={{ borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}`, background: C.bgAlt }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto', padding: 'clamp(32px, 4vw, 48px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
-          <p style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(18px, 2.2vw, 24px)', fontStyle: 'italic', color: C.white, lineHeight: 1.5, maxWidth: 720, margin: '0 auto 12px' }}>
-            Trabajo con el colegio profesional de los procuradores de A Coruña, despachos legales,
-            inmobiliarias y comercios de Galicia.
-          </p>
-          <p style={{ fontFamily: C.fontBody, fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.muted }}>
-            {/* TODO-VÍCTOR: testimonio real con nombre para sustituir esta línea */}
-            Proyectos ejecutados con NorteIA
-          </p>
-        </div>
-      </section>
+      <hr className="tramline" />
 
-      {/* ══════════ QUÉ RESUELVO ══════════ */}
-      <section style={{ padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 64px)' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+      {/* ══════════ PUNTO 01 · LECTURA ══════════ */}
+      <section id="lectura" style={{ position: 'relative', padding: 'clamp(80px, 11vw, 140px) clamp(24px, 5vw, 64px)' }}>
+        <span className="punto-label">Punto 01 · Lectura</span>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <Reveal>
-            <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.28em', textTransform: 'uppercase', color: C.copper, marginBottom: 16 }}>Qué resuelvo</p>
-            <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(30px, 4vw, 52px)', fontWeight: 400, color: C.white, maxWidth: 640, lineHeight: 1.12, marginBottom: 56 }}>
-              Si te suena alguna de estas tres,<br /><em style={{ color: C.copper }}>hablemos.</em>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '118%', fontWeight: 750, fontSize: 'clamp(30px, 4.6vw, 58px)', lineHeight: 1.02, letterSpacing: '-0.025em', maxWidth: '18ch', marginBottom: 'clamp(40px, 6vw, 72px)' }}>
+              Leo tu negocio como leía al rival<span style={{ color: 'var(--accent)' }}>.</span>
             </h2>
           </Reveal>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: 2 }}>
-            {resuelvo.map((r, i) => (
-              <Reveal key={i} delay={i * 0.08}>
-                <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: 'clamp(28px, 3.5vw, 44px) clamp(22px, 2.8vw, 36px)', height: '100%' }}>
-                  <p style={{ fontFamily: C.fontMono, fontSize: 12, color: C.copper, marginBottom: 18 }}>0{i + 1}</p>
-                  <h3 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(20px, 2.2vw, 26px)', fontWeight: 500, color: C.white, lineHeight: 1.25, marginBottom: 14 }}>{r.titulo}</h3>
-                  <p style={{ fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.mutedLight, lineHeight: 1.75 }}>{r.texto}</p>
+          <div>
+            {lecturas.map((l, i) => (
+              <Reveal key={l.n} delay={i * 0.07}>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'minmax(56px, 120px) 1fr',
+                  gap: 'clamp(16px, 4vw, 56px)',
+                  padding: 'clamp(28px, 4vw, 44px) 0',
+                  borderTop: '1.5px solid var(--border)',
+                  alignItems: 'start',
+                }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(13px, 1.4vw, 15px)', color: 'var(--accent)', paddingTop: 6 }}>
+                    {l.n} /
+                  </span>
+                  <div style={{ maxWidth: 620, justifySelf: i % 2 === 1 ? 'end' : 'start' }}>
+                    <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(20px, 2.6vw, 30px)', letterSpacing: '-0.015em', lineHeight: 1.15, marginBottom: 12 }}>
+                      {l.titulo}
+                    </h3>
+                    <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 15.5, color: 'var(--text-muted)', lineHeight: 1.75, maxWidth: '58ch' }}>
+                      {l.texto}
+                    </p>
+                  </div>
                 </div>
               </Reveal>
             ))}
+            <div style={{ borderTop: '1.5px solid var(--border)' }} />
           </div>
         </div>
       </section>
 
-      {/* ══════════ CASOS DESTACADOS ══════════ */}
-      <section style={{ borderTop: `1px solid ${C.border}`, padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 64px)', background: C.bgAlt }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <Reveal>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 16, marginBottom: 56 }}>
+      {/* ══════════ PUNTO 02 · ANTICIPACIÓN ══════════ */}
+      <section style={{ position: 'relative', background: 'var(--surface-alt)', padding: 'clamp(80px, 11vw, 140px) clamp(24px, 5vw, 64px)' }}>
+        <span className="punto-label">Punto 02 · Anticipación</span>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 'clamp(40px, 6vw, 88px)', alignItems: 'start' }}>
+
+            <Reveal>
               <div>
-                <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.28em', textTransform: 'uppercase', color: C.copper, marginBottom: 16 }}>Casos</p>
-                <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(30px, 4vw, 52px)', fontWeight: 400, color: C.white, lineHeight: 1.12 }}>
-                  Problemas reales,<br /><em style={{ color: C.copper }}>resultados medibles.</em>
+                <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '118%', fontWeight: 750, fontSize: 'clamp(30px, 4.2vw, 52px)', lineHeight: 1.02, letterSpacing: '-0.025em', marginBottom: 24 }}>
+                  Cuando la bola llega, ya es tarde<span style={{ color: 'var(--accent)' }}>.</span>
                 </h2>
+                <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 16, color: 'var(--text-muted)', lineHeight: 1.8, maxWidth: '52ch', marginBottom: 28 }}>
+                  Eso lo aprendí en la pista, no en un máster. El que espera al problema pierde el
+                  punto; el que se anticipa lo gana antes de golpear. Mi trabajo es que tu empresa
+                  juegue así.
+                </p>
+
+                <div className="photo-frame" style={{ position: 'relative', maxWidth: 380 }}>
+                  <div style={{ position: 'relative', aspectRatio: '4/5', borderRadius: 'var(--radius-card)', overflow: 'hidden' }}>
+                    <Image
+                      src="/victor-mago.webp"
+                      alt="Víctor Mago, consultor de IA y entrenador de tenis"
+                      fill
+                      sizes="(max-width: 768px) 90vw, 380px"
+                      style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                    />
+                  </div>
+                  {/* Marca de pista sobre la foto */}
+                  <div aria-hidden style={{ position: 'absolute', left: -14, bottom: -14, width: 110, height: 110, borderLeft: '2.5px solid var(--accent)', borderBottom: '2.5px solid var(--accent)', borderRadius: '0 0 0 6px' }} />
+                </div>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-faint)', marginTop: 18 }}>
+                  Cada tarde sigo en la pista · <Link href="/sobre-mi" style={{ color: 'var(--accent)' }}>mi historia →</Link>
+                </p>
               </div>
-              <Link href="/casos" style={{ fontFamily: C.fontBody, fontSize: 12, fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.copper, textDecoration: 'none' }}>
-                Todos los casos →
+            </Reveal>
+
+            <div style={{ display: 'grid', gap: 'clamp(8px, 1.5vw, 14px)', paddingTop: 'clamp(0px, 4vw, 56px)' }}>
+              {principios.map((p, i) => (
+                <Reveal key={p.titulo} delay={i * 0.06}>
+                  <div style={{ background: 'var(--surface)', border: '1.5px solid var(--border)', borderRadius: 'var(--radius-card)', padding: 'clamp(22px, 2.6vw, 30px)', marginLeft: i % 2 === 1 ? 'clamp(0px, 3vw, 40px)' : 0 }}>
+                    <p style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--accent)', marginBottom: 10 }}>0{i + 1}</p>
+                    <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(17px, 1.9vw, 21px)', letterSpacing: '-0.01em', marginBottom: 8 }}>{p.titulo}</h3>
+                    <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 14.5, color: 'var(--text-muted)', lineHeight: 1.7 }}>{p.texto}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════ PUNTO 03 · GOLPES GANADORES (noche) ══════════ */}
+      <section className="section-night" style={{ position: 'relative', padding: 'clamp(80px, 11vw, 140px) clamp(24px, 5vw, 64px)' }}>
+        <span className="punto-label" style={{ color: 'var(--text-faint)' }}>Punto 03 · Golpes ganadores</span>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <Reveal>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 20, marginBottom: 'clamp(36px, 5vw, 56px)' }}>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '118%', fontWeight: 750, fontSize: 'clamp(30px, 4.6vw, 58px)', lineHeight: 1.02, letterSpacing: '-0.025em', color: 'var(--text)' }}>
+                Golpes ganadores<span style={{ color: 'var(--accent)' }}>.</span>
+              </h2>
+              <Link href="/casos" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--accent)' }}>
+                Marcador completo →
               </Link>
             </div>
           </Reveal>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: 2 }}>
+          {/* Marcador: filas, no tarjetas */}
+          <div role="list">
             {destacados.map((caso, i) => (
-              <Reveal key={caso.slug} delay={i * 0.08}>
-                <Link href={`/casos/${caso.slug}`} style={{ display: 'block', height: '100%', textDecoration: 'none' }}>
-                  <article style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: 'clamp(28px, 3.5vw, 40px) clamp(22px, 2.8vw, 32px)', height: '100%', transition: 'border-color 0.25s' }}>
-                    <p style={{ fontFamily: C.fontBody, fontSize: 10, fontWeight: 500, letterSpacing: '0.2em', textTransform: 'uppercase', color: C.muted, marginBottom: 14 }}>{caso.sector}</p>
-                    <h3 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(19px, 2vw, 24px)', fontWeight: 500, color: C.white, lineHeight: 1.25, marginBottom: 12 }}>{caso.cliente}</h3>
-                    <p style={{ fontFamily: C.fontBody, fontSize: 13.5, fontWeight: 300, color: C.mutedLight, lineHeight: 1.7, marginBottom: 20 }}>{caso.resumen}</p>
-                    <span style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.copper }}>Leer el caso →</span>
-                  </article>
+              <Reveal key={caso.slug} delay={i * 0.07}>
+                <Link role="listitem" href={`/casos/${caso.slug}`} style={{ display: 'block' }}>
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'minmax(70px, 110px) 1fr auto',
+                    gap: 'clamp(14px, 3vw, 40px)',
+                    alignItems: 'center',
+                    padding: 'clamp(22px, 3vw, 34px) clamp(4px, 1vw, 12px)',
+                    borderTop: '1.5px solid var(--border)',
+                    transition: 'background 0.25s',
+                  }}>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--accent)' }}>SET {i + 1}</span>
+                    <span>
+                      <span style={{ display: 'block', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(19px, 2.6vw, 30px)', letterSpacing: '-0.015em', color: 'var(--text)', marginBottom: 6 }}>
+                        {caso.cliente}
+                      </span>
+                      <span style={{ display: 'block', fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 14, color: 'var(--text-muted)', maxWidth: '62ch', lineHeight: 1.6 }}>
+                        {caso.sector} — {caso.resumen}
+                      </span>
+                    </span>
+                    <span aria-hidden style={{ fontFamily: 'var(--font-mono)', fontSize: 18, color: 'var(--accent)' }}>→</span>
+                  </div>
                 </Link>
               </Reveal>
             ))}
+            <div style={{ borderTop: '1.5px solid var(--border)' }} />
+          </div>
+
+          <Reveal delay={0.15}>
+            <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 14.5, color: 'var(--text-muted)', lineHeight: 1.7, marginTop: 'clamp(28px, 4vw, 40px)', maxWidth: '68ch' }}>
+              Trabajo con el colegio profesional de los procuradores de A Coruña, despachos legales,
+              inmobiliarias y comercios de Galicia. Los proyectos los ejecuto con{' '}
+              <a href="https://norteia.es" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: 3 }}>NorteIA</a>.
+              {/* TODO-VÍCTOR: testimonio real con nombre cuando lo tengas */}
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ══════════ PUNTO 04 · MARCADOR (ticker azul) ══════════ */}
+      <div className="ticker" aria-hidden style={{ background: 'var(--accent)', padding: '16px 0' }}>
+        <div className="ticker-track">
+          {[0, 1].map(dup => (
+            <span key={dup} style={{ display: 'inline-flex' }}>
+              {tickerFrases.map(f => (
+                <span key={f} style={{ fontFamily: 'var(--font-mono)', fontSize: 13.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--bg)', padding: '0 28px', whiteSpace: 'nowrap' }}>
+                  {f} <span style={{ opacity: 0.55, paddingLeft: 28 }}>●</span>
+                </span>
+              ))}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ══════════ PUNTO 05 · ENTRENAMIENTO (lead magnet + FAQ) ══════════ */}
+      <section style={{ position: 'relative', padding: 'clamp(80px, 11vw, 140px) clamp(24px, 5vw, 64px)' }}>
+        <span className="punto-label">Punto 05 · Entrenamiento</span>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 'clamp(40px, 6vw, 88px)', alignItems: 'start' }}>
+
+            <Reveal>
+              <div style={{ position: 'sticky', top: 100 }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.28em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 18 }}>
+                  PDF gratis
+                </p>
+                <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '118%', fontWeight: 750, fontSize: 'clamp(26px, 3.4vw, 42px)', lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: 16 }}>
+                  5 automatizaciones que cualquier despacho puede montar esta semana<span style={{ color: 'var(--accent)' }}>.</span>
+                </h2>
+                <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 15, color: 'var(--text-muted)', lineHeight: 1.75, maxWidth: '48ch', marginBottom: 26 }}>
+                  El proceso, la herramienta y el resultado de cada una. Pensado para despachos de
+                  procuradores; útil para cualquier negocio con papeleo.
+                </p>
+                <LeadForm recurso="automatizaciones-procuradores" />
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.08}>
+              <div>
+                <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 750, fontSize: 'clamp(22px, 2.6vw, 30px)', letterSpacing: '-0.015em', marginBottom: 10 }}>
+                  Lo que me preguntan antes de empezar
+                </h2>
+                <Faq items={faqs} />
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ══════════ SOBRE MÍ (corto) ══════════ */}
-      <section style={{ borderTop: `1px solid ${C.border}`, padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 64px)' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: 'clamp(40px, 5vw, 72px)', alignItems: 'center' }}>
-          <Reveal>
-            <div className="photo-frame" style={{ position: 'relative', aspectRatio: '3/4', maxWidth: 340 }}>
-              <div style={{ position: 'absolute', inset: 0, border: `1px solid ${C.borderCu}`, zIndex: 2 }} />
-              <div style={{ position: 'absolute', top: 12, left: 12, right: -12, bottom: -12, border: `1px solid ${C.border}`, zIndex: 0 }} />
-              <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 1 }}>
-                <Image
-                  src="/victor-mago.webp"
-                  alt="Víctor Mago, consultor de IA en A Coruña"
-                  fill
-                  sizes="(max-width: 768px) 90vw, 340px"
-                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
-                />
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.12}>
-            <div>
-              <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: C.copper, marginBottom: 20 }}>Quién soy</p>
-              <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 400, lineHeight: 1.15, color: C.white, marginBottom: 20 }}>
-                Entrenador de tenis.<br /><em style={{ fontStyle: 'italic', color: C.copper }}>Consultor de IA.</em><br />La misma habilidad.
-              </h2>
-              <p style={{ fontFamily: C.fontBody, fontSize: 15, fontWeight: 300, color: C.mutedLight, lineHeight: 1.8, marginBottom: 12 }}>
-                Quince años enseñando a leer al rival y anticiparse. Hoy hago lo mismo con procesos de empresa:
-                ver la jugada antes de que llegue y preparar el sistema que la responde.
-              </p>
-              <p style={{ fontFamily: C.fontBody, fontSize: 15, fontWeight: 300, color: C.mutedLight, lineHeight: 1.8, marginBottom: 28 }}>
-                Cofundé NorteIA para que las pymes gallegas adopten la IA sin humo y cumpliendo el EU AI Act.
-              </p>
-              <Link href="/sobre-mi" style={{ fontFamily: C.fontBody, fontSize: 12, fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.copper, border: `1px solid ${C.borderCu}`, padding: '12px 28px', textDecoration: 'none', display: 'inline-block' }}>
-                Mi historia completa →
-              </Link>
-            </div>
-          </Reveal>
+      {/* ══════════ PUNTO 06 · BOLA DE PARTIDO ══════════ */}
+      <section className="section-night" style={{ position: 'relative', padding: 'clamp(90px, 13vw, 160px) clamp(24px, 5vw, 64px)', overflow: 'hidden' }}>
+        <span className="punto-label">Punto 06 · Bola de partido</span>
+        <div aria-hidden style={{ position: 'absolute', left: 'clamp(-220px, -10vw, -60px)', bottom: '-30%', width: 'clamp(300px, 38vw, 540px)', transform: 'rotate(180deg)', pointerEvents: 'none', opacity: 0.6 }}>
+          <CourtSvg night />
         </div>
-      </section>
-
-      {/* ══════════ LEAD MAGNET ══════════ */}
-      <section style={{ borderTop: `1px solid ${C.border}`, background: C.bgAlt, padding: 'clamp(64px, 8vw, 100px) clamp(24px, 5vw, 64px)' }}>
-        <div style={{ maxWidth: 760, margin: '0 auto' }}>
-          <Reveal>
-            <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: C.copper, marginBottom: 16 }}>Recurso gratis</p>
-            <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(26px, 3.2vw, 40px)', fontWeight: 400, color: C.white, lineHeight: 1.2, marginBottom: 14 }}>
-              5 automatizaciones que cualquier despacho de procuradores puede montar esta semana
-            </h2>
-            <p style={{ fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.mutedLight, lineHeight: 1.75, marginBottom: 28 }}>
-              PDF directo al grano: el proceso, la herramienta y el resultado de cada una.
-              Si no tienes despacho, te sirve igual — los procesos repetitivos son los mismos en casi todos los sectores.
-            </p>
-            <LeadForm recurso="automatizaciones-procuradores" />
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ══════════ FAQ ══════════ */}
-      <section style={{ padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 64px)', borderTop: `1px solid ${C.border}` }}>
-        <div style={{ maxWidth: 760, margin: '0 auto' }}>
-          <Reveal>
-            <div style={{ marginBottom: 48, textAlign: 'center' }}>
-              <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: C.copper, marginBottom: 16 }}>Preguntas frecuentes</p>
-              <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(28px, 3.5vw, 46px)', fontWeight: 400, color: C.white }}>
-                Lo que más me preguntan
-              </h2>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <Faq items={faqs} />
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ══════════ CTA FINAL ══════════ */}
-      <section style={{ position: 'relative', padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 64px)', textAlign: 'center', overflow: 'hidden', background: C.bgAlt, borderTop: `1px solid ${C.border}` }}>
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 800, height: 500, background: `radial-gradient(ellipse, ${mix(7)} 0%, transparent 60%)`, pointerEvents: 'none' }} />
         <Reveal>
-          <div style={{ maxWidth: 680, margin: '0 auto', position: 'relative' }}>
-            <h2 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(32px, 5vw, 58px)', fontWeight: 400, lineHeight: 1.12, color: C.white, marginBottom: 20 }}>
-              20 minutos.<br /><em style={{ fontStyle: 'italic', color: C.copper }}>Gratis. Sin compromiso.</em>
-            </h2>
-            <p style={{ fontFamily: C.fontBody, fontSize: 15, fontWeight: 300, color: C.mutedLight, lineHeight: 1.75, maxWidth: 520, margin: '0 auto 40px' }}>
-              Me cuentas cómo trabajáis y te digo qué automatizaría primero y qué resultado puedes esperar.
-              Si la IA no te va a ayudar, también te lo digo.
+          <div style={{ position: 'relative', maxWidth: 900, margin: '0 auto' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 22 }}>
+              Bola de partido
             </p>
-            <CtaButton />
+            <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '122%', fontWeight: 800, fontSize: 'clamp(36px, 6.4vw, 84px)', lineHeight: 0.98, letterSpacing: '-0.03em', textTransform: 'uppercase', color: 'var(--text)', marginBottom: 26 }}>
+              ¿Qué jugada te está llegando<span style={{ color: 'var(--accent)' }}>?</span>
+            </h2>
+            <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(15px, 1.8vw, 18px)', color: 'var(--text-muted)', lineHeight: 1.75, maxWidth: '48ch', marginBottom: 40 }}>
+              20 minutos, gratis y sin compromiso. Me cuentas cómo trabajáis y te digo qué
+              automatizaría primero. Si la IA no te va a ayudar, también te lo digo.
+            </p>
+            <div className="cta-buttons" style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+              {ctaExternal
+                ? <a className="btn-primary" href={ctaHref()} target="_blank" rel="noopener noreferrer">{CTA_LABEL}</a>
+                : <Link className="btn-primary" href={ctaHref()}>{CTA_LABEL}</Link>}
+              <a className="btn-ghost" style={{ borderColor: 'var(--text)', color: 'var(--text)' }} href="mailto:victor@norteia.es">victor@norteia.es</a>
+            </div>
           </div>
         </Reveal>
       </section>
