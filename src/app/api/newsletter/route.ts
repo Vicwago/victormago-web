@@ -72,6 +72,14 @@ export async function POST(req: NextRequest) {
 
     await notifyMissionControl({ origen: 'newsletter', name: '', email })
 
+    // Aviso a Víctor de cada alta
+    await resend.emails.send({
+      from: 'Web victormago.com <web@norteia.es>',
+      to: 'victor@norteia.es',
+      subject: `Nueva alta en IA que Impulsa: ${email}`,
+      html: `<p><strong>Nueva suscripción a la newsletter.</strong></p><p>Email: ${email}</p><p>Origen: victormago.com</p>`,
+    })
+
     return NextResponse.json({ ok: true })
   } catch (err) {
     console.error('Newsletter API error:', err)

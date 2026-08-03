@@ -21,7 +21,7 @@ def bloque(a):
         <div class="card"><p class="label">Herramientas</p><p>{a['herramientas']}</p></div>
         <div class="card"><p class="label">Qué puedes esperar</p><p>{a['resultado']}</p></div>
       </div>
-      <p class="consejo"><strong>Consejo de pista:</strong> {a['consejo']}</p>
+      <p class="consejo"><strong>Consejo práctico:</strong> {a['consejo']}</p>
     </section>"""
 
 html = f"""<!DOCTYPE html>

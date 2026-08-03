@@ -122,11 +122,11 @@ const productos: Producto[] = [
 ]
 
 const tickerFrases = [
-  'La bola llega: o la esperas o corres detrás de ella',
+  'El que se anticipa, gana',
   'Sistemas que funcionan el lunes por la mañana',
   'El Art. 4 del EU AI Act ya está en vigor',
   'Sin humo, sin slides eternas',
-  '15 años enseñando a anticiparse',
+  'Tu competencia ya está probando la IA',
 ]
 
 // ─── SVG: media pista de tenis (líneas de cal) + arco de bola ───────────────
@@ -166,7 +166,7 @@ export default function Home() {
 
       {/* ══════════ PUNTO 00 · SAQUE ══════════ */}
       <section style={{ position: 'relative', minHeight: '96vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-        <span className="punto-label">Punto 00 · Saque</span>
+        <span className="punto-label">00 · Inicio</span>
 
         {/* Pista de fondo tras la estatua */}
         <div aria-hidden style={{ position: 'absolute', right: 'clamp(-160px, -6vw, -30px)', top: '54%', transform: 'translateY(-50%)', width: 'clamp(300px, 42vw, 600px)', pointerEvents: 'none', opacity: 0.75 }}>
@@ -217,7 +217,7 @@ export default function Home() {
                 {ctaExternal
                   ? <a className="btn-primary" href={ctaHref()} target="_blank" rel="noopener noreferrer">{CTA_LABEL}</a>
                   : <Link className="btn-primary" href={ctaHref()}>{CTA_LABEL}</Link>}
-                <a className="btn-ghost" href="#lectura">Sigue el punto ↓</a>
+                <a className="btn-ghost" href="#lectura">Qué resuelvo ↓</a>
               </div>
             </div>
 
@@ -243,7 +243,7 @@ export default function Home() {
               Confían en mí
             </p>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'clamp(32px, 6vw, 80px)', flexWrap: 'wrap' }}>
-              <figure style={{ textAlign: 'center' }}>
+              <figure style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/logos/icpc.webp" alt="Ilustre Colegio de Procuradores de A Coruña" className="trust-logo" style={{ height: 64 }} />
                 <figcaption style={{ fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 300, color: 'var(--text-faint)', marginTop: 10 }}>
@@ -278,7 +278,7 @@ export default function Home() {
 
       {/* ══════════ PUNTO 01 · LECTURA ══════════ */}
       <section id="lectura" style={{ position: 'relative', padding: 'clamp(80px, 11vw, 140px) clamp(24px, 5vw, 64px)' }}>
-        <span className="punto-label">Punto 01 · Lectura</span>
+        <span className="punto-label">01 · Qué resuelvo</span>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <Reveal>
             <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '118%', fontWeight: 750, fontSize: 'clamp(30px, 4.6vw, 58px)', lineHeight: 1.02, letterSpacing: '-0.025em', maxWidth: '18ch', marginBottom: 'clamp(40px, 6vw, 72px)' }}>
@@ -299,7 +299,7 @@ export default function Home() {
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(13px, 1.4vw, 15px)', color: 'var(--accent)', paddingTop: 6 }}>
                   {l.n} /
                 </span>
-                <div style={{ maxWidth: 620, justifySelf: i % 2 === 1 ? 'end' : 'start' }}>
+                <div style={{ maxWidth: 620, justifySelf: i % 2 === 1 ? 'center' : 'start' }}>
                   <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(20px, 2.6vw, 30px)', letterSpacing: '-0.015em', lineHeight: 1.15, marginBottom: 12 }}>
                     {l.titulo}
                   </h3>
@@ -316,7 +316,7 @@ export default function Home() {
 
       {/* ══════════ PUNTO 02 · TRAYECTORIA (drench azul) ══════════ */}
       <section className="section-blue" style={{ position: 'relative', padding: 'clamp(80px, 11vw, 150px) clamp(24px, 5vw, 64px)', overflow: 'hidden' }}>
-        <span className="punto-label" style={{ color: 'var(--text-faint)' }}>Punto 02 · Anticipación</span>
+        <span className="punto-label" style={{ color: 'var(--text-faint)' }}>02 · Trayectoria</span>
         {/* Línea de cal cruzando el azul */}
         <div aria-hidden className="drift-slow" style={{ position: 'absolute', left: '8%', right: '8%', top: 90, height: 1.5, background: 'rgba(245,243,235,0.25)' }} />
         {/* Bola de tenis de partículas: reacciona al cursor */}
@@ -368,15 +368,15 @@ export default function Home() {
 
       {/* ══════════ PUNTO 03 · GOLPES GANADORES (noche) ══════════ */}
       <section className="section-night" style={{ position: 'relative', padding: 'clamp(80px, 11vw, 140px) clamp(24px, 5vw, 64px)' }}>
-        <span className="punto-label" style={{ color: 'var(--text-faint)' }}>Punto 03 · Golpes ganadores</span>
+        <span className="punto-label" style={{ color: 'var(--text-faint)' }}>03 · Casos</span>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <Reveal>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 20, marginBottom: 'clamp(36px, 5vw, 56px)' }}>
               <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '118%', fontWeight: 750, fontSize: 'clamp(30px, 4.6vw, 58px)', lineHeight: 1.02, letterSpacing: '-0.025em', color: 'var(--text)' }}>
-                Golpes ganadores<span style={{ color: 'var(--accent)' }}>.</span>
+                Resultados reales<span style={{ color: 'var(--accent)' }}>.</span>
               </h2>
               <Link href="/casos" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--accent)' }}>
-                Marcador completo →
+                Ver todos los casos →
               </Link>
             </div>
           </Reveal>
@@ -393,7 +393,7 @@ export default function Home() {
                   borderTop: '1.5px solid var(--border)',
                   transition: 'background 0.25s',
                 }}>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--accent)' }}>SET {i + 1}</span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--accent)' }}>CASO 0{i + 1}</span>
                   <span>
                     <span style={{ display: 'block', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(19px, 2.6vw, 30px)', letterSpacing: '-0.015em', color: 'var(--text)', marginBottom: 6 }}>
                       {caso.alias}
@@ -422,7 +422,7 @@ export default function Home() {
 
       {/* ══════════ PUNTO 04 · VITRINA (productos propios) ══════════ */}
       <section style={{ position: 'relative', padding: 'clamp(80px, 11vw, 130px) clamp(24px, 5vw, 64px)', background: 'var(--surface-alt)' }}>
-        <span className="punto-label">Punto 04 · Vitrina</span>
+        <span className="punto-label">04 · Productos</span>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <Reveal>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 20, marginBottom: 'clamp(36px, 5vw, 56px)' }}>
@@ -457,7 +457,7 @@ export default function Home() {
 
       {/* ══════════ PUNTO 05 · ENTRENAMIENTO (lead magnet + FAQ) ══════════ */}
       <section style={{ position: 'relative', padding: 'clamp(80px, 11vw, 140px) clamp(24px, 5vw, 64px)' }}>
-        <span className="punto-label">Punto 05 · Entrenamiento</span>
+        <span className="punto-label">05 · Recursos</span>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 'clamp(40px, 6vw, 88px)', alignItems: 'start' }}>
 
@@ -491,21 +491,22 @@ export default function Home() {
 
       {/* ══════════ PUNTO 06 · BOLA DE PARTIDO ══════════ */}
       <section className="section-night" style={{ position: 'relative', padding: 'clamp(90px, 13vw, 160px) clamp(24px, 5vw, 64px)', overflow: 'hidden' }}>
-        <span className="punto-label">Punto 06 · Bola de partido</span>
+        <span className="punto-label">06 · Hablemos</span>
         <div aria-hidden className="drift-slow" style={{ position: 'absolute', left: 'clamp(-220px, -10vw, -60px)', bottom: '-30%', width: 'clamp(300px, 38vw, 540px)', transform: 'rotate(180deg)', pointerEvents: 'none', opacity: 0.6 }}>
           <CourtSvg night />
         </div>
         <Reveal>
           <div style={{ position: 'relative', maxWidth: 900, margin: '0 auto' }}>
             <p style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 22 }}>
-              Bola de partido
+              Hablemos
             </p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '122%', fontWeight: 800, fontSize: 'clamp(36px, 6.4vw, 84px)', lineHeight: 0.98, letterSpacing: '-0.03em', textTransform: 'uppercase', color: 'var(--text)', marginBottom: 26 }}>
-              ¿Qué jugada te está llegando<span style={{ color: 'var(--accent)' }}>?</span>
+              No dejes que tu rival te gane<span style={{ color: 'var(--accent)' }}>.</span>
             </h2>
             <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(15px, 1.8vw, 18px)', color: 'var(--text-muted)', lineHeight: 1.75, maxWidth: '48ch', marginBottom: 40 }}>
-              20 minutos, gratis y sin compromiso. Me cuentas cómo trabajáis y te digo qué
-              automatizaría primero. Si la IA no te va a ayudar, también te lo digo.
+              Tu competencia ya está probando la IA. 20 minutos, gratis y sin compromiso:
+              me cuentas cómo trabajáis y te digo qué automatizaría primero. Si la IA no
+              te va a ayudar, también te lo digo.
             </p>
             <div className="cta-buttons" style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
               {ctaExternal

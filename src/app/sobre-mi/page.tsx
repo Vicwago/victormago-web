@@ -112,7 +112,7 @@ export default function SobreMiPage() {
       <section style={{ borderTop: `1px solid ${C.border}`, background: C.bgAlt, padding: 'clamp(64px, 8vw, 96px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
         <Reveal>
           <h2 style={{ fontFamily: C.fontDisplay, fontWeight: 750, fontSize: 'clamp(28px, 4vw, 46px)', letterSpacing: '-0.025em', color: C.white, lineHeight: 1.05, marginBottom: 20 }}>
-            ¿Vemos qué jugada<br /><span style={{ color: C.copper }}>te está llegando?</span>
+            No dejes que tu rival<br /><span style={{ color: C.copper }}>se adelante.</span>
           </h2>
           <p style={{ fontFamily: C.fontBody, fontSize: 15, fontWeight: 300, color: C.mutedLight, marginBottom: 36 }}>
             20 minutos, gratis. Me cuentas cómo trabajáis y te digo qué automatizaría primero.

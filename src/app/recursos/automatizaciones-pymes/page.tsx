@@ -108,7 +108,7 @@ export default function RecursoPymesPage() {
                 </div>
 
                 <p style={{ fontFamily: C.fontBody, fontSize: 13.5, fontWeight: 300, color: C.mutedLight, lineHeight: 1.7, borderLeft: 'none', background: 'color-mix(in srgb, var(--accent) 6%, transparent)', border: `1.5px solid ${C.borderCu}`, borderRadius: 'var(--radius-card)', padding: '14px 18px', maxWidth: '62ch' }}>
-                  <strong style={{ color: C.white, fontWeight: 600 }}>Consejo de pista:</strong> {a.consejo}
+                  <strong style={{ color: C.white, fontWeight: 600 }}>Consejo práctico:</strong> {a.consejo}
                 </p>
               </article>
             </Reveal>

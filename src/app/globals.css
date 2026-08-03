@@ -411,6 +411,8 @@
 .trust-logo {
   height: 52px;
   width: auto;
+  display: block;
+  margin: 0 auto;
   filter: grayscale(1);
   opacity: 0.72;
   mix-blend-mode: multiply;
@@ -424,6 +426,8 @@
 .trust-logo-invert {
   height: 44px;
   width: auto;
+  display: block;
+  margin: 0 auto;
   filter: invert(1) grayscale(1) contrast(1.1);
   opacity: 0.72;
   transition: filter 0.3s, opacity 0.3s;

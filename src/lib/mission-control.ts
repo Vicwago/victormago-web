@@ -19,11 +19,12 @@ export type WebLead = {
 
 export async function notifyMissionControl(lead: WebLead): Promise<void> {
   const url = process.env.MISSION_CONTROL_WEBHOOK_URL
-  if (!url) return
+  const secret = process.env.MISSION_CONTROL_WEBHOOK_SECRET
+  if (!url || !secret) return
   try {
     await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'x-web-secret': secret },
       body: JSON.stringify({ ...lead, fuente: 'victormago.com', ts: new Date().toISOString() }),
       signal: AbortSignal.timeout(5000),
     })
