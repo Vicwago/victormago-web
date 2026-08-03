@@ -69,7 +69,7 @@ def plantilla(kicker, titulo, tema, ancho, alto, marca="victormago.com"):
 
 with sync_playwright() as p:
     browser = p.chromium.launch()
-    page = browser.new_page(viewport={"width": 1600, "height": 900}, device_scale_factor=1)
+    page = browser.new_page(viewport={"width": 1600, "height": 900}, device_scale_factor=2)
     (ROOT / "public/blog").mkdir(exist_ok=True)
     for c in PORTADAS:
         page.set_content(plantilla(c["kicker"], c["titulo"], c["tema"], 1600, 900), wait_until="networkidle")
@@ -77,7 +77,7 @@ with sync_playwright() as p:
         page.screenshot(path=str(out))
         print(f"OK {out.name} ({out.stat().st_size // 1024} KB)")
     # OG por defecto del sitio
-    page2 = browser.new_page(viewport={"width": 1200, "height": 630}, device_scale_factor=1)
+    page2 = browser.new_page(viewport={"width": 1200, "height": 630}, device_scale_factor=2)
     page2.set_content(
         plantilla("Consultor de IA · A Coruña", "Enseño a las empresas a anticiparse con la IA",
                   "papel", 1200, 630, "Víctor Mago · victormago.com"),

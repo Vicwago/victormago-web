@@ -442,6 +442,11 @@
   .scoreboard { display: none !important; }
 }
 
+/* ── Trayectoria: el escalonado solo tiene sentido en columnas ── */
+@media (min-width: 760px) {
+  .etapa-stagger { margin-top: var(--stagger, 0px); }
+}
+
 /* ── Hero: apilar en móvil ── */
 @media (max-width: 900px) {
   .hero-grid {

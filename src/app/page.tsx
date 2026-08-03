@@ -336,7 +336,7 @@ export default function Home() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', gap: 'clamp(24px, 3.5vw, 48px)' }}>
             {etapas.map((e, i) => (
-              <div key={e.n} className="scale-in" style={{ borderTop: '2px solid rgba(245,243,235,0.45)', paddingTop: 22, marginTop: i * 34 }}>
+              <div key={e.n} className="scale-in etapa-stagger" style={{ borderTop: '2px solid rgba(245,243,235,0.45)', paddingTop: 22, ['--stagger' as string]: `${i * 34}px` }}>
                 <p style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--accent-light)', marginBottom: 14 }}>
                   {e.n} · {e.etiqueta}
                 </p>

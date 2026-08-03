@@ -16,7 +16,7 @@ export default function ParticleBall({ className, style, light = false }: { clas
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const N = 1300
-    const dpr = Math.min(window.devicePixelRatio || 1, 2)
+    const dpr = Math.min(window.devicePixelRatio || 1, 3)
 
     // Distribución fibonacci sobre la esfera + marca de costura de bola de tenis
     const pts: { x: number; y: number; z: number; seam: boolean; ox: number; oy: number }[] = []
