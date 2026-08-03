@@ -83,6 +83,34 @@ export const casos: Caso[] = [
     youtubeId: null,
   },
   {
+    slug: 'app-tenis-marineda',
+    cliente: 'Escuela de Tenis Marineda',
+    // Autorizado por Víctor (logo ya visible en la sección de confianza)
+    alias: 'Escuela de Tenis Marineda',
+    web: 'https://tenismarineda.net/',
+    logo: '/logos/marineda.webp',
+    sector: 'Deporte · A Coruña',
+    titulo: 'La app del club: reservas, clases y avisos sin llamadas ni papeles',
+    resumen:
+      'Una app para la escuela donde entreno cada tarde: los jugadores reservan pista, consultan sus clases y reciben los avisos del club sin que nadie tenga que perseguirlos por teléfono.',
+    problema: [
+      'La gestión diaria de un club de tenis vive del teléfono y del tablón: reservas apuntadas a mano, cambios de hora avisados uno a uno, clases que se descuadran. Lo conozco desde dentro: es la escuela donde entreno.',
+      // TODO-VÍCTOR: dato concreto (nº jugadores, reservas/semana, horas de gestión)
+    ],
+    construimos: [
+      'Una aplicación web para el club: los jugadores reservan pista y consultan sus clases desde el móvil, y el club envía avisos y notificaciones sin llamadas. La gestión deja de depender de la memoria de nadie.',
+      // TODO-VÍCTOR: confirmar funcionalidades publicables y estado actual
+    ],
+    herramientas: ['App web (PWA)', 'React + Supabase', 'Notificaciones y emails automáticos'],
+    resultado: [
+      'El club gana horas de gestión cada semana y los jugadores tienen el club en el bolsillo. Es el caso que mejor me representa: mi mundo de siempre, resuelto con lo que hago ahora.',
+      // TODO-VÍCTOR: métrica real cuando la tengas
+    ],
+    testimonio: null,
+    destacado: true,
+    youtubeId: null,
+  },
+  {
     slug: 'coachdesk-saas-tenis',
     cliente: 'CoachDesk',
     alias: 'CoachDesk',
@@ -106,7 +134,8 @@ export const casos: Caso[] = [
       // TODO-VÍCTOR: métrica real (entrenadores/clubes usándolo, horas ahorradas)
     ],
     testimonio: null,
-    destacado: true,
+    // Solo en la vitrina "No solo lo cuento: lo fabrico" — el destacado de la home es la app de Marineda
+    destacado: false,
     youtubeId: null,
   },
   {

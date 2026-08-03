@@ -299,7 +299,7 @@ export default function Home() {
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(13px, 1.4vw, 15px)', color: 'var(--accent)', paddingTop: 6 }}>
                   {l.n} /
                 </span>
-                <div style={{ maxWidth: 620, justifySelf: i % 2 === 1 ? 'center' : 'start' }}>
+                <div style={{ maxWidth: 620 }}>
                   <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(20px, 2.6vw, 30px)', letterSpacing: '-0.015em', lineHeight: 1.15, marginBottom: 12 }}>
                     {l.titulo}
                   </h3>
