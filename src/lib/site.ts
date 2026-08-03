@@ -2,10 +2,9 @@
 export const SITE_URL = 'https://victormago.com'
 export const SITE_NAME = 'Víctor Mago'
 
-// TODO-VÍCTOR: crea tu cuenta gratuita en https://cal.com, configura el evento
-// "20 minutos" y pega aquí la URL (ej: 'https://cal.com/victormago/20min').
-// Mientras sea null, el CTA primario lleva al formulario de /contacto.
-export const CAL_URL: string | null = null
+// Agenda real de Víctor (Cal.com conectado a su Google Calendar).
+// Todos los CTAs "Reserva 20 min gratis" del sitio apuntan aquí.
+export const CAL_URL: string | null = 'https://cal.com/victor-mago-ztpkfj/20min'
 
 export const CTA_LABEL = 'Reserva 20 min gratis'
 export const ctaHref = () => CAL_URL ?? '/contacto'
