@@ -1,4 +1,4 @@
-// ─── Casos de estudio ────────────────────────────────────────────────────────
+﻿// ─── Casos de estudio ────────────────────────────────────────────────────────
 // Estructura fija del brief: problema → qué construimos → resultado → testimonio.
 // REGLA: no inventar datos. Donde falta la métrica real hay un TODO-VÍCTOR y el
 // texto publicado es narrativo hasta que Víctor la confirme.
@@ -20,6 +20,11 @@ export type Caso = {
   construimos: string[]
   herramientas: string[]
   resultado: string[]
+  /**
+   * KPIs destacados (ej. { valor: '85%', texto: 'menos tiempo de clasificación' }).
+   * TODO-VÍCTOR: SOLO cifras reales verificadas — vacío hasta que las confirmes.
+   */
+  kpis: { valor: string; texto: string }[]
   /** TODO-VÍCTOR: pedir testimonio real al cliente. null = no se muestra. */
   testimonio: { texto: string; autor: string } | null
   destacado: boolean
@@ -52,6 +57,7 @@ export const casos: Caso[] = [
       'El despacho dejó de dedicar el principio de cada jornada a mover papeles: la información llega clasificada y el equipo empieza el día trabajando, no ordenando.',
       // TODO-VÍCTOR: métrica real (horas/semana ahorradas, % documentos auto-clasificados)
     ],
+    kpis: [],
     testimonio: null,
     destacado: true,
     youtubeId: null,
@@ -78,6 +84,7 @@ export const casos: Caso[] = [
       'Los interesados obtienen respuesta inmediata con datos reales y el equipo comercial recibe conversaciones ya cualificadas en lugar de preguntas repetitivas.',
       // TODO-VÍCTOR: métrica real (% consultas resueltas sin humano, leads cualificados)
     ],
+    kpis: [],
     testimonio: null,
     destacado: true,
     youtubeId: null,
@@ -106,6 +113,7 @@ export const casos: Caso[] = [
       'El club gana horas de gestión cada semana y los jugadores tienen el club en el bolsillo. Es el caso que mejor me representa: mi mundo de siempre, resuelto con lo que hago ahora.',
       // TODO-VÍCTOR: métrica real cuando la tengas
     ],
+    kpis: [],
     testimonio: null,
     destacado: true,
     youtubeId: null,
@@ -133,6 +141,7 @@ export const casos: Caso[] = [
       'Este caso cierra un círculo personal: la misma experiencia que enseñaba en pista, convertida en un producto que ahorra a otros entrenadores el trabajo que a mí me sobraba.',
       // TODO-VÍCTOR: métrica real (entrenadores/clubes usándolo, horas ahorradas)
     ],
+    kpis: [],
     testimonio: null,
     // Solo en la vitrina "No solo lo cuento: lo fabrico" — el destacado de la home es la app de Marineda
     destacado: false,
@@ -161,6 +170,7 @@ export const casos: Caso[] = [
       'Un negocio de barrio con sistemas de empresa grande, sin coste de empresa grande.',
       // TODO-VÍCTOR: métrica real
     ],
+    kpis: [],
     testimonio: null,
     destacado: false,
     youtubeId: null,
@@ -188,6 +198,7 @@ export const casos: Caso[] = [
       'Demostramos que la IA no entiende de sectores: entiende de procesos repetitivos, y esos existen en todas partes.',
       // TODO-VÍCTOR: métrica real
     ],
+    kpis: [],
     testimonio: null,
     destacado: false,
     youtubeId: null,

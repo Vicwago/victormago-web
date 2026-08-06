@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
@@ -8,7 +8,7 @@ import { C } from '@/lib/theme'
 import { posts } from '@/lib/blog'
 
 export const metadata: Metadata = {
-  title: 'Blog — IA aplicada, sin humo',
+  title: 'Blog — IA aplicada al negocio',
   description:
     'IA y automatización explicadas desde casos reales: despachos legales, pymes gallegas, EU AI Act y lo que aprendí llevando la anticipación de la pista de tenis a la empresa.',
   alternates: { canonical: '/blog' },
@@ -24,7 +24,7 @@ export default function BlogPage() {
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <p style={{ fontFamily: C.fontBody, fontSize: 11, fontWeight: 500, letterSpacing: '0.28em', textTransform: 'uppercase', color: C.copper, marginBottom: 20 }}>Blog</p>
           <h1 style={{ fontFamily: C.fontDisplay, fontWeight: 750, fontSize: 'clamp(34px, 5.5vw, 66px)', lineHeight: 1.02, letterSpacing: '-0.03em', color: C.white, marginBottom: 24 }}>
-            IA aplicada,<br /><span style={{ color: C.copper }}>sin humo.</span>
+            IA aplicada<br /><span style={{ color: C.copper }}>al negocio.</span>
           </h1>
           <p style={{ fontFamily: C.fontBody, fontSize: 'clamp(15px, 1.7vw, 17px)', fontWeight: 300, color: C.mutedLight, lineHeight: 1.75, maxWidth: 560 }}>
             Lo que aprendo automatizando empresas reales, contado para que lo puedas aplicar.

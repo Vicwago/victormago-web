@@ -1,4 +1,4 @@
-import { Resend } from 'resend'
+﻿import { Resend } from 'resend'
 import { NextRequest, NextResponse } from 'next/server'
 import { notifyMissionControl } from '@/lib/mission-control'
 
@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
           <p style="margin:0 0 20px;font-size:24px;font-weight:700;color:#14122A;line-height:1.2;">Ya estás dentro.</p>
           <p style="margin:0 0 16px;font-size:15px;color:#4E4C60;line-height:1.75;">
             Cada semana te mando una idea práctica de IA y automatización que puedas aplicar
-            en tu negocio esa misma semana. Sin humo, sin teoría eterna: lo que funciona,
+            en tu negocio esa misma semana. Sin teoría eterna: lo que funciona,
             contado desde proyectos reales en Galicia.
           </p>
           <p style="margin:0 0 28px;font-size:15px;color:#4E4C60;line-height:1.75;">

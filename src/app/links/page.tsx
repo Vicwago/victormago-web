@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { C } from '@/lib/theme'
@@ -15,9 +15,10 @@ export const metadata: Metadata = {
 // Todos los enlaces llevan UTM para medir qué trae cada red.
 const enlaces = [
   { label: 'Reserva 20 min gratis', href: '/contacto?utm_source=bio&utm_medium=social&utm_campaign=links', destacado: true },
+  { label: 'Diagnóstico exprés (3 min, gratis)', href: '/diagnostico?utm_source=bio&utm_medium=social&utm_campaign=links', destacado: false },
   { label: 'PDF: 5 automatizaciones para tu pyme', href: '/recursos/automatizaciones-pymes?utm_source=bio&utm_medium=social&utm_campaign=links', destacado: false },
   { label: 'Casos reales', href: '/casos?utm_source=bio&utm_medium=social&utm_campaign=links', destacado: false },
-  { label: 'Blog: IA aplicada, sin humo', href: '/blog?utm_source=bio&utm_medium=social&utm_campaign=links', destacado: false },
+  { label: 'Blog: IA aplicada al negocio', href: '/blog?utm_source=bio&utm_medium=social&utm_campaign=links', destacado: false },
   { label: 'NorteIA — mi agencia', href: 'https://norteia.es?utm_source=victormago&utm_medium=links', destacado: false, externo: true },
 ]
 

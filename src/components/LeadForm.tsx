@@ -8,17 +8,18 @@ type FormState = 'idle' | 'submitting' | 'success' | 'error'
 // entrega el recurso por email (Resend) y notifica a Víctor + Mission Control.
 export default function LeadForm({ recurso }: { recurso: string }) {
   const [email, setEmail] = useState('')
-  const [name, setName] = useState('')
+  const [consent, setConsent] = useState(false)
   const [state, setState] = useState<FormState>('idle')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!consent) return
     setState('submitting')
     try {
       const res = await fetch('/api/lead-magnet', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, recurso }),
+        body: JSON.stringify({ name: '', email, recurso }),
       })
       if (res.ok) setState('success')
       else setState('error')
@@ -40,15 +41,7 @@ export default function LeadForm({ recurso }: { recurso: string }) {
 
   return (
     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-        <input
-          type="text"
-          aria-label="Tu nombre"
-          placeholder="Tu nombre"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          style={{ flex: '1 1 140px', background: 'var(--bg)', border: `1.5px solid ${C.border}`, borderRadius: 10, padding: '13px 16px', fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.white }}
-        />
+      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
         <input
           type="email"
           required
@@ -56,28 +49,28 @@ export default function LeadForm({ recurso }: { recurso: string }) {
           placeholder="tu@email.com"
           value={email}
           onChange={e => setEmail(e.target.value)}
-          style={{ flex: '2 1 200px', background: 'var(--bg)', border: `1.5px solid ${C.border}`, borderRadius: 10, padding: '13px 16px', fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.white }}
+          style={{ flex: '1 1 200px', background: 'var(--bg)', border: `1.5px solid ${C.border}`, borderRadius: 999, padding: '13px 18px', fontFamily: C.fontBody, fontSize: 14, fontWeight: 300, color: C.white }}
         />
+        <button
+          type="submit"
+          disabled={state === 'submitting' || !consent}
+          style={{ fontFamily: C.fontBody, fontSize: 15, fontWeight: 600, background: C.orange, color: C.ctaText, padding: '13px 28px', border: 'none', borderRadius: 999, opacity: state === 'submitting' || !consent ? 0.55 : 1 }}
+        >
+          {state === 'submitting' ? 'Enviando…' : 'Descargar PDF gratis'}
+        </button>
       </div>
+      <label style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontFamily: C.fontBody, fontSize: 11.5, fontWeight: 300, color: C.muted, lineHeight: 1.5, cursor: 'pointer' }}>
+        <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} required style={{ marginTop: 2, accentColor: '#2C03F3' }} />
+        <span>
+          Acepto la <a href="/politica-privacidad" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>política de privacidad</a>.
+          Sin spam: baja cuando quieras.
+        </span>
+      </label>
       {state === 'error' && (
         <p style={{ fontFamily: C.fontBody, fontSize: 13, color: C.orange }}>
           No se pudo enviar. Inténtalo de nuevo o escríbeme a victor@norteia.es.
         </p>
       )}
-      <button
-        type="submit"
-        disabled={state === 'submitting'}
-        style={{ fontFamily: C.fontBody, fontSize: 15, fontWeight: 600, background: C.orange, color: C.ctaText, padding: '14px 32px', border: 'none', borderRadius: 999, opacity: state === 'submitting' ? 0.6 : 1 }}
-      >
-        {state === 'submitting' ? 'Enviando…' : 'Quiero el PDF →'}
-      </button>
-      <label style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontFamily: C.fontBody, fontSize: 11.5, fontWeight: 300, color: C.muted, lineHeight: 1.5, cursor: 'pointer' }}>
-        <input type="checkbox" required style={{ marginTop: 2, accentColor: '#2C03F3' }} />
-        <span>
-          Acepto la <a href="/politica-privacidad" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>política de privacidad</a>.
-          Sin spam: solo te escribo cuando tengo algo útil, y puedes darte de baja cuando quieras.
-        </span>
-      </label>
     </form>
   )
 }

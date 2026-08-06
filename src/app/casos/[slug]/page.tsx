@@ -92,8 +92,8 @@ export default async function CasoPage({ params }: { params: Promise<{ slug: str
       {/* Cuerpo: problema → construimos → resultado */}
       <section style={{ borderTop: `1px solid ${C.border}`, padding: 'clamp(48px, 6vw, 72px) clamp(24px, 5vw, 64px)' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
-          <Reveal><Bloque etiqueta="El problema" parrafos={caso.problema} /></Reveal>
-          <Reveal><Bloque etiqueta="Qué construimos" parrafos={caso.construimos} /></Reveal>
+          <Reveal><Bloque etiqueta="El reto inicial" parrafos={caso.problema} /></Reveal>
+          <Reveal><Bloque etiqueta="Arquitectura de la solución" parrafos={caso.construimos} /></Reveal>
 
           {/* Herramientas */}
           <Reveal>
@@ -106,7 +106,21 @@ export default async function CasoPage({ params }: { params: Promise<{ slug: str
             </div>
           </Reveal>
 
-          <Reveal><Bloque etiqueta="El resultado" parrafos={caso.resultado} /></Reveal>
+          {/* KPIs destacados — solo cifras reales verificadas por Víctor */}
+          {caso.kpis.length > 0 && (
+            <Reveal>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(180px, 100%), 1fr))', gap: 14, marginBottom: 'clamp(32px, 4vw, 44px)' }}>
+                {caso.kpis.map(k => (
+                  <div key={k.texto} style={{ background: C.bgCard, border: `1.5px solid ${C.borderCu}`, borderRadius: 'var(--radius-card)', padding: '22px 20px', textAlign: 'center' }}>
+                    <p style={{ fontFamily: C.fontDisplay, fontWeight: 800, fontSize: 'clamp(30px, 4vw, 44px)', letterSpacing: '-0.02em', color: C.copper, lineHeight: 1 }}>{k.valor}</p>
+                    <p style={{ fontFamily: C.fontBody, fontSize: 13, fontWeight: 300, color: C.mutedLight, marginTop: 8, lineHeight: 1.5 }}>{k.texto}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          )}
+
+          <Reveal><Bloque etiqueta="Resultado medible" parrafos={caso.resultado} /></Reveal>
 
           {caso.youtubeId && (
             <Reveal>

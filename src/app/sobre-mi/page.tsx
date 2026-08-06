@@ -13,33 +13,34 @@ export const metadata: Metadata = {
   alternates: { canonical: '/sobre-mi' },
 }
 
-// Estructura 50/50: mitad trayectoria de tenis, mitad llegada a la IA.
+// El tenis como antecedente profesional: metodología, lectura de patrones,
+// disciplina y optimización del rendimiento → arquitectura de procesos con IA.
 const capitulos = [
   {
-    etapa: 'Primera parte · La pista',
-    titulo: 'Quince años leyendo el juego',
+    etapa: 'El antecedente · Alto rendimiento',
+    titulo: 'Quince años optimizando rendimiento',
     parrafos: [
-      'Llevo más de quince años entrenando a jugadores de tenis. Cada tarde, en el club, el trabajo es el mismo: mirar cómo juega la persona que tienes delante, detectar el patrón que repite sin darse cuenta y entrenar la respuesta hasta que sale sola.',
-      'El tenis tiene una regla que no perdona: cuando la bola llega, ya es tarde. Todo lo que importa pasa antes — la lectura del rival, la posición, la preparación del golpe. A eso se le llama anticipación, y es lo que separa a un jugador que corre detrás de la bola de uno que la espera.',
-      // TODO-VÍCTOR: anécdota personal concreta de la etapa de entrenador (un alumno, un momento, un aprendizaje)
+      'Antes de la IA, mi profesión fue el alto rendimiento deportivo: más de quince años como entrenador de tenis. Visto desde fuera parece otro mundo; visto desde dentro, es un laboratorio de metodología pura: observar cómo trabaja una persona, detectar el patrón que repite sin darse cuenta, diseñar la corrección y entrenarla hasta que el resultado es estable.',
+      'De esa etapa vienen las tres cosas que hoy definen mi forma de trabajar: lectura de patrones, disciplina de proceso y obsesión por el resultado medible. En el deporte no vale "creo que mejoramos": o el rendimiento sube, o el método está mal.',
+      // TODO-VÍCTOR: anécdota profesional concreta (un proceso de mejora medible con un alumno)
     ],
   },
   {
-    etapa: 'El punto de giro',
-    titulo: 'La misma jugada, en otro terreno',
+    etapa: 'La transición',
+    titulo: 'El mismo método, en otro terreno',
     parrafos: [
-      'Cuando la IA generativa se convirtió en herramienta de trabajo real, vi la misma escena que veía cada tarde en la pista: empresas corriendo detrás de la bola. Tareas repetitivas comiéndose las horas, consultas sin responder, tecnología usada tarde y mal.',
-      'Y la solución era la que ya conocía: leer el patrón, preparar la respuesta, entrenar la repetición hasta que sale sola. Eso es exactamente lo que hace una automatización bien montada.',
+      'Cuando la IA generativa se convirtió en herramienta de trabajo real, reconocí la escena: equipos reaccionando tarde a problemas que se podían anticipar. Tareas repetitivas comiéndose las horas, consultas sin responder, tecnología infrautilizada.',
+      'La solución era metodológicamente idéntica a lo que llevaba quince años haciendo: leer el patrón, diseñar la respuesta y sistematizar la repetición. Eso es, exactamente, una automatización bien construida.',
       // TODO-VÍCTOR: cómo fue el momento real de la transición (primer proyecto, primera formación)
     ],
   },
   {
-    etapa: 'Segunda parte · Los sistemas',
-    titulo: 'NorteIA y el trabajo de hoy',
+    etapa: 'Hoy · Los sistemas',
+    titulo: 'NorteIA y la IA en producción',
     parrafos: [
-      'Cofundé NorteIA con Luis Salgado, mi socio técnico, para llevar esto a las pymes gallegas: yo leo el negocio y traduzco; él construye los sistemas. Automatización de procesos, formación de equipos sin perfil técnico y cumplimiento del EU AI Act.',
-      'Trabajo con despachos de procuradores, inmobiliarias, comercios locales y proyectos culturales. Sectores distintos, mismo patrón: procesos repetitivos que una máquina hace mejor, y personas que por fin pueden dedicarse a lo que una máquina no sabe hacer.',
-      'Sigo entrenando por las tardes. No pienso dejarlo: la pista es donde mejor se entiende todo lo que hago por las mañanas.',
+      'Cofundé NorteIA con Luis Salgado, mi socio técnico, para llevar esto a las pymes gallegas: yo analizo el negocio y diseño la estrategia; el equipo construye y despliega. Automatización de procesos, formación de equipos sin perfil técnico y preparación para el EU AI Act.',
+      'Trabajo con despachos legales, inmobiliarias, comercios locales y proyectos culturales. Sectores distintos, mismo patrón: procesos repetitivos que un sistema hace mejor, y personas que por fin pueden dedicarse a lo que un sistema no sabe hacer.',
+      'Sigo vinculado al deporte cada tarde. Es el recordatorio diario de que ningún método funciona sin repetición, medición y ajuste.',
     ],
   },
 ]
@@ -87,8 +88,8 @@ export default function SobreMiPage() {
             <Reveal delay={0.1}>
               <blockquote style={{ borderLeft: `2px solid ${C.borderCu}`, paddingLeft: 24 }}>
                 <p style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(20px, 2.5vw, 28px)', fontStyle: 'italic', color: C.copperLight, lineHeight: 1.5 }}>
-                  "En el tenis, cuando la bola llega, ya es tarde. En las empresas pasa lo mismo:
-                  el que espera a que el problema llegue, pierde el punto."
+                  "El alto rendimiento me enseñó la regla que aplico a cada proceso: quien
+                  reacciona tarde, pierde. Quien se anticipa con método, gana."
                 </p>
               </blockquote>
             </Reveal>

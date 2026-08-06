@@ -41,28 +41,28 @@ const lecturas = [
   },
 ]
 
-// ─── 02 TRAYECTORIA: de la pista a la IA en producción ──────────────────────
+// ─── 02 TRAYECTORIA: metodología de alto rendimiento → IA en producción ─────
 const etapas = [
   {
     n: '01',
-    etiqueta: 'La pista',
-    titulo: 'Quince años leyendo el juego',
+    etiqueta: 'Método',
+    titulo: 'Análisis de alto rendimiento',
     texto:
-      'Entrenar jugadores me dio algo que ningún máster tech da: leer patrones y anticiparme. Saber por qué alguien repite un error y cómo entrenarlo hasta que la corrección sale sola.',
+      'Quince años optimizando el rendimiento de personas me dieron un método: leer patrones, corregir y repetir hasta que el resultado es estable. Esa disciplina es hoy mi forma de analizar procesos.',
   },
   {
     n: '02',
     etiqueta: 'Tecnología e IA',
-    titulo: 'De la trinchera, no del aula',
+    titulo: 'Sistemas en producción',
     texto:
-      'La transición natural. Cofundé NorteIA y me metí donde se aprende de verdad: construyendo sistemas, automatizando procesos, poniendo IA en producción en empresas reales.',
+      'Cofundé NorteIA y construyo desde dentro: automatización de procesos, agentes de IA e integraciones desplegadas en empresas reales, con su documentación y su mantenimiento.',
   },
   {
     n: '03',
     etiqueta: 'Consultoría',
     titulo: 'Construyo lo que recomiendo',
     texto:
-      'Entender personas + construir tecnología me llevó aquí. No la consultoría de las Big Four: sin slides, con código. Sin promesas, con sistemas funcionando el lunes.',
+      'Entender la operativa y construir la tecnología me llevó a la consultoría. Estrategia con implementación: cada recomendación llega respaldada por un sistema que ya sé desplegar.',
   },
 ]
 
@@ -123,9 +123,9 @@ const productos: Producto[] = [
 
 const tickerFrases = [
   'El que se anticipa, gana',
-  'Sistemas que funcionan el lunes por la mañana',
+  'Sistemas estables desplegados en producción',
   'El Art. 4 del EU AI Act ya está en vigor',
-  'Sin humo, sin slides eternas',
+  'Resultados medibles, no promesas',
   'Tu competencia ya está probando la IA',
 ]
 
@@ -184,41 +184,39 @@ export default function Home() {
 
               <h1 className="rise rise-2" style={{
                 fontFamily: 'var(--font-display)',
-                fontStretch: '125%',
+                fontStretch: '118%',
                 fontWeight: 800,
-                fontSize: 'clamp(52px, 9vw, 132px)',
-                lineHeight: 0.94,
-                letterSpacing: '-0.035em',
-                textTransform: 'uppercase',
+                fontSize: 'clamp(36px, 5.2vw, 72px)',
+                lineHeight: 1.02,
+                letterSpacing: '-0.03em',
                 color: 'var(--text)',
-                marginBottom: 'clamp(22px, 3vh, 36px)',
+                marginBottom: 'clamp(20px, 3vh, 30px)',
+                maxWidth: '17ch',
               }}>
-                Víctor<br />Mago<span style={{ color: 'var(--accent)' }}>.</span>
+                Implemento sistemas de IA que ahorran cientos de horas a tu equipo<span style={{ color: 'var(--accent)' }}>.</span>
               </h1>
 
-              <div className="rise rise-3" style={{ marginBottom: 'clamp(22px, 3vh, 32px)' }}>
-                <p style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 'clamp(16px, 1.9vw, 20px)', color: 'var(--accent)', marginBottom: 6 }}>
-                  Consultor de IA y automatización.
-                </p>
-                <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(15px, 1.8vw, 19px)', color: 'var(--text)', marginBottom: 6 }}>
-                  Cofundador de NorteIA.
-                </p>
-                <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(15px, 1.8vw, 19px)', color: 'var(--text)' }}>
-                  Entrenador de tenis.
-                </p>
-              </div>
-
-              <p className="rise rise-4" style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(15px, 1.7vw, 17.5px)', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '42ch', marginBottom: 'clamp(28px, 4vh, 44px)' }}>
-            15 años enseñando a jugadores a anticiparse. Ahora enseño lo mismo a las empresas,
-            con sistemas que funcionan el lunes por la mañana.
+              <p className="rise rise-3" style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(15px, 1.8vw, 18px)', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '48ch', marginBottom: 'clamp(26px, 3.5vh, 38px)' }}>
+                <strong style={{ fontWeight: 600, color: 'var(--text)' }}>Cofundador de NorteIA.</strong>{' '}
+                Traslado la estrategia y el análisis de alto rendimiento al software corporativo,
+                con sistemas estables desplegados en producción.
               </p>
+
+              <div className="rise rise-4" style={{ marginBottom: 'clamp(14px, 2vh, 20px)' }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-mono)', fontSize: 11.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--accent)', border: '1.5px solid var(--border-accent)', borderRadius: 999, padding: '7px 16px' }}>
+                  🛡 Preparación EU AI Act · Art. 4
+                </span>
+              </div>
 
               <div className="rise rise-5 cta-buttons" style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center' }}>
                 {ctaExternal
                   ? <a className="btn-primary" href={ctaHref()} target="_blank" rel="noopener noreferrer">{CTA_LABEL}</a>
                   : <Link className="btn-primary" href={ctaHref()}>{CTA_LABEL}</Link>}
-                <a className="btn-ghost" href="#lectura">Qué resuelvo ↓</a>
+                <Link className="btn-ghost" href="/diagnostico">Diagnóstico gratis en 3 min</Link>
               </div>
+              <p className="rise rise-5" style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 12.5, color: 'var(--text-faint)', marginTop: 14 }}>
+                ✓ Diagnóstico de 20 min &nbsp;·&nbsp; 💬 En español de negocio, sin jerga técnica &nbsp;·&nbsp; ⏱ Sin compromiso
+              </p>
             </div>
 
             {/* La bola de partículas junto al nombre (petición de Mariana) */}
@@ -270,6 +268,16 @@ export default function Home() {
               </figure>
               {/* TODO-VÍCTOR: más logos cuando confirmes cuáles (mismo patrón) */}
             </div>
+
+            {/* Franja de stack tecnológico */}
+            <div style={{ marginTop: 'clamp(32px, 4vw, 44px)', textAlign: 'center' }}>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: 10.5, letterSpacing: '0.26em', textTransform: 'uppercase', color: 'var(--text-faint)', marginBottom: 14 }}>
+                Tecnología e infraestructura
+              </p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.06em', color: 'var(--text-muted)', lineHeight: 2 }}>
+                Claude · OpenAI · n8n · Make · Supabase · Google Cloud · Vercel
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -282,7 +290,7 @@ export default function Home() {
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <Reveal>
             <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '118%', fontWeight: 750, fontSize: 'clamp(30px, 4.6vw, 58px)', lineHeight: 1.02, letterSpacing: '-0.025em', maxWidth: '18ch', marginBottom: 'clamp(40px, 6vw, 72px)' }}>
-              Leo tu negocio como leía al rival<span style={{ color: 'var(--accent)' }}>.</span>
+              Primero leo tu negocio. Después lo automatizo<span style={{ color: 'var(--accent)' }}>.</span>
             </h2>
           </Reveal>
 
@@ -330,7 +338,7 @@ export default function Home() {
               Trayectoria
             </p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '120%', fontWeight: 800, fontSize: 'clamp(34px, 5.6vw, 74px)', lineHeight: 0.98, letterSpacing: '-0.03em', textTransform: 'uppercase', color: 'var(--text)', maxWidth: '16ch', marginBottom: 'clamp(44px, 6vw, 80px)' }}>
-              De la pista a la IA en producción<span style={{ color: 'var(--accent-light)' }}>.</span>
+              Del análisis de alto rendimiento a la IA en producción<span style={{ color: 'var(--accent-light)' }}>.</span>
             </h2>
           </Reveal>
 
@@ -355,8 +363,8 @@ export default function Home() {
               <div style={{ position: 'relative', width: 108, height: 108, borderRadius: '50%', overflow: 'hidden', border: '2.5px solid rgba(245,243,235,0.6)', flexShrink: 0 }}>
                 <Image src="/victor-mago.webp" alt="Víctor Mago" fill sizes="108px" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
               </div>
-              <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(18px, 2.3vw, 26px)', letterSpacing: '-0.015em', lineHeight: 1.3, color: 'var(--text)', maxWidth: '30ch' }}>
-                "Sigo entrenando cada tarde. La pista es donde mejor se entiende lo que hago por las mañanas."
+              <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(18px, 2.3vw, 26px)', letterSpacing: '-0.015em', lineHeight: 1.3, color: 'var(--text)', maxWidth: '32ch' }}>
+                "Cada proyecto lo diseño contigo y lo despliego con mi equipo de NorteIA. Un solo interlocutor, de la estrategia a producción."
               </p>
               <Link href="/sobre-mi" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--accent-light)', marginLeft: 'auto' }}>
                 Mi historia →
@@ -428,11 +436,15 @@ export default function Home() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 20, marginBottom: 'clamp(36px, 5vw, 56px)' }}>
               <div>
                 <p style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 16 }}>
-                  Lo que construyo
+                  [ Labs &amp; tecnología propia ]
                 </p>
                 <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '118%', fontWeight: 750, fontSize: 'clamp(30px, 4.6vw, 58px)', lineHeight: 1.02, letterSpacing: '-0.025em' }}>
                   No solo lo cuento:<br />lo fabrico<span style={{ color: 'var(--accent)' }}>.</span>
                 </h2>
+                <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 15, color: 'var(--text-muted)', lineHeight: 1.75, maxWidth: '56ch', marginTop: 16 }}>
+                  Desarrollo las tecnologías que recomiendo: diseñar e implementar software propio
+                  con IA es lo que garantiza la solidez de los proyectos para clientes.
+                </p>
               </div>
             </div>
           </Reveal>

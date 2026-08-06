@@ -8,8 +8,9 @@ const navLinks = [
   { label: 'Sobre mí', href: '/sobre-mi' },
   { label: 'Casos', href: '/casos' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Contacto', href: '/contacto' },
+  { label: 'Diagnóstico exprés', href: '/diagnostico' },
   { label: 'Recursos gratis', href: '/recursos/automatizaciones-pymes' },
+  { label: 'Contacto', href: '/contacto' },
 ]
 
 const legalLinks = [
