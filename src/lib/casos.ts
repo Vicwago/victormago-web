@@ -41,27 +41,24 @@ export const casos: Caso[] = [
     web: 'https://www.sanchezgarciaprocuradores.com/',
     logo: '/logos/sanchez.png',
     sector: 'Legal · A Coruña',
-    titulo: 'Automatización de la gestión documental de un despacho de procuradores',
+    titulo: 'Años de facturación al día, en una fracción del tiempo',
     resumen:
-      'Un despacho de procuradores que pasaba horas cada día moviendo notificaciones y documentos a mano. Automatizamos el circuito para que el equipo trabaje sobre información ya organizada.',
+      'Un despacho que gestiona unas 100 notificaciones de LexNET al día y arrastraba años de facturación sin conciliar. Con IA, la facturación quedó al día y los cobros pendientes, reclamados — en una fracción del tiempo que habría llevado a mano.',
     problema: [
-      'El día a día de un despacho de procuradores es un flujo constante de notificaciones, plazos y documentos. Cada notificación había que descargarla, clasificarla, registrarla y comunicarla al abogado correspondiente. Todo a mano.',
-      // TODO-VÍCTOR: dato concreto del problema (nº notificaciones/día, horas dedicadas)
+      'El día a día del despacho es intenso: alrededor de 100 notificaciones de LexNET y otros tantos correos cada jornada, con dos personas dedicando 3-4 horas diarias solo al triaje.',
+      'A eso se sumaba la facturación: años de facturas en su programa de gestión (Camaleón) sin registrar qué estaba cobrado y qué no. Una montaña de horas de conciliación que nunca llegaba, con dinero pendiente de cobrar sin reclamar.',
     ],
     construimos: [
-      'Diseñé con NorteIA un sistema que recoge la documentación entrante, la clasifica automáticamente por procedimiento y la deja registrada y lista para trabajar, avisando a la persona adecuada en cada caso.',
-      // TODO-VÍCTOR: confirmar piezas exactas del sistema (n8n, extracción con IA, etc.)
+      'Empezamos por donde más dolía: la facturación. Con IA cruzamos y pusimos al día el histórico completo, identificamos qué facturas seguían pendientes de cobro y preparamos las notificaciones de reclamación para cada cliente.',
     ],
-    herramientas: ['Automatización de flujos', 'Clasificación con IA', 'Integración con el correo del despacho'],
+    herramientas: ['IA aplicada a conciliación de facturación', 'Camaleón (el software del despacho)', 'Reclamación de cobros pendientes'],
     resultado: [
-      'El despacho dejó de dedicar el principio de cada jornada a mover papeles: la información llega clasificada y el equipo empieza el día trabajando, no ordenando.',
-      // TODO-VÍCTOR: sustituir por métricas reales del cliente cuando las confirmes
+      'La facturación histórica está al día y las facturas pendientes de cobro ya se han reclamado a quien correspondía. El trabajo se hizo en torno al 10% del tiempo que habría llevado a mano — y ahora el despacho sabe exactamente qué tiene cobrado y qué no.',
     ],
-    // Cifras-propiedad del sistema (verificables); cambiar por métricas de cliente al confirmarlas
     kpis: [
-      { valor: '24/7', texto: 'clasificación de notificaciones sin intervención manual' },
-      { valor: '100%', texto: 'de documentos registrados con enlace al original' },
-      { valor: '1ª hora', texto: 'el equipo empieza el día con el correo ya organizado' },
+      { valor: '90%', texto: 'menos tiempo: la puesta al día se hizo en ~10% del tiempo que llevaría a mano' },
+      { valor: '~100', texto: 'notificaciones de LexNET al día que gestiona el despacho' },
+      { valor: '100%', texto: 'de cobros pendientes identificados y reclamados' },
     ],
     testimonio: null,
     destacado: true,
@@ -86,13 +83,12 @@ export const casos: Caso[] = [
     ],
     herramientas: ['RAG sobre la base de inmuebles', 'Asistente conversacional con IA', 'Escalado a humano'],
     resultado: [
-      'Los interesados obtienen respuesta inmediata con datos reales y el equipo comercial recibe conversaciones ya cualificadas en lugar de preguntas repetitivas.',
-      // TODO-VÍCTOR: sustituir por métricas reales del cliente cuando las confirmes
+      'Los interesados obtienen respuesta inmediata con datos reales y el equipo comercial recibe conversaciones ya cualificadas. Desde que el asistente responde a todas horas, la inmobiliaria estima entre un 20% y un 30% más de leads recibidos.',
     ],
     kpis: [
-      { valor: '24/7', texto: 'respuesta inmediata a cada interesado' },
-      { valor: '0', texto: 'datos inventados: responde solo con la ficha real del inmueble' },
-      { valor: '100%', texto: 'de conversaciones con escalado a una persona disponible' },
+      { valor: '+20-30%', texto: 'más leads desde que el asistente responde a todas horas' },
+      { valor: '24/7', texto: 'respuesta inmediata con los datos reales de cada inmueble' },
+      { valor: '0', texto: 'datos inventados: responde solo con la ficha del inmueble' },
     ],
     testimonio: null,
     destacado: true,
@@ -106,26 +102,23 @@ export const casos: Caso[] = [
     web: 'https://tenismarineda.net/',
     logo: '/logos/marineda.webp',
     sector: 'Deporte · A Coruña',
-    titulo: 'La app del club: reservas, clases y avisos sin llamadas ni papeles',
+    titulo: 'Rankings y torneos sin llamadas: la app del club',
     resumen:
-      'Una app para la escuela donde entreno cada tarde: los jugadores reservan pista, consultan sus clases y reciben los avisos del club sin que nadie tenga que perseguirlos por teléfono.',
+      'La app de la escuela donde entreno cada tarde: rankings y torneos con 60-80 jugadores por edición, cada uno consultando su horario y recibiendo los avisos sin que el club tenga que llamar a nadie.',
     problema: [
-      'La gestión diaria de un club de tenis vive del teléfono y del tablón: reservas apuntadas a mano, cambios de hora avisados uno a uno, clases que se descuadran. Lo conozco desde dentro: es la escuela donde entreno.',
-      // TODO-VÍCTOR: dato concreto (nº jugadores, reservas/semana, horas de gestión)
+      'Cada ranking o torneo del club mueve entre 60 y 80 jugadores, a veces más. Antes, cada horario había que comunicarlo uno a uno: llamadas, WhatsApps, la misma pregunta repetida decenas de veces. Horas de gestión que el club pagaba de su tiempo. Lo conozco desde dentro: es la escuela donde entreno.',
     ],
     construimos: [
-      'Una aplicación web para el club: los jugadores reservan pista y consultan sus clases desde el móvil, y el club envía avisos y notificaciones sin llamadas. La gestión deja de depender de la memoria de nadie.',
-      // TODO-VÍCTOR: confirmar funcionalidades publicables y estado actual
+      'Una app web donde el club publica los rankings y los cuadros de los torneos, y cada jugador consulta su horario y recibe los avisos automáticamente en el móvil.',
     ],
-    herramientas: ['App web (PWA)', 'React + Supabase', 'Notificaciones y emails automáticos'],
+    herramientas: ['App web (PWA)', 'React + Supabase', 'Notificaciones y avisos automáticos'],
     resultado: [
-      'El club gana horas de gestión cada semana y los jugadores tienen el club en el bolsillo. Es el caso que mejor me representa: mi mundo de siempre, resuelto con lo que hago ahora.',
-      // TODO-VÍCTOR: sustituir por métricas reales del club cuando las confirmes
+      'El club dejó de perseguir a los jugadores por teléfono: los horarios se consultan en la app y los avisos salen solos. Menos llamadas, menos WhatsApps y torneos que se organizan sin fricción. Es el caso que mejor me representa: mi mundo de siempre, resuelto con lo que hago ahora.',
     ],
     kpis: [
-      { valor: '24/7', texto: 'reservas de pista desde el móvil, sin llamadas' },
-      { valor: '0', texto: 'avisos perdidos: notificaciones automáticas a cada jugador' },
-      { valor: '1 app', texto: 'toda la gestión del club en un solo sitio' },
+      { valor: '60-80', texto: 'jugadores por torneo o ranking gestionados en la app' },
+      { valor: '0', texto: 'llamadas necesarias para consultar un horario' },
+      { valor: '24/7', texto: 'horarios y avisos disponibles en el móvil de cada jugador' },
     ],
     testimonio: null,
     destacado: true,
