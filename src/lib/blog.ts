@@ -40,14 +40,14 @@ export const posts: Post[] = [
   },
   {
     slug: 'eu-ai-act-pymes',
-    titulo: 'EU AI Act: qué te obliga YA y qué llega el 2 de agosto de 2026',
+    titulo: 'El EU AI Act ya se aplica: qué significa para tu pyme',
     descripcion:
-      'Lo que el Reglamento europeo de IA exige hoy a tu pyme (sí, ya hay obligaciones vigentes), qué llega el 2 de agosto de 2026 y qué aplazó el Digital Omnibus.',
-    fecha: '2026-07-31',
-    keywords: ['EU AI Act pymes qué hacer', 'reglamento IA 2026', 'alfabetización IA artículo 4'],
+      'El Reglamento europeo de IA entró en aplicación general el 2 de agosto de 2026 y la alfabetización obligatoria lleva vigente desde febrero de 2025. Qué te obliga hoy, qué se aplazó y qué hacer esta semana.',
+    fecha: '2026-08-07',
+    keywords: ['EU AI Act pymes qué hacer', 'reglamento IA 2026', 'alfabetización IA artículo 4', 'sanciones EU AI Act', 'cumplimiento IA empresas España'],
     imagen: '/blog/foto-euaiact.webp',
-    imagenAlt: 'Portada: EU AI Act, qué te obliga ya y qué llega el 2 de agosto de 2026',
-    borrador: true,
+    imagenAlt: 'Hemiciclo de un parlamento europeo durante una sesión',
+    borrador: false,
   },
   {
     slug: 'mission-control-crm-agentes-ia',
