@@ -2,67 +2,96 @@ import ArticleLayout from '@/components/ArticleLayout'
 import Faq from '@/components/Faq'
 
 export const metadata = {
-  title: 'Cómo un despacho de procuradores puede automatizar el 70% de su gestión documental',
+  title: 'IA en un despacho de procuradores: por dónde empezar de verdad',
   description:
-    'Qué tareas documentales de un despacho de procuradores se pueden automatizar con IA, por dónde empezar y qué resultados esperar. Guía práctica desde casos reales.',
+    'Guía práctica para despachos de procuradores: cómo encontrar tu cuello de botella real (LexNET, correo o redacción), por dónde empezar con IA y qué resultados esperar. Con un caso real de A Coruña.',
   alternates: { canonical: '/blog/automatizar-gestion-documental-procuradores' },
 }
 
 <ArticleLayout slug="automatizar-gestion-documental-procuradores">
 
-{/* ═══════════════════════════════════════════════════════════════
-    TODO-VÍCTOR: ARTÍCULO EN ESQUELETO. La estructura está lista
-    para que dictes el contenido de cada sección. Los H2 están
-    pensados para la keyword "IA para despachos de procuradores".
-    ═══════════════════════════════════════════════════════════════ */}
+La pregunta que me hacen los procuradores es siempre la misma: "¿por dónde empiezo con esto de la IA?". Y mi respuesta nunca es una herramienta. Es una pregunta de vuelta: **¿dónde pierdes tú más tiempo?**
 
-El día de un procurador empieza igual en casi todos los despachos: descargar notificaciones,
-clasificarlas por procedimiento, registrarlas y avisar a quien corresponda. Horas de trabajo
-que no facturan y que una máquina hace mejor.
+Parece obvio. No lo es. Casi todo el mundo empieza al revés: por la herramienta de moda, no por su propio cuello de botella. Y así es como se acaba con una suscripción más y el mismo trabajo encima de la mesa.
 
-Trabajo con despachos de procuradores en Galicia y esto es lo que he aprendido automatizando
-esa gestión documental.
+## Primero el diagnóstico, después la tecnología
 
-## Qué se puede automatizar hoy en un despacho de procuradores
+No hay dos despachos iguales. En unos, el volumen de notificaciones de LexNET es brutal y se come la mañana entera. En otros, apenas entran y el problema está en el correo. Y en otros, el tiempo se va en redactar escritos.
 
-{/* TODO-VÍCTOR: dictar la lista real basada en el caso Sánchez García:
-    recepción de notificaciones, clasificación por procedimiento, registro,
-    avisos a abogados, control de plazos... con el detalle que autorice el cliente */}
+Estos son los tres cuellos de botella que me encuentro, y por dónde entraría en cada caso:
 
-- Clasificación automática de notificaciones y documentos entrantes
-- Registro en el sistema de gestión del despacho
-- Avisos automáticos al abogado o al cliente correspondiente
-- Control de plazos con alertas
+### 1. Te ahogan las notificaciones de LexNET
 
-## Por dónde empezar (sin poner en riesgo nada)
+Si cada día descargas decenas o cientos de notificaciones y hay personas dedicando horas a clasificarlas y repartirlas, ahí está tu dinero. En un despacho con el que trabajo en A Coruña son unas 100 notificaciones diarias, con dos personas dedicándole entre tres y cuatro horas cada jornada.
 
-{/* TODO-VÍCTOR: dictar el orden recomendado y los errores típicos que has visto */}
+Eso se automatiza: la notificación entra, un paso de IA la clasifica por procedimiento, la registra y avisa a quien corresponde. Las dudosas se quedan en una bandeja de revisión para que las mire una persona. **Nunca se pierde nada.**
 
-La regla que aplico siempre: se empieza por el proceso más repetitivo y de menor riesgo.
-Nunca por el que toca plazos procesales críticos.
+### 2. El correo es el que manda en tu día
 
-## Qué resultados puede esperar un despacho
+Si el volumen de LexNET es asumible pero el correo es un goteo constante que interrumpe todo, empieza por ahí. La misma lógica: clasificar automáticamente lo que entra, etiquetarlo, reenviarlo a quien toca y guardar los adjuntos en la carpeta del expediente correspondiente.
 
-{/* TODO-VÍCTOR: métricas reales del caso (horas/semana, % clasificación automática).
-    NO publicar cifras sin verificar. */}
+### 3. Se te va el tiempo redactando escritos
 
-## El caso real
+Este es el que menos gente ve como automatizable, y es de los más agradecidos. No se trata de que una IA escriba tus escritos: se trata de tener asistentes preparados con tus propios modelos, tus criterios y tu forma de redactar, de manera que el borrador salga hecho y tú hagas lo que sabes hacer — revisar y decidir.
 
-Puedes leer cómo lo hicimos en un despacho real:
-[el caso de un despacho de procuradores de A Coruña](/casos/sanchez-garcia-procuradores).
+## La trampa de los plazos
+
+En un despacho de procuradores todo va contrarreloj. "Esto hay que presentarlo hoy". "Esto vence mañana". Es el sector donde más he visto trabajar al límite del plazo, y es exactamente por eso por lo que la automatización tiene tanto sentido aquí: **cada hora que le quitas al trabajo mecánico es una hora que le devuelves al trabajo que sí requiere criterio jurídico.**
+
+Y hay un segundo efecto, menos evidente: un sistema que vigila los plazos y avisa (y vuelve a avisar, y escala si nadie reacciona) elimina el riesgo de que algo dependa de que una persona se acuerde.
+
+## Lo que nadie dice: el problema no es técnico
+
+Voy a ser honesto, porque creo que ayuda más que vender humo. La procuraduría es un gremio con mucha tradición y con profesionales de muchos años de oficio. La tecnología no siempre entra con facilidad, y eso no es un defecto: es una realidad con la que hay que contar desde el primer día.
+
+Por eso mi forma de trabajar en despachos es esta:
+
+- **Se empieza por lo que no toca plazos críticos.** Nunca meto una automatización en medio de un procedimiento como primer proyecto. Primero, algo con impacto claro y riesgo bajo.
+- **No se cambia el programa de gestión.** Los sistemas se conectan a lo que ya usáis; se añade una capa, no se sustituye nada. Nadie tiene que aprender otro programa de cero.
+- **La IA propone, la persona decide.** En un despacho eso no es negociable, y además es lo que permite que el equipo se fíe del sistema.
+
+## Un caso real: años de facturación al día
+
+En el despacho de A Coruña con el que trabajo, el primer proyecto no fueron las notificaciones. Fue **la facturación**, porque ahí estaba el agujero más grande: años de facturas en su programa de gestión sin registrar qué estaba cobrado y qué no. Dinero pendiente que nadie había reclamado, simplemente porque poner eso al día a mano era una montaña de horas que nunca llegaba.
+
+Con IA cruzamos y pusimos al día el histórico completo, identificamos las facturas pendientes de cobro y preparamos las reclamaciones. **El trabajo se hizo en torno al 10% del tiempo que habría llevado hacerlo a mano.**
+
+Ese es el orden correcto: no la automatización más vistosa, sino la que resuelve tu cuello de botella real.
+
+Puedes leer el caso completo aquí: [años de facturación al día en un despacho de procuradores](/casos/sanchez-garcia-procuradores).
+
+## Cómo empezar esta semana
+
+1. **Apunta durante tres días** dónde se va el tiempo de tu equipo. Sin herramientas: papel y boli. Lo que salga repetido, ahí está tu proyecto.
+2. **Elige lo más repetitivo y menos crítico** de esa lista. No lo más complejo: lo más aburrido.
+3. **Móntalo o pide que te lo monten**, úsalo dos semanas y mide. Si no te ahorra tiempo real, no sirve, por muy moderno que suene.
+
+Y si prefieres que lo miremos juntos, en 20 minutos te digo cuál sería tu primer proyecto y qué puedes esperar de él. Sin compromiso: si creo que la IA no te va a ayudar, también te lo digo.
 
 <Faq items={[
   {
-    q: '¿La automatización con IA es segura para documentación judicial?',
-    a: 'Sí, si se diseña bien: el sistema clasifica y organiza, pero las decisiones con relevancia procesal siguen pasando por una persona. La IA quita trabajo mecánico, no responsabilidad.',
+    q: '¿Es seguro automatizar con IA la documentación judicial de un despacho?',
+    a: 'Sí, si se diseña bien. El sistema clasifica, organiza y prepara; las decisiones con relevancia procesal siguen pasando siempre por una persona. La IA quita trabajo mecánico, nunca responsabilidad. Y lo que el sistema no clasifica con seguridad se queda en una bandeja de revisión manual.',
   },
   {
-    q: '¿Hace falta cambiar el software de gestión del despacho?',
-    a: 'Normalmente no. Las automatizaciones se conectan a lo que ya usas: correo, carpetas, tu programa de gestión. Se añade una capa, no se sustituye nada.',
+    q: '¿Tengo que cambiar el programa de gestión del despacho?',
+    a: 'No. Las automatizaciones se conectan a lo que ya usas: tu correo, tus carpetas y tu programa de gestión. Se añade una capa por encima, no se sustituye nada. Nadie del equipo tiene que aprender un software nuevo desde cero.',
+  },
+  {
+    q: '¿Por dónde debería empezar un despacho de procuradores?',
+    a: 'Por su cuello de botella real, no por la herramienta de moda. Si el volumen de LexNET es alto, por la clasificación de notificaciones. Si el problema es el correo, por ahí. Si el tiempo se va redactando, por asistentes de redacción con tus propios modelos. En el despacho de A Coruña con el que trabajo, lo primero fue la facturación.',
   },
   {
     q: '¿Cuánto tarda en montarse una automatización así?',
-    a: 'Las primeras automatizaciones útiles pueden estar funcionando en pocas semanas. Se empieza por lo más repetitivo y se amplía por fases.',
+    a: 'Las primeras automatizaciones útiles pueden estar funcionando en pocas semanas. Se empieza por un proceso concreto, se usa, se mide y se amplía por fases. Nada de proyectos de seis meses sin resultados visibles.',
+  },
+  {
+    q: '¿Y si en mi despacho hay gente poco acostumbrada a la tecnología?',
+    a: 'Es lo habitual en el sector y se cuenta con ello desde el primer día. Por eso no se cambia el programa de gestión ni se obliga a nadie a aprender herramientas nuevas: la automatización trabaja por detrás y el equipo sigue viendo la información donde siempre. Cuando hace falta formación, es práctica y con los casos reales del despacho.',
+  },
+  {
+    q: '¿Esto afecta al cumplimiento del EU AI Act?',
+    a: 'La obligación de alfabetización en IA (Art. 4 del Reglamento europeo) está vigente desde el 2 de febrero de 2025 y aplica a cualquier empresa cuyo personal use sistemas de IA, incluidos los despachos. La aplicación general del Reglamento llega el 2 de agosto de 2026. Formar al equipo cubre ese requisito y además hace que la IA se use bien.',
   },
 ]} />
 

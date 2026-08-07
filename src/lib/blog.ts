@@ -18,14 +18,14 @@ export type Post = {
 export const posts: Post[] = [
   {
     slug: 'automatizar-gestion-documental-procuradores',
-    titulo: 'Cómo un despacho de procuradores puede automatizar el 70% de su gestión documental',
+    titulo: 'IA en un despacho de procuradores: por dónde empezar de verdad',
     descripcion:
-      'Guía práctica para despachos de procuradores: qué tareas documentales se pueden automatizar con IA, por dónde empezar y qué resultados esperar.',
-    fecha: '2026-07-31',
-    keywords: ['IA para despachos de procuradores', 'automatizar LexNET', 'automatización despacho procuradores'],
+      'Cómo encontrar tu cuello de botella real (LexNET, correo o redacción), por dónde empezar con IA en un despacho de procuradores y qué resultados esperar. Con un caso real de A Coruña.',
+    fecha: '2026-08-07',
+    keywords: ['IA para despachos de procuradores', 'automatizar LexNET', 'automatización despacho procuradores', 'IA despachos legales Galicia'],
     imagen: '/blog/foto-procuradores.webp',
-    imagenAlt: 'Portada: automatizar el 70% de la gestión documental de un despacho',
-    borrador: true,
+    imagenAlt: 'Manos firmando documentos en un despacho profesional',
+    borrador: false,
   },
   {
     slug: 'de-la-pista-de-tenis-a-la-ia',
