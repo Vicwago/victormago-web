@@ -81,6 +81,7 @@ export default function Footer() {
               <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" style={{ fontFamily: C.fontBody, fontSize: 13, color: C.mutedLight, letterSpacing: '0.04em' }}>LinkedIn →</a>
               <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" style={{ fontFamily: C.fontBody, fontSize: 13, color: C.mutedLight, letterSpacing: '0.04em' }}>Instagram →</a>
               <a href={`mailto:${SOCIAL.email}`} style={{ fontFamily: C.fontBody, fontSize: 13, color: C.mutedLight, letterSpacing: '0.04em' }}>{SOCIAL.email}</a>
+              <a href="tel:+34637905866" style={{ fontFamily: C.fontBody, fontSize: 13, color: C.mutedLight, letterSpacing: '0.04em' }}>+34 637 90 58 66</a>
             </div>
           </div>
         </div>

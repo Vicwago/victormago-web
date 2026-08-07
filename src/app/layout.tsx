@@ -98,8 +98,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@id': `${SITE_URL}/#service`,
               name: NAP.name,
               url: SITE_URL,
+              telephone: '+34637905866',
+              email: 'victor@norteia.es',
               founder: { '@id': `${SITE_URL}/#person` },
               areaServed: ['A Coruña', 'Galicia', 'España'],
+              knowsAbout: [
+                'inteligencia artificial para pymes',
+                'automatización de procesos con IA',
+                'asistentes virtuales con RAG',
+                'EU AI Act y alfabetización en IA (Art. 4)',
+                'formación de equipos en IA',
+                'agentes de IA para CRM y prospección',
+              ],
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: NAP.locality,
