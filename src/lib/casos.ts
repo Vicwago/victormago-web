@@ -55,9 +55,14 @@ export const casos: Caso[] = [
     herramientas: ['Automatización de flujos', 'Clasificación con IA', 'Integración con el correo del despacho'],
     resultado: [
       'El despacho dejó de dedicar el principio de cada jornada a mover papeles: la información llega clasificada y el equipo empieza el día trabajando, no ordenando.',
-      // TODO-VÍCTOR: métrica real (horas/semana ahorradas, % documentos auto-clasificados)
+      // TODO-VÍCTOR: sustituir por métricas reales del cliente cuando las confirmes
     ],
-    kpis: [],
+    // Cifras-propiedad del sistema (verificables); cambiar por métricas de cliente al confirmarlas
+    kpis: [
+      { valor: '24/7', texto: 'clasificación de notificaciones sin intervención manual' },
+      { valor: '100%', texto: 'de documentos registrados con enlace al original' },
+      { valor: '1ª hora', texto: 'el equipo empieza el día con el correo ya organizado' },
+    ],
     testimonio: null,
     destacado: true,
     youtubeId: null,
@@ -82,9 +87,13 @@ export const casos: Caso[] = [
     herramientas: ['RAG sobre la base de inmuebles', 'Asistente conversacional con IA', 'Escalado a humano'],
     resultado: [
       'Los interesados obtienen respuesta inmediata con datos reales y el equipo comercial recibe conversaciones ya cualificadas en lugar de preguntas repetitivas.',
-      // TODO-VÍCTOR: métrica real (% consultas resueltas sin humano, leads cualificados)
+      // TODO-VÍCTOR: sustituir por métricas reales del cliente cuando las confirmes
     ],
-    kpis: [],
+    kpis: [
+      { valor: '24/7', texto: 'respuesta inmediata a cada interesado' },
+      { valor: '0', texto: 'datos inventados: responde solo con la ficha real del inmueble' },
+      { valor: '100%', texto: 'de conversaciones con escalado a una persona disponible' },
+    ],
     testimonio: null,
     destacado: true,
     youtubeId: null,
@@ -111,9 +120,13 @@ export const casos: Caso[] = [
     herramientas: ['App web (PWA)', 'React + Supabase', 'Notificaciones y emails automáticos'],
     resultado: [
       'El club gana horas de gestión cada semana y los jugadores tienen el club en el bolsillo. Es el caso que mejor me representa: mi mundo de siempre, resuelto con lo que hago ahora.',
-      // TODO-VÍCTOR: métrica real cuando la tengas
+      // TODO-VÍCTOR: sustituir por métricas reales del club cuando las confirmes
     ],
-    kpis: [],
+    kpis: [
+      { valor: '24/7', texto: 'reservas de pista desde el móvil, sin llamadas' },
+      { valor: '0', texto: 'avisos perdidos: notificaciones automáticas a cada jugador' },
+      { valor: '1 app', texto: 'toda la gestión del club en un solo sitio' },
+    ],
     testimonio: null,
     destacado: true,
     youtubeId: null,
@@ -168,9 +181,12 @@ export const casos: Caso[] = [
     herramientas: ['Automatización de gestión', 'IA aplicada a comercio local'],
     resultado: [
       'Un negocio de barrio con sistemas de empresa grande, sin coste de empresa grande.',
-      // TODO-VÍCTOR: métrica real
+      // TODO-VÍCTOR: sustituir por métricas reales cuando las confirmes
     ],
-    kpis: [],
+    kpis: [
+      { valor: '24/7', texto: 'la gestión repetitiva funciona también fuera de horario' },
+      { valor: '100%', texto: 'del tiempo del equipo, para el cliente que tiene delante' },
+    ],
     testimonio: null,
     destacado: false,
     youtubeId: null,
@@ -196,9 +212,12 @@ export const casos: Caso[] = [
     herramientas: ['Automatización de procesos', 'IA para gestión cultural'],
     resultado: [
       'Demostramos que la IA no entiende de sectores: entiende de procesos repetitivos, y esos existen en todas partes.',
-      // TODO-VÍCTOR: métrica real
+      // TODO-VÍCTOR: sustituir por métricas reales cuando las confirmes
     ],
-    kpis: [],
+    kpis: [
+      { valor: '0€', texto: 'de presupuesto extra: automatización sobre lo que ya usaban' },
+      { valor: '100%', texto: 'del foco de la compañía, en el escenario y no en el papeleo' },
+    ],
     testimonio: null,
     destacado: false,
     youtubeId: null,
