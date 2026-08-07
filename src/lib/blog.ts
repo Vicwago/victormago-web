@@ -29,14 +29,14 @@ export const posts: Post[] = [
   },
   {
     slug: 'de-la-pista-de-tenis-a-la-ia',
-    titulo: 'De la pista de tenis a la consultoría de IA',
+    titulo: 'De la pista de tenis a la IA: 15 años detectando patrones',
     descripcion:
-      '15 años enseñando a jugadores a anticiparse. Esta es la historia de cómo esa misma habilidad se convirtió en mi trabajo con la inteligencia artificial.',
-    fecha: '2026-07-31',
-    keywords: ['IA para entrenadores de tenis', 'consultor IA A Coruña', 'marca personal IA'],
+      'Quince años entrenando tenis me enseñaron que las personas repiten patrones donde se sienten cómodas. Las empresas hacen exactamente lo mismo. Cómo pasé de la pista a automatizar procesos con IA.',
+    fecha: '2026-08-07',
+    keywords: ['cambiar de sector a la IA', 'consultor IA A Coruña', 'aprender inteligencia artificial sin ser ingeniero', 'marca personal IA'],
     imagen: '/blog/foto-tenis.webp',
-    imagenAlt: 'Portada: de la pista de tenis a la consultoría de IA',
-    borrador: true,
+    imagenAlt: 'Jugador de tenis sacando en una pista de tierra batida, vista cenital',
+    borrador: false,
   },
   {
     slug: 'eu-ai-act-pymes',
