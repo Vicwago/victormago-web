@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/webinar`, priority: 0.5, changeFrequency: 'monthly' },
     { url: `${SITE_URL}/recursos/automatizaciones-pymes`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${SITE_URL}/diagnostico`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${SITE_URL}/newsletter`, priority: 0.7, changeFrequency: 'monthly' },
   ]
 
   const casoRoutes: MetadataRoute.Sitemap = casos.map(c => ({

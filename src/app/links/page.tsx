@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 // Todos los enlaces llevan UTM para medir qué trae cada red.
 const enlaces = [
   { label: 'Reserva 20 min gratis', href: '/contacto?utm_source=bio&utm_medium=social&utm_campaign=links', destacado: true },
+  { label: 'Newsletter: IA que Impulsa (semanal)', href: '/newsletter?utm_source=bio&utm_medium=social&utm_campaign=links', destacado: false },
   { label: 'Diagnóstico exprés (3 min, gratis)', href: '/diagnostico?utm_source=bio&utm_medium=social&utm_campaign=links', destacado: false },
   { label: 'PDF: 5 automatizaciones para tu pyme', href: '/recursos/automatizaciones-pymes?utm_source=bio&utm_medium=social&utm_campaign=links', destacado: false },
   { label: 'Casos reales', href: '/casos?utm_source=bio&utm_medium=social&utm_campaign=links', destacado: false },

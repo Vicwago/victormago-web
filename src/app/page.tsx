@@ -108,7 +108,7 @@ const productos: Producto[] = [
     tag: 'Herramienta',
     nombre: 'Faro',
     texto: 'Auditoría con IA de la presencia digital de negocios locales: detecta qué falla en tu web, tu ficha de Google y tu reputación antes de que te cueste clientes.',
-    imagenes: [],
+    imagenes: ['/productos/faro-informe.webp', '/productos/faro-analisis.webp'],
     href: null,
     estado: 'En desarrollo',
   },
