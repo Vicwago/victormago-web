@@ -63,3 +63,25 @@ export const posts: Post[] = [
 ]
 
 export const getPost = (slug: string) => posts.find(p => p.slug === slug)
+
+// Metadata completa de un artículo (canonical + Open Graph con su portada).
+// Uso en page.mdx:  export const metadata = articleMetadata('mi-slug')
+export function articleMetadata(slug: string) {
+  const p = getPost(slug)
+  if (!p) return {}
+  const url = `https://victormago.com/blog/${p.slug}`
+  return {
+    title: p.titulo,
+    description: p.descripcion,
+    alternates: { canonical: `/blog/${p.slug}` },
+    openGraph: {
+      title: p.titulo,
+      description: p.descripcion,
+      type: 'article',
+      publishedTime: p.fecha,
+      url,
+      images: [{ url: `https://victormago.com${p.imagen}`, alt: p.imagenAlt }],
+    },
+    twitter: { card: 'summary_large_image' },
+  }
+}

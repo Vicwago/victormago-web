@@ -1,12 +1,8 @@
 import ArticleLayout from '@/components/ArticleLayout'
 import Faq from '@/components/Faq'
+import { articleMetadata } from '@/lib/blog'
 
-export const metadata = {
-  title: 'El EU AI Act ya se aplica: qué significa para tu pyme',
-  description:
-    'El Reglamento europeo de IA entró en aplicación general el 2 de agosto de 2026 y la obligación de alfabetización lleva vigente desde febrero de 2025. Qué te obliga hoy, qué se aplazó y qué hacer esta semana.',
-  alternates: { canonical: '/blog/eu-ai-act-pymes' },
-}
+export const metadata = articleMetadata('eu-ai-act-pymes')
 
 <ArticleLayout slug="eu-ai-act-pymes">
 

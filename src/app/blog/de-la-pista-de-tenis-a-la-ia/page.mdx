@@ -1,12 +1,8 @@
 import ArticleLayout from '@/components/ArticleLayout'
 import Faq from '@/components/Faq'
+import { articleMetadata } from '@/lib/blog'
 
-export const metadata = {
-  title: 'De la pista de tenis a la IA: 15 años detectando patrones',
-  description:
-    'Quince años entrenando tenis me enseñaron que las personas repiten patrones donde se sienten cómodas. Las empresas hacen exactamente lo mismo. Esta es la historia de cómo pasé de la pista a automatizar procesos con IA.',
-  alternates: { canonical: '/blog/de-la-pista-de-tenis-a-la-ia' },
-}
+export const metadata = articleMetadata('de-la-pista-de-tenis-a-la-ia')
 
 <ArticleLayout slug="de-la-pista-de-tenis-a-la-ia">
 

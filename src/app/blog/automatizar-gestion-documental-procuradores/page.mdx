@@ -1,12 +1,8 @@
 import ArticleLayout from '@/components/ArticleLayout'
 import Faq from '@/components/Faq'
+import { articleMetadata } from '@/lib/blog'
 
-export const metadata = {
-  title: 'IA en un despacho de procuradores: por dónde empezar de verdad',
-  description:
-    'Guía práctica para despachos de procuradores: cómo encontrar tu cuello de botella real (LexNET, correo o redacción), por dónde empezar con IA y qué resultados esperar. Con un caso real de A Coruña.',
-  alternates: { canonical: '/blog/automatizar-gestion-documental-procuradores' },
-}
+export const metadata = articleMetadata('automatizar-gestion-documental-procuradores')
 
 <ArticleLayout slug="automatizar-gestion-documental-procuradores">
 

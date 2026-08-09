@@ -1,12 +1,8 @@
 import ArticleLayout from '@/components/ArticleLayout'
 import Faq from '@/components/Faq'
+import { articleMetadata } from '@/lib/blog'
 
-export const metadata = {
-  title: 'El sistema con el que trabajo: un CRM con agentes de IA',
-  description:
-    'Mission Control es el CRM que usamos en NorteIA: prospecta, hace seguimiento y hasta construye webs de demostración solo. Te cuento qué hace sin que yo toque nada, qué decido yo, y qué parte puedes copiar en tu negocio.',
-  alternates: { canonical: '/blog/mission-control-crm-agentes-ia' },
-}
+export const metadata = articleMetadata('mission-control-crm-agentes-ia')
 
 <ArticleLayout slug="mission-control-crm-agentes-ia">
 
