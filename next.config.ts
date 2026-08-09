@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'i.ytimg.com' },
     ],
   },
+  async headers() {
+    return [
+      // Assets para publicar en redes vía herramientas externas (Buffer):
+      // CORS abierto solo en /ig/* para poder inyectarlos como archivos.
+      {
+        source: '/ig/:path*',
+        headers: [{ key: 'Access-Control-Allow-Origin', value: '*' }],
+      },
+    ]
+  },
   async redirects() {
     return [
       // Arquitectura antigua → nueva (301). No eliminar: conservan el SEO
