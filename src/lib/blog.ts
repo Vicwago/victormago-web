@@ -56,8 +56,8 @@ export const posts: Post[] = [
       'Mission Control prospecta, hace seguimiento y hasta construye webs de demostración solo. Qué hace sin que yo toque nada, qué decido yo a mano y qué parte puedes copiar en tu negocio.',
     fecha: '2026-08-08',
     keywords: ['CRM con agentes IA', 'automatizar prospección con IA', 'agentes IA empresa', 'automatizar seguimiento comercial'],
-    imagen: '/blog/foto-missioncontrol.webp',
-    imagenAlt: 'Panel de control con gráficas de datos en una pantalla de portátil',
+    imagen: '/productos/mission-control-dashboard.webp',
+    imagenAlt: 'Panel general de Mission Control con el pipeline comercial y los leads en cartera',
     borrador: false,
   },
 ]

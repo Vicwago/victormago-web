@@ -116,7 +116,7 @@ const productos: Producto[] = [
     tag: 'Sistema interno',
     nombre: 'Mission Control',
     texto: 'Nuestro CRM con agentes de IA: prospecta, hace seguimiento y documenta el trabajo comercial casi solo. Lo usamos cada día en NorteIA.',
-    imagenes: [],
+    imagenes: ['/productos/mission-control-dashboard.webp', '/productos/mission-control-agentes.webp'],
     href: '/blog/mission-control-crm-agentes-ia',
   },
 ]
