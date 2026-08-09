@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
             <a href="https://victormago.com/recursos/automatizaciones-pymes" style="font-size:14px;color:#2C03F3;text-decoration:underline;">→ 5 automatizaciones que cualquier pyme puede montar esta semana</a>
           </p>
           <p style="margin:0 0 32px;">
-            <a href="https://victormago.com/blog/eu-ai-act-pymes" style="font-size:14px;color:#2C03F3;text-decoration:underline;">→ EU AI Act: qué te obliga YA y qué llega el 2 de agosto de 2026</a>
+            <a href="https://victormago.com/blog/eu-ai-act-pymes" style="font-size:14px;color:#2C03F3;text-decoration:underline;">→ El EU AI Act ya se aplica: qué significa para tu pyme</a>
           </p>
           <p style="margin:0;font-size:13px;color:#8B889A;line-height:1.6;">
             Si esto no es para ti, tienes el enlace de baja al pie de cada envío.

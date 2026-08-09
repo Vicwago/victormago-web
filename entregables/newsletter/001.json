@@ -1,0 +1,28 @@
+{
+  "numero": 1,
+  "asunto": "Tu empresa ya está obligada por la ley de IA (y casi nadie lo sabe)",
+  "previewText": "El artículo 4 se aplica desde febrero de 2025. Esto es lo que hay que hacer esta semana.",
+  "titular": "La obligación que llevas incumpliendo desde febrero",
+  "parrafos": [
+    "El 2 de agosto entró en aplicación general el Reglamento europeo de IA, y con él se repitió en todas partes la misma frase: «tranquilo, lo importante se ha aplazado». Es verdad a medias. Lo que se aplazó es el régimen de alto riesgo. Lo que afecta a tu pyme ya está en vigor.",
+    "Si en tu empresa alguien usa ChatGPT, Copilot o cualquier IA para trabajar —aunque sea por su cuenta y sin decírtelo—, el artículo 4 te obliga desde febrero de 2025 a formar a tu equipo en el uso correcto de la IA. Y si no hay registro de esa formación, no puedes demostrar que cumples.",
+    "La parte buena: esto no es burocracia vacía. Enseñar a tu equipo qué puede y qué no puede hacer con la IA es exactamente lo mismo que necesitas para que la IA os ahorre tiempo sin poner en riesgo datos de clientes. Cumplir la norma y usar bien la IA son, por una vez, la misma tarea."
+  ],
+  "destacado": {
+    "etiqueta": "El artículo de la semana",
+    "titulo": "El EU AI Act ya se aplica: qué significa para tu pyme",
+    "url": "https://victormago.com/blog/eu-ai-act-pymes"
+  },
+  "encorto": [
+    {
+      "titulo": "Nuevo: el sistema con el que trabajo — un CRM con agentes de IA",
+      "url": "https://victormago.com/blog/mission-control-crm-agentes-ia"
+    },
+    {
+      "titulo": "Diagnóstico exprés: 5 preguntas y te digo por dónde empezaría en tu caso",
+      "url": "https://victormago.com/diagnostico"
+    }
+  ],
+  "ps": "Si conoces a alguien a quien esto le venga bien, reenvíaselo. El alta está al pie de victormago.com.",
+  "broadcastId": "1f35f8e7-94b7-4e23-9a7d-00f5b97dcda8"
+}
