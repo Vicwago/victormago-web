@@ -51,14 +51,14 @@ export const posts: Post[] = [
   },
   {
     slug: 'mission-control-crm-agentes-ia',
-    titulo: 'Así trabaja un CRM con agentes de IA: Mission Control',
+    titulo: 'El sistema con el que trabajo: un CRM con agentes de IA',
     descripcion:
-      'Documentamos el sistema que usamos en NorteIA: un CRM donde agentes de IA prospectan, contactan y hacen seguimiento de forma casi automática.',
-    fecha: '2026-07-31',
-    keywords: ['CRM con agentes IA', 'automatizar prospección con IA', 'agentes IA empresa'],
+      'Mission Control prospecta, hace seguimiento y hasta construye webs de demostración solo. Qué hace sin que yo toque nada, qué decido yo a mano y qué parte puedes copiar en tu negocio.',
+    fecha: '2026-08-08',
+    keywords: ['CRM con agentes IA', 'automatizar prospección con IA', 'agentes IA empresa', 'automatizar seguimiento comercial'],
     imagen: '/blog/foto-missioncontrol.webp',
-    imagenAlt: 'Portada: así trabaja un CRM con agentes de IA',
-    borrador: true,
+    imagenAlt: 'Panel de control con gráficas de datos en una pantalla de portátil',
+    borrador: false,
   },
 ]
 

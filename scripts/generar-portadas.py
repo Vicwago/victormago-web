@@ -1,4 +1,4 @@
-# Genera las portadas del blog y la imagen OG con la identidad "El punto".
+﻿# Genera las portadas del blog y la imagen OG con la identidad "El punto".
 # Cada artículo nuevo del pipeline puede añadirse aquí y regenerar.
 # Uso:  python scripts/generar-portadas.py
 from pathlib import Path
@@ -10,25 +10,25 @@ PORTADAS = [
     {
         "slug": "automatizar-gestion-documental-procuradores",
         "kicker": "Nicho legal",
-        "titulo": "Automatizar el 70% de la gestión documental de un despacho",
+        "titulo": "IA en un despacho: por dónde empezar de verdad",
         "tema": "noche",
     },
     {
         "slug": "de-la-pista-de-tenis-a-la-ia",
         "kicker": "Mi historia",
-        "titulo": "De la pista de tenis a la consultoría de IA",
+        "titulo": "De la pista de tenis a la IA: 15 años detectando patrones",
         "tema": "azul",
     },
     {
         "slug": "eu-ai-act-pymes",
         "kicker": "EU AI Act",
-        "titulo": "Qué te obliga YA y qué llega el 2 de agosto de 2026",
+        "titulo": "El EU AI Act ya se aplica: qué significa para tu pyme",
         "tema": "papel",
     },
     {
         "slug": "mission-control-crm-agentes-ia",
         "kicker": "Sistemas",
-        "titulo": "Así trabaja un CRM con agentes de IA",
+        "titulo": "El sistema con el que trabajo: un CRM con agentes de IA",
         "tema": "noche",
     },
 ]
@@ -79,7 +79,7 @@ with sync_playwright() as p:
     # OG por defecto del sitio
     page2 = browser.new_page(viewport={"width": 1200, "height": 630}, device_scale_factor=2)
     page2.set_content(
-        plantilla("Consultor de IA · A Coruña", "Enseño a las empresas a anticiparse con la IA",
+        plantilla("Consultor de IA · A Coruña", "Sistemas de IA que ahorran cientos de horas a tu equipo",
                   "papel", 1200, 630, "Víctor Mago · victormago.com"),
         wait_until="networkidle")
     page2.screenshot(path=str(ROOT / "public/og.png"))

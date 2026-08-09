@@ -2,57 +2,81 @@ import ArticleLayout from '@/components/ArticleLayout'
 import Faq from '@/components/Faq'
 
 export const metadata = {
-  title: 'Así trabaja un CRM con agentes de IA: Mission Control',
+  title: 'El sistema con el que trabajo: un CRM con agentes de IA',
   description:
-    'Documentamos el sistema que usamos en NorteIA: un CRM donde agentes de IA prospectan, contactan y hacen seguimiento de forma casi automática. Con capturas y arquitectura real.',
+    'Mission Control es el CRM que usamos en NorteIA: prospecta, hace seguimiento y hasta construye webs de demostración solo. Te cuento qué hace sin que yo toque nada, qué decido yo, y qué parte puedes copiar en tu negocio.',
   alternates: { canonical: '/blog/mission-control-crm-agentes-ia' },
 }
 
 <ArticleLayout slug="mission-control-crm-agentes-ia">
 
-{/* ═══════════════════════════════════════════════════════════════
-    TODO-VÍCTOR: ARTÍCULO EN ESQUELETO — la pieza "enséñalo, no lo
-    cuentes" del ecosistema. Documenta Mission Control con capturas
-    reales (ocultando datos de clientes) y si grabas un vlog del
-    sistema, el vídeo va aquí con <VideoEmbed id="..." />.
-    ═══════════════════════════════════════════════════════════════ */}
+Cuando le digo a una empresa que automatice su trabajo comercial, la pregunta razonable es: *"¿y tú lo haces?"*.
 
-En NorteIA no solo montamos sistemas de IA para clientes. Nosotros trabajamos con uno.
-Se llama Mission Control y es nuestro CRM: la diferencia con un CRM normal es que aquí
-los agentes de IA hacen parte del trabajo comercial por nosotros.
+Sí. Se llama Mission Control y es el sistema con el que trabajamos en NorteIA. No es un producto que venda: es nuestra herramienta interna, y por eso puedo contarte lo que hace de verdad, incluido lo que sigo haciendo yo a mano.
 
-Este artículo lo documenta por dentro. No es un producto que vendo: es la prueba de cómo
-trabajamos.
+## Lo que hace sin que yo toque nada
 
-## Qué hace Mission Control mientras yo estoy en la pista
+**Prospección.** Es lo que más tiempo me quitaba antes y lo que más me ahorra ahora. El sistema identifica negocios que encajan con lo que hacemos, recopila la información pública de cada uno y me los deja preparados en el CRM, listos para trabajar. Yo antes hacía eso a mano, negocio por negocio.
 
-{/* TODO-VÍCTOR: dictar la lista real — prospección, seguimiento de leads,
-    tareas, facturas, contenido... qué hace cada agente */}
+**Creación de webs de demostración.** Esta es la que más sorprende a la gente. Para enseñarle a un negocio local lo que podría tener, el sistema **construye y publica una web de muestra hecha a su medida**, con su información real. Antes, preparar una demo así era medio día de trabajo por cliente. Ahora está hecha antes de que yo abra el ordenador.
 
-## La arquitectura, sin secretos
+**Seguimiento.** Registra cada interacción con cada cliente y **me avisa de cuándo tengo que volver a contactar**. Esto parece lo menos vistoso y es lo que más dinero salva: los presupuestos no se pierden porque el cliente diga que no, se pierden porque nadie vuelve a llamar.
 
-{/* TODO-VÍCTOR: decidir con Luis qué se puede enseñar de la arquitectura
-    (React + Supabase + agentes) y con qué nivel de detalle */}
+**Facturación y tareas.** Todo en el mismo sitio, conectado con el resto. Sin saltar entre herramientas.
 
-## Los leads de esta web también entran solos
+Y sí: los leads de esta web que estás leyendo entran solos ahí. Cuando alguien rellena un formulario o deja su email en el chat, aparece en el CRM con su origen etiquetado. Nadie copia emails a mano.
 
-Cada formulario de esta web — el contacto, el PDF de automatizaciones, el webinar —
-entra automáticamente en Mission Control. Nadie copia emails a mano. Esa es la idea
-que intento transmitir a cada cliente: si lo haces más de dos veces por semana y es
-igual las dos veces, no deberías estar haciéndolo tú.
+## Lo que decido yo (y no pienso automatizar)
 
-## Qué puedes copiar de esto para tu empresa
+Aquí está la parte que casi nadie cuenta cuando enseña su sistema de automatización.
 
-{/* TODO-VÍCTOR: dictar 3-4 lecciones aplicables a cualquier pyme */}
+Hay dos cosas que sigo decidiendo yo, siempre:
+
+1. **El copy.** Lo que se le dice a cada persona lo escribo o lo apruebo yo. Un mensaje comercial genérico se nota a un kilómetro, y quemas al contacto para siempre.
+2. **Cuándo se envía.** El sistema prepara, propone y avisa. El botón de enviar lo pulso yo.
+
+Podría automatizar las dos cosas. No lo hago a propósito. **La IA hace el trabajo repetitivo; las decisiones que afectan a la relación con una persona las tomo yo.** Ese es exactamente el criterio que aplico también en los proyectos de clientes.
+
+## Cómo está montado, por encima
+
+Sin entrar en el detalle de la arquitectura, las piezas son las que recomendaría a cualquiera:
+
+- Una **base de datos y un panel propios** donde vive todo (clientes, interacciones, tareas, facturas), en lugar de tener la información repartida entre cinco herramientas.
+- **Agentes de IA** especializados: cada uno se ocupa de una parte del trabajo (prospectar, preparar, hacer seguimiento) en vez de un asistente genérico que lo hace todo regular.
+- **Automatizaciones que conectan** lo que ya usamos: el correo, la web, el calendario.
+
+Nada de esto es exótico. Lo llamativo no son las herramientas: es haber decidido **qué parte del trabajo deja de ser humana**.
+
+## Qué puedes copiar tú mañana
+
+Si tienes un negocio pequeño, no necesitas construir un Mission Control. Necesitas tres piezas, y estas sí las puedes montar por orden:
+
+**1. Prospección.** Deja de buscar clientes a mano. Que un sistema te prepare la lista con la información ya recopilada y tú dediques tu tiempo a hablar con ellos, no a buscarlos.
+
+**2. Facturación.** Saber en todo momento qué has cobrado y qué no, sin abrir cinco archivos. Es la automatización menos glamurosa y la que más dinero recupera — en un despacho de procuradores con el que trabajo, poner al día años de facturación pendiente se hizo en torno al 10% del tiempo que habría llevado a mano.
+
+**3. Seguimiento.** Que algo te avise de a quién tienes que volver a contactar y cuándo. Si esto depende de tu memoria, estás perdiendo clientes ahora mismo sin enterarte.
+
+Esas tres, en ese orden. La cuarta ya la decides cuando las tres primeras funcionen.
+
+Si quieres ver cuál de las tres te correspondería primero a ti, tienes el [diagnóstico exprés](/diagnostico): cinco preguntas y te digo por dónde empezaría en tu caso. O [reserva 20 minutos conmigo](/contacto) y lo miramos juntos.
 
 <Faq items={[
   {
     q: '¿Mission Control se puede comprar?',
-    a: 'No es un producto de catálogo: es nuestro sistema interno. Pero la arquitectura — CRM + agentes de IA + automatización de leads — la montamos adaptada para clientes.',
+    a: 'No es un producto de catálogo: es el sistema interno con el que trabajamos en NorteIA. Lo que sí hacemos es montar la misma arquitectura adaptada al negocio de cada cliente: CRM propio, agentes de IA para el trabajo repetitivo y automatización de la captación.',
   },
   {
-    q: '¿Cuánta intervención humana necesita?',
-    a: 'Los agentes preparan y ejecutan el trabajo repetitivo; las decisiones comerciales las tomamos las personas. La IA propone, nosotros disponemos.',
+    q: '¿Cuánta intervención humana necesita un sistema así?',
+    a: 'La justa y en el sitio correcto. En mi caso, el sistema prospecta, prepara y avisa; yo decido el mensaje y cuándo se envía. La IA se encarga del trabajo repetitivo, las decisiones que afectan a la relación con una persona las toma un humano.',
+  },
+  {
+    q: '¿Por dónde debería empezar una pyme?',
+    a: 'Por la prospección si tu problema es encontrar clientes, por la facturación si no sabes con certeza qué tienes cobrado, y por el seguimiento si sospechas que se te escapan oportunidades. Casi siempre en ese orden.',
+  },
+  {
+    q: '¿Hace falta un equipo técnico para tener algo así?',
+    a: 'Para la versión completa, sí hace falta quien lo construya: eso lo hacemos con el equipo de NorteIA. Pero las tres piezas básicas (prospección, facturación y seguimiento) se pueden montar con herramientas de automatización estándar y bastante menos presupuesto del que la gente imagina.',
   },
 ]} />
 
