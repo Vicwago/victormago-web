@@ -23,7 +23,7 @@ export default function Reveal({ children, delay = 0, y = 28 }: { children: Reac
     <div ref={ref} style={{
       opacity: visible ? 1 : 0,
       transform: visible ? 'translateY(0)' : `translateY(${y}px)`,
-      transition: `opacity 0.9s ease ${delay}s, transform 0.9s ease ${delay}s`,
+      transition: `opacity 0.5s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.5s cubic-bezier(0.22,1,0.36,1) ${delay}s`,
     }}>{children}</div>
   )
 }
