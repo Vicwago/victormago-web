@@ -1,0 +1,29 @@
+{
+  "numero": 2,
+  "asunto": "El trabajo atrasado que nunca vas a hacer a mano",
+  "previewText": "Todos tenemos una carpeta pendiente desde hace meses. Ahí es donde la IA gana de calle.",
+  "titular": "Empieza por el atasco, no por lo que se ve",
+  "parrafos": [
+    "Cuando alguien me pregunta por dónde empezar con la IA, casi siempre señala hacia fuera: la web, las redes, un chatbot. Y casi siempre el problema real está hacia dentro, en esa carpeta que llevas meses posponiendo porque ponerla al día son semanas de trabajo que nadie tiene.",
+    "Un despacho de procuradores de A Coruña arrastraba años de facturación sin conciliar. Nadie iba a sentarse a cruzar aquello a mano: era una montaña. Con IA se puso al día en torno al 10% del tiempo que habría llevado hacerlo a mano, y aparecieron facturas pendientes de cobro que llevaban tiempo ahí sin que nadie las reclamara.",
+    "Esa es la prueba que te propongo esta semana: no busques qué automatizar del día a día. Busca la tarea atrasada que sabes que nunca vas a hacer. Escríbela en una línea, con lo que tardarías a mano. Si esa línea existe, ya tienes tu primer proyecto de IA — y probablemente sea el que antes se paga solo."
+  ],
+  "destacado": {
+    "etiqueta": "El artículo de la semana",
+    "titulo": "IA en un despacho de procuradores: por dónde empezar de verdad",
+    "url": "https://victormago.com/blog/automatizar-gestion-documental-procuradores"
+  },
+  "encorto": [
+    {
+      "titulo": "El caso completo: años de facturación al día en una fracción del tiempo",
+      "url": "https://victormago.com/casos/sanchez-garcia-procuradores"
+    },
+    {
+      "titulo": "Las 5 automatizaciones que toda pyme puede montar ya (recurso gratis)",
+      "url": "https://victormago.com/recursos/automatizaciones-pymes"
+    }
+  ],
+  "ps": "Si te sale más de una tarea atrasada, respóndeme con las dos y te digo por cuál empezaría.",
+  "broadcastId": "be5dfabf-160d-4134-9e8d-44f0d2b24031",
+  "enviadoAt": "2026-08-21T12:57:21.400Z"
+}

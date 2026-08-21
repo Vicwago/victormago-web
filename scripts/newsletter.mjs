@@ -52,7 +52,8 @@ function render({ preview = false } = {}) {
   const bannerPreview = preview
     ? `<tr><td style="background:#2C03F3;padding:10px 16px;">
          <p style="margin:0;font-size:12px;color:#F5F3EB;letter-spacing:0.08em;text-transform:uppercase;">
-           Borrador Nº ${numero.numero} — pendiente de tu OK. El broadcast está en Resend sin enviar.
+           Borrador Nº ${numero.numero} — SALE SOLO MAÑANA VIERNES A LAS 9:00.<br>
+           Para pararlo: borra este broadcast en Resend, o dímelo en Claude Code.
          </p>
        </td></tr>`
     : ''
@@ -148,5 +149,7 @@ if (flag === '--send') {
     }),
   })
   console.log('PREVIEW enviada a victor@norteia.es')
-  console.log(`Para enviarlo de verdad: node scripts/newsletter.mjs ${archivo} --send`)
+  console.log('Se enviara solo el viernes a las 9:00 (newsletter-ia-que-impulsa-envio).')
+  console.log(`Para pararlo: borra el broadcast en Resend o pon "cancelado": true en ${archivo}`)
+  console.log(`Para enviarlo ya, sin esperar: node scripts/newsletter.mjs ${archivo} --send`)
 }
