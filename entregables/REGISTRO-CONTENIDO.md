@@ -39,15 +39,17 @@
 | mar 1 sep | 9:00 | LinkedIn | Construyo tu web antes de que pagues | ✅ | programado |
 | mié 2 sep | 19:30 | Instagram | 4 preguntas para quien te venda IA | ✅ | programado |
 | jue 3 sep | 9:00 | LinkedIn | El error más caro: proceso roto | ✅ | programado |
-| vie 4 sep | 9:00 | LinkedIn | Septiembre: "este año sí" | ✅ | ⚠️ **SIN TILDES — repasar** |
+| vie 4 sep | 9:00 | LinkedIn | Septiembre: "este año sí" | ✅ | programado |
+
+**Todos verificados: con imagen, con tildes correctas y con CTA a la newsletter (cero WhatsApp).**
 
 ### Borradores en Buffer (reels esperando vídeo de Víctor)
 
-| Borrador | Tema | Veredicto |
+| Borrador | Tema | Estado |
 |---|---|---|
-| Clip A — "¿Cuántas horas pierde tu equipo copiando datos?" | Fricción | ✅ Usable |
-| Clip C — "Esta web la terminamos antes de que pagara" | Método construir-primero | ⚠️ Choca con el LI del 1 sep. Esperar a partir del 22 sep |
-| Clip D — "Llevo 15 años entrenando a personas" | Historia personal | 🔴 **REPETIDO 2 VECES.** No publicar |
+| Clip A — "¿Cuántas horas pierde tu equipo copiando datos?" | Fricción | ✅ Listo. Nota interna: subir el **lun 31/08 18:30** (día libre). CTA ya corregido a la bio |
+| Clip C — "Esta web la terminamos antes de que pagara" | Método construir-primero | ⏸ Listo pero **RESERVADO para la semana del 22/09** (su tema salió en LinkedIn el 1 sep). Nota de aviso dentro del propio borrador. CTA ya corregido |
+| ~~Clip D — "Llevo 15 años entrenando a personas"~~ | Historia personal | ❌ **BORRADO** el 27/08 por estar repetido (LinkedIn 14 ago + Instagram 13 ago) |
 
 ---
 
@@ -152,10 +154,22 @@ Requiere CORS abierto en `/ig/*` (ya configurado en `next.config.ts`).
 
 ## 7. TRAMPAS CONOCIDAS DE BUFFER
 
-- **El editor rechaza los acentos** cuando el entorno se degrada: los envía amontonados
-  al principio del texto ("ññíñíóñ..."). Si pasa: cerrar la pestaña y abrir una NUEVA
-  (recargar no basta). Si aun así falla, escribir el texto SIN tildes y avisar a Víctor
-  para que las repase, o dejarlo preparado en el pack para que él lo pegue.
+- 🔑 **EL EDITOR RECHAZA LOS ACENTOS al escribirlos con el teclado sintético**: los envía
+  amontonados al principio ("ññíñíóñ..."). **SOLUCIÓN DEFINITIVA — usar el portapapeles
+  de Windows, no el teclado:**
+
+  ```powershell
+  # 1) Escribir el texto a un .txt en UTF-8 y cargarlo al portapapeles
+  $t = Get-Content "ruta\post.txt" -Raw -Encoding UTF8
+  Set-Clipboard -Value $t
+  ```
+  ```
+  # 2) En Buffer: clic en el editor → Ctrl+A → verificar con JS que
+  #    window.getSelection().toString().length > 0 → Ctrl+V
+  ```
+  Si Ctrl+A devuelve 0, usar **triple clic** sobre el párrafo concreto (selecciona ese
+  párrafo entero de forma fiable) y pegar encima. Así se editan trozos sueltos sin
+  reescribir todo. Este método SÍ respeta tildes, ñ, ¿ ¡ y emojis.
 - **El composer se queda en blanco** tras varias operaciones seguidas. Misma solución:
   pestaña nueva.
 - **El date picker registra el clic en otra fila.** Verificar SIEMPRE la fecha del botón

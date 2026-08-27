@@ -19,11 +19,11 @@ Revisión de lo que había programado otra conversación. Se detectaron 5 proble
 | Mar 1 | 9:00 | LinkedIn | Construyo tu web antes de que pagues un euro | ✅ li-metodo |
 | Mié 2 | 19:30 | Instagram | 4 preguntas para quien te venda IA | ✅ ig-preguntas |
 | Jue 3 | 9:00 | LinkedIn | El error más caro: automatizar un proceso roto | ✅ li-proceso-roto |
-| Vie 4 | 9:00 | LinkedIn | Septiembre: "este año sí" | ✅ li-septiembre · ⚠️ **SIN TILDES** |
+| Vie 4 | 9:00 | LinkedIn | Septiembre: "este año sí" | ✅ li-septiembre · ✅ corregido |
 
 ### ⚠️ Pendiente en el post del viernes 4
 
-El editor de Buffer se degradó al final de la sesión y dejó de aceptar caracteres acentuados
+**RESUELTO el 27/08:** se corrigió con el método del portapapeles de Windows (ver REGISTRO-CONTENIDO.md, sección 7). El post está publicable tal cual.
 (los enviaba desordenados al principio del texto). El post del viernes quedó con el **texto
 completo y correcto pero sin tildes**. Hay que darle un repaso de 1 minuto: abrir el post en
 Buffer, seleccionar todo y pegar el texto de abajo.
