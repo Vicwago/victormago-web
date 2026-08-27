@@ -1,0 +1,28 @@
+{
+  "numero": 3,
+  "asunto": "La pregunta que respondes 60 veces al mes",
+  "previewText": "Si contestas siempre lo mismo, no te falta gente: te falta que la respuesta esté disponible sin ti.",
+  "titular": "Cuenta cuántas veces respondes lo mismo",
+  "parrafos": [
+    "Hay un trabajo que no aparece en ninguna hoja de cálculo y se come la semana entera: contestar por enésima vez lo que ya has contestado. El horario, el precio, si queda sitio, cuándo empieza. Nadie lo llama trabajo porque cada respuesta dura dos minutos. Multiplícalo por sesenta y ya no son dos minutos.",
+    "En la escuela de tenis donde entreno cada tarde, cada torneo o ranking mueve entre 60 y 80 jugadores, y cada uno preguntaba su horario por teléfono o por WhatsApp. Ahora lo consulta en la app del club y los avisos salen solos: cero llamadas para saber a qué hora juegas. En una inmobiliaria con la que trabajo pasó algo parecido con las consultas de los pisos, que llegan a cualquier hora: desde que un asistente responde con los datos reales de cada ficha, estiman entre un 20% y un 30% más de leads.",
+    "El ejercicio de esta semana es de contar, no de tecnología. Coge la pregunta que más veces te hacen y estima cuántas veces la respondiste el mes pasado. Si el número te incomoda, ya sabes cuál es tu primera automatización — y no es un chatbot que hable bonito: es que la respuesta esté donde la gente la busca, sin ti en medio."
+  ],
+  "destacado": {
+    "etiqueta": "El caso de la semana",
+    "titulo": "Rankings y torneos sin llamadas: la app del club",
+    "url": "https://victormago.com/casos/app-tenis-marineda"
+  },
+  "encorto": [
+    {
+      "titulo": "Un asesor virtual que responde con los datos reales y no se inventa nada",
+      "url": "https://victormago.com/casos/fincastyle-asesor-inmobiliario"
+    },
+    {
+      "titulo": "Diagnóstico exprés: 5 preguntas y te digo por dónde empezaría en tu caso",
+      "url": "https://victormago.com/diagnostico"
+    }
+  ],
+  "ps": "Si me respondes con tu pregunta más repetida, te digo en dos líneas cómo la quitaría de tu día.",
+  "broadcastId": "0b914c33-734f-42d2-a94a-695c0098b2bb"
+}
