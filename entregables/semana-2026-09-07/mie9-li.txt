@@ -1,0 +1,28 @@
+El año pasado le dije a un cliente que no me contratara.
+
+Vino con la idea muy clara: quería un asistente con IA para responder a sus clientes. Había visto una demo, le había encantado, y traía presupuesto.
+
+Le pedí que me enseñara cuántos mensajes recibía a la semana.
+
+Eran once.
+
+Once mensajes. Los contestaba él en veinte minutos, tomándose un café. No había cuello de botella, no había clientes esperando, no había nada que arreglar ahí.
+
+Lo que sí tenía era otro problema: pasaba tardes enteras cuadrando albaranes con facturas, a mano, línea por línea.
+
+Eso no le parecía "de IA". Le parecía simplemente su trabajo.
+
+Y ahí está el patrón que veo una y otra vez: la gente quiere automatizar lo que se ve, y aguanta en silencio lo que no se ve.
+
+Lo que se ve es el chat, la atención al cliente, la parte que luego puedes enseñar.
+Lo que no se ve es el papeleo, el copiar y pegar, el revisar dos veces por si acaso.
+
+El dinero está casi siempre en lo segundo.
+
+No le monté el asistente. Le monté lo de los albaranes. Costó bastante menos y le devolvió las tardes.
+
+Sigue siendo cliente, por cierto. Creo que precisamente por eso.
+
+→ ¿Qué haces tú a mano que no te parece "de IA"?
+
+Cada semana mando una idea aplicable así por correo: victormago.com/newsletter

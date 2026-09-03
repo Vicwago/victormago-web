@@ -30,33 +30,26 @@
 
 ## 2. ESTADO ACTUAL DE LA COLA
 
-**Última actualización: 31 agosto 2026**
+**Ultima actualizacion: 3 septiembre 2026**
 
 | Fecha | Hora | Canal | Post | Imagen | Estado |
 |---|---|---|---|---|---|
-| jue 27 ago | 19:30 | Instagram | 3 señales de que pierdes dinero | ✅ | programado |
-| vie 28 ago | 9:00 | LinkedIn | El diagnóstico en 5 preguntas | ✅ | programado |
-| mar 1 sep | 9:00 | LinkedIn | Construyo tu web antes de que pagues | ✅ | programado |
-| mié 2 sep | 19:30 | Instagram | 4 preguntas para quien te venda IA | ✅ | programado |
-| jue 3 sep | 9:00 | LinkedIn | El error más caro: proceso roto | ✅ | programado |
 | vie 4 sep | 9:00 | LinkedIn | Septiembre: "este año sí" | ✅ | programado |
-| lun 7 sep | 9:00 | LinkedIn | Cuánto cuesta de verdad automatizar | ⏳ | planificado |
-| mar 8 sep | 19:30 | Instagram | 5 señales de que tu CRM es un Excel con corbata | ⏳ | planificado |
-| mié 9 sep | 9:00 | LinkedIn | El cliente que no necesitaba IA | ⏳ | planificado |
-| jue 10 sep | 19:30 | Instagram | REEL — automatizar no es despedir | ⏳ | pendiente de grabar |
-| vie 11 sep | 9:00 | LinkedIn | Qué automatizar primero: autónomo vs. equipo | ⏳ | planificado |
+| lun 7 sep | 9:00 | LinkedIn | Cuánto cuesta de verdad automatizar | ✅ li-precio | programado |
+| mar 8 sep | 19:30 | Instagram | 5 señales: CRM = hoja de cálculo | ✅ ig-crm-hoja | programado |
+| mié 9 sep | 9:00 | LinkedIn | El cliente al que le dije que no | ✅ li-no-necesitaba | programado |
+| **jue 10 sep** | **19:30** | **Instagram** | **HUECO PARA EL REEL** (Clip A) | vídeo de Víctor | pendiente de grabar |
+| vie 11 sep | 9:00 | LinkedIn | Automatizar no es despedir | ✅ li-equipo | programado |
 
-**Todos verificados: con imagen, con tildes correctas y con CTA a la newsletter (cero WhatsApp).**
+**Todos verificados: con imagen propia, con tildes, con CTA a la newsletter (cero WhatsApp)
+y SIN link preview** (ver punto 7: hay que pulsar "Replace link preview with media").
 
 ### Borradores en Buffer (reels esperando vídeo de Víctor)
 
 | Borrador | Tema | Estado |
 |---|---|---|
-| Clip A — "¿Cuántas horas pierde tu equipo copiando datos?" | Fricción | ✅ Listo. Nota interna: subir el **lun 31/08 18:30** (día libre). CTA ya corregido a la bio |
-| Clip C — "Esta web la terminamos antes de que pagara" | Método construir-primero | ⏸ Listo pero **RESERVADO para la semana del 22/09** (su tema salió en LinkedIn el 1 sep). Nota de aviso dentro del propio borrador. CTA ya corregido |
-| ~~Clip D — "Llevo 15 años entrenando a personas"~~ | Historia personal | ❌ **BORRADO** el 27/08 por estar repetido (LinkedIn 14 ago + Instagram 13 ago) |
-
----
+| Clip A — "¿Cuántas horas pierde tu equipo copiando datos?" | Fricción | ▶ **Va en el hueco del jue 10/09 19:30.** La nota interna del borrador aún dice 31/08 (fecha ya pasada): ignorarla |
+| Clip C — "Esta web la terminamos antes de que pagara" | Método construir-primero | ⏸ RESERVADO para la semana del 22/09 (su tema salió en LinkedIn el 1 sep) |
 
 ## 3. TEMAS QUEMADOS (ya publicados)
 
@@ -79,11 +72,10 @@
 | 4 preguntas para quien te venda IA | Instagram | 2 sep |
 | El error más caro: automatizar un proceso roto | LinkedIn | 3 sep |
 | Septiembre: "este año sí" / empieza por lo pequeño | LinkedIn | 4 sep |
-| Cuánto cuesta de verdad automatizar (transparencia de precios) | LinkedIn | 7 sep (previsto) |
-| 5 señales de que tu CRM es una hoja de cálculo con corbata | Instagram | 8 sep (previsto) |
-| El cliente que no necesitaba IA (y se lo dije) | LinkedIn | 9 sep (previsto) |
-| Automatizar no es despedir: qué pasa con el equipo | Instagram (reel) | 10 sep (previsto) |
-| Qué automatizar primero si eres autónomo vs. con equipo | LinkedIn | 11 sep (previsto) |
+| Cuánto cuesta de verdad automatizar (transparencia de precios) | LinkedIn | 7 sep |
+| 5 señales de que tu CRM es una hoja de cálculo con corbata | Instagram | 8 sep |
+| El cliente al que le dije que no necesitaba IA (los 11 mensajes) | LinkedIn | 9 sep |
+| Automatizar no es despedir: qué pasa con el equipo | LinkedIn | 11 sep |
 
 ---
 
@@ -112,6 +104,7 @@ Cada vez que uses uno, muévelo a la tabla del punto 3.
 - Qué pasa cuando la IA se equivoca en tu negocio (y cómo lo previenes)
 
 **Práctico / accionable**
+- Qué automatizar primero si eres autónomo (vs. si tienes equipo)
 - Cómo escribir un proceso para que se pueda automatizar (plantilla)
 - La reunión de 20 minutos que ahorra 20 horas
 
@@ -159,29 +152,86 @@ Requiere CORS abierto en `/ig/*` (ya configurado en `next.config.ts`).
 
 ## 7. TRAMPAS CONOCIDAS DE BUFFER
 
-- 🔑 **EL EDITOR RECHAZA LOS ACENTOS al escribirlos con el teclado sintético**: los envía
-  amontonados al principio ("ññíñíóñ..."). **SOLUCIÓN DEFINITIVA — usar el portapapeles
-  de Windows, no el teclado:**
+### 7.1 🔑 El editor rechaza el texto con tildes (LA trampa principal)
 
-  ```powershell
-  # 1) Escribir el texto a un .txt en UTF-8 y cargarlo al portapapeles
-  $t = Get-Content "ruta\post.txt" -Raw -Encoding UTF8
-  Set-Clipboard -Value $t
-  ```
-  ```
-  # 2) En Buffer: clic en el editor → Ctrl+A → verificar con JS que
-  #    window.getSelection().toString().length > 0 → Ctrl+V
-  ```
-  Si Ctrl+A devuelve 0, usar **triple clic** sobre el párrafo concreto (selecciona ese
-  párrafo entero de forma fiable) y pegar encima. Así se editan trozos sueltos sin
-  reescribir todo. Este método SÍ respeta tildes, ñ, ¿ ¡ y emojis.
-- **El composer se queda en blanco** tras varias operaciones seguidas. Misma solución:
-  pestaña nueva.
-- **El date picker registra el clic en otra fila.** Verificar SIEMPRE la fecha del botón
-  inferior antes de Schedule.
-- **El selector de canal recuerda el último usado.** Comprobar el preview (dice
-  "LinkedIn Preview" o "Instagram Preview") antes de escribir.
-- Atajo: el botón "New post" del canal en la barra lateral preselecciona ese canal.
+El editor de Buffer es Lexical y **descarta el texto escrito con teclado sintético**:
+los acentos llegan amontonados al principio ("ññíñíóñ..."). El portapapeles de Windows
++ Ctrl+V funciona, pero solo si la ventana de Chrome está en primer plano.
+
+**MÉTODO DEFINITIVO — evento `paste` sintético. Funciona siempre, incluso con la
+pestaña en segundo plano, y respeta tildes, ñ, ¿ ¡, → y emojis:**
+
+```js
+const ed = document.querySelector('[role="dialog"] [contenteditable="true"]');
+ed.focus();
+const s = getSelection(), rg = document.createRange();
+rg.selectNodeContents(ed); s.removeAllRanges(); s.addRange(rg);   // selecciona todo
+const dt = new DataTransfer();
+dt.setData('text/plain', TXT);
+ed.dispatchEvent(new ClipboardEvent('paste', {clipboardData: dt, bubbles: true, cancelable: true}));
+```
+
+Para meter TXT sin pelearse con el escapado: generar el literal con
+`python -c "import json; print('const TXT='+json.dumps(texto, ensure_ascii=False))"`.
+Verificar después con `/[áéíóúñ¿]/.test(ed.innerText)`.
+
+### 7.2 🔴 La link preview se come la tarjeta (LinkedIn)
+
+Si el post contiene un enlace (p. ej. victormago.com/newsletter), Buffer añade una
+**link preview** que se publica EN LUGAR de la imagen, aunque la imagen esté adjunta.
+Se detecta porque en la cola aparece "Víctor Mago — Consultor de IA…" bajo el post.
+
+**Arreglo, en este orden exacto:**
+1. Pulsar el botón `Replace link preview with media`.
+2. Se abre un panel "Suggested media": cerrarlo con `Close suggested media`.
+3. **Esto borra la imagen adjunta** → volver a inyectarla con el fetch del punto 6.
+4. Comprobar que el pie ahora dice `Replace with link attachment` (media ganando).
+5. Guardar con `Save`.
+
+Comprobación rápida en la cola: `document.body.innerText.match(/Consultor de IA/g)`
+debe devolver `null`.
+
+### 7.3 Selección de canal
+
+El composer **recuerda los canales del último post** y a veces abre con los dos
+seleccionados. Identificarlos por el src del avatar, no por posición:
+LinkedIn = `6a78f657` · Instagram = `69fbc210`.
+
+```js
+const des = [...d.querySelectorAll('button')].filter(b => /Deselect channel/i.test(
+  (b.getAttribute('aria-label')||'') + (b.textContent||'')));
+```
+Antes de programar, verificar que queda **exactamente 1** canal seleccionado.
+
+### 7.4 Fecha y hora
+
+- El día se elige por `aria-label` exacto, nunca por el número visible (dos celdas
+  pueden poner "7": la de septiembre y la de octubre):
+  `[...document.querySelectorAll('button')].find(e => e.getAttribute('aria-label')==='Monday, September 7th, 2026')`
+- La hora es un input controlado por React: hay que usar el setter nativo.
+  A veces no prende a la primera → **repetir y verificar** el pie del composer.
+
+```js
+const set = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set;
+inp.focus(); inp.click();
+set.call(inp, '9:00 AM');
+inp.dispatchEvent(new Event('input', {bubbles:true}));
+inp.dispatchEvent(new Event('change', {bubbles:true}));
+inp.dispatchEvent(new KeyboardEvent('keydown', {key:'Enter', keyCode:13, bubbles:true}));
+```
+Verificar SIEMPRE con `document.body.innerText.match(/Sep \d+, \d+:\d+ [AP]M/g)` antes de Schedule.
+
+### 7.5 El composer se cuelga
+
+Tras 2-3 posts seguidos, el composer abre en blanco (0 avatares) y el CDP da timeout.
+**Cerrar la pestaña y abrir una NUEVA** — recargar no basta. Contar con ello: aparece
+cada 2 o 3 posts. Además, los scripts de más de ~40 s dan timeout: trocear en llamadas
+cortas en vez de una función larga.
+
+### 7.6 Otros
+
+- La vista `Drafts` a veces no carga y sigue mostrando la Queue (bug de Buffer).
+- Escribir sin foco en el editor dispara los atajos de teclado y navega a Insights.
 
 ---
 
