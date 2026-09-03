@@ -30,7 +30,7 @@
 
 ## 2. ESTADO ACTUAL DE LA COLA
 
-**Última actualización: 27 agosto 2026**
+**Última actualización: 31 agosto 2026**
 
 | Fecha | Hora | Canal | Post | Imagen | Estado |
 |---|---|---|---|---|---|
@@ -40,6 +40,11 @@
 | mié 2 sep | 19:30 | Instagram | 4 preguntas para quien te venda IA | ✅ | programado |
 | jue 3 sep | 9:00 | LinkedIn | El error más caro: proceso roto | ✅ | programado |
 | vie 4 sep | 9:00 | LinkedIn | Septiembre: "este año sí" | ✅ | programado |
+| lun 7 sep | 9:00 | LinkedIn | Cuánto cuesta de verdad automatizar | ⏳ | planificado |
+| mar 8 sep | 19:30 | Instagram | 5 señales de que tu CRM es un Excel con corbata | ⏳ | planificado |
+| mié 9 sep | 9:00 | LinkedIn | El cliente que no necesitaba IA | ⏳ | planificado |
+| jue 10 sep | 19:30 | Instagram | REEL — automatizar no es despedir | ⏳ | pendiente de grabar |
+| vie 11 sep | 9:00 | LinkedIn | Qué automatizar primero: autónomo vs. equipo | ⏳ | planificado |
 
 **Todos verificados: con imagen, con tildes correctas y con CTA a la newsletter (cero WhatsApp).**
 
@@ -74,6 +79,11 @@
 | 4 preguntas para quien te venda IA | Instagram | 2 sep |
 | El error más caro: automatizar un proceso roto | LinkedIn | 3 sep |
 | Septiembre: "este año sí" / empieza por lo pequeño | LinkedIn | 4 sep |
+| Cuánto cuesta de verdad automatizar (transparencia de precios) | LinkedIn | 7 sep (previsto) |
+| 5 señales de que tu CRM es una hoja de cálculo con corbata | Instagram | 8 sep (previsto) |
+| El cliente que no necesitaba IA (y se lo dije) | LinkedIn | 9 sep (previsto) |
+| Automatizar no es despedir: qué pasa con el equipo | Instagram (reel) | 10 sep (previsto) |
+| Qué automatizar primero si eres autónomo vs. con equipo | LinkedIn | 11 sep (previsto) |
 
 ---
 
@@ -92,10 +102,7 @@
 Cada vez que uses uno, muévelo a la tabla del punto 3.
 
 **Método y criterio**
-- Cuánto cuesta de verdad automatizar algo (transparencia de precios)
 - Por qué empiezo siempre por escribir el proceso a mano
-- El cliente que no necesitaba IA (y se lo dije)
-- Automatizar no es despedir: qué pasa con el equipo
 - La diferencia entre una automatización y un parche
 
 **Errores y anti-humo**
@@ -106,8 +113,6 @@ Cada vez que uses uno, muévelo a la tabla del punto 3.
 
 **Práctico / accionable**
 - Cómo escribir un proceso para que se pueda automatizar (plantilla)
-- 5 señales de que tu CRM es una hoja de cálculo con corbata
-- Qué automatizar primero si eres autónomo (vs. si tienes equipo)
 - La reunión de 20 minutos que ahorra 20 horas
 
 **Sector / local**

@@ -1,0 +1,28 @@
+{
+  "numero": 4,
+  "asunto": "El lead no se pierde cuando entra: se pierde el jueves",
+  "previewText": "Conseguir que te escriban es la parte fácil. Lo caro es lo que pasa —o no pasa— los cinco días siguientes.",
+  "titular": "Tu problema no es conseguir leads",
+  "parrafos": [
+    "Casi todo el mundo que me escribe quiere lo mismo: más clientes. Más visitas, más anuncios, más presencia. Y cuando miramos su semana de verdad, el agujero casi nunca está en la entrada. Está en lo que pasa después: gente que preguntó el lunes, a la que ibas a contestar «esta tarde», y hoy ya es jueves.",
+    "En una inmobiliaria con la que trabajo pusimos un asistente que responde a cualquier hora con los datos reales de cada inmueble, y estiman entre un 20% y un 30% más de leads. Pero lo interesante no es que responda de noche: es que nadie tiene que acordarse. En mi propio sistema pasa igual — un CRM con agentes que prospecta y hace seguimiento sin que yo lo empuje. Yo decido a quién y qué le ofrezco; el recordar no es trabajo mío.",
+    "La prueba de esta semana no necesita ninguna herramienta nueva. Abre tu bandeja y cuenta cuántas conversaciones llevan más de tres días sin respuesta tuya. Ese número es tu facturación aparcada. Y es la primera automatización que yo montaría en tu negocio: no un chatbot que capte más, sino algo que no deje caer lo que ya entró."
+  ],
+  "destacado": {
+    "etiqueta": "El artículo de la semana",
+    "titulo": "El sistema con el que trabajo: un CRM con agentes de IA",
+    "url": "https://victormago.com/blog/mission-control-crm-agentes-ia"
+  },
+  "encorto": [
+    {
+      "titulo": "Las 5 automatizaciones que toda pyme puede montar ya (recurso gratis)",
+      "url": "https://victormago.com/recursos/automatizaciones-pymes"
+    },
+    {
+      "titulo": "Diagnóstico exprés: 5 preguntas y te digo por dónde empezaría en tu caso",
+      "url": "https://victormago.com/diagnostico"
+    }
+  ],
+  "ps": "Si el número te ha salido feo, respóndeme con él. No hace falta que me cuentes nada más.",
+  "broadcastId": "670147d8-804c-40e2-838e-b0e50bbde5b0"
+}

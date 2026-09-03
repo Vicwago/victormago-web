@@ -56,22 +56,23 @@ def lista(items):
 
 
 TARJETAS = [
-    dict(out="li-metodo.jpg", fmt=H_LI, tema=PAPEL, kicker="Cómo trabajo",
-         titulo="Construyo tu web antes de que pagues un euro",
-         items=[], cta="El método, en victormago.com →"),
-    dict(out="li-proceso-roto.jpg", fmt=H_LI, tema=NOCHE, kicker="El error más caro",
-         titulo="Automatizar un proceso roto solo te da errores más rápidos",
-         items=[], cta="Cómo evitarlo →"),
-    dict(out="ig-preguntas.jpg", fmt=H_IG, tema=PAPEL, kicker="Guárdate esto",
-         titulo="4 preguntas para quien te venda IA",
-         items=["¿Qué proceso mío mejora, exactamente?",
-                "¿Qué pasa el día que tú no estés?",
-                "¿Dónde acaban los datos de mis clientes?",
-                "¿Qué parte sigo decidiendo yo?"],
+    dict(out="li-precio.jpg", fmt=H_LI, tema=NOCHE, kicker="Hablemos de dinero",
+         titulo="Nadie publica precios en esto. Voy a hacerlo yo",
+         items=[], cta="Cómo se reparte el coste →"),
+    dict(out="li-no-necesitaba.jpg", fmt=H_LI, tema=PAPEL, kicker="Historia real",
+         titulo="El año pasado le dije a un cliente que no me contratara",
+         items=[], cta="Por qué, en victormago.com →"),
+    dict(out="li-equipo.jpg", fmt=H_LI, tema=NOCHE, kicker="La pregunta incómoda",
+         titulo="Automatizar no es despedir. Es quitar la peor hora del día",
+         items=[], cta="Lo que pasa de verdad →"),
+    dict(out="ig-crm-hoja.jpg", fmt=H_IG, tema=PAPEL, kicker="Guárdate esto",
+         titulo="5 señales de que tu CRM es una hoja de cálculo con corbata",
+         items=["Solo una persona sabe cómo funciona",
+                "Existe el archivo final_bueno_2",
+                "Nadie sabe cuándo se habló con quién",
+                "Te avisa tu memoria, no el sistema",
+                "Para ver el mes, sumas a mano"],
          cta="Más ideas, en la bio →"),
-    dict(out="li-septiembre.jpg", fmt=H_LI, tema=PAPEL, kicker="Septiembre",
-         titulo="Todos los años me escribe alguien diciendo: este año sí",
-         items=[], cta="Empieza por lo pequeño →"),
 ]
 
 OUT = Path("C:/Users/victor/Documents/WebVictor/public/ig")
