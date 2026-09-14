@@ -30,31 +30,28 @@
 
 ## 2. ESTADO ACTUAL DE LA COLA
 
-**Ultima actualizacion: 7 septiembre 2026 (tarde)**
+**Última actualización: lunes 14 septiembre 2026 (mediodía)**
+
+La semana del 7-11 sep ya se publicó. El Clip A NO llegó a grabarse para el jue 10.
+
+### Semana del 14 al 18 sep — PROGRAMADA y verificada en Buffer
 
 | Fecha | Hora | Canal | Post | Imagen | Estado |
 |---|---|---|---|---|---|
-| vie 4 sep | 9:00 | LinkedIn | Septiembre: "este año sí" | ✅ | programado |
-| lun 7 sep | 9:00 | LinkedIn | Cuánto cuesta de verdad automatizar | ✅ li-precio | programado |
-| mar 8 sep | 19:30 | Instagram | 5 señales: CRM = hoja de cálculo | ✅ ig-crm-hoja | programado |
-| mié 9 sep | 9:00 | LinkedIn | El cliente al que le dije que no | ✅ li-no-necesitaba | programado |
-| **jue 10 sep** | **19:30** | **Instagram** | **REEL Clip A** — horas copiando datos | vídeo de Víctor | guion listo · Víctor graba el **mar 8** |
-| vie 11 sep | 9:00 | LinkedIn | Automatizar no es despedir | ✅ li-equipo | programado |
+| lun 14 sep | **17:30** | LinkedIn | Qué automatizar primero: autónomo vs. equipo | ✅ li-primero-autonomo | programado (a las 17:30 porque se subió a mediodía) |
+| mar 15 sep | 19:30 | Instagram | Plantilla: tu proceso en 5 líneas | ✅ ig-proceso-5-lineas | programado |
+| mié 16 sep | 9:00 | LinkedIn | Qué pasa cuando la IA se equivoca (3 reglas) | ✅ li-cuando-falla | programado |
+| **jue 17 sep** | **19:30** | **Instagram** | **REEL de Víctor** (graba y Claude lo edita) | vídeo | pendiente del vídeo |
+| vie 18 sep | 9:00 | LinkedIn | Qué automatizan de verdad las pymes de A Coruña | ✅ li-coruna | programado |
 
-**Todos verificados: con imagen propia, con tildes, con CTA a la newsletter (cero WhatsApp)
-y SIN link preview** (ver punto 7: hay que pulsar "Replace link preview with media").
+Verificado: 4 posts, cada uno con su tarjeta, tildes correctas, CTA a la newsletter, cero WhatsApp y cero link previews.
+Copys en `entregables/semana-2026-09-14/`.
 
-### Planificado — semana del 14 al 18 sep (aún NO programado en Buffer)
-
-Plan completo en `entregables/plan-semana-2026-09-14.md`.
-
-| Fecha | Hora | Canal | Post | Tarjeta sugerida |
-|---|---|---|---|---|
-| lun 14 sep | 9:00 | LinkedIn | Qué automatizar primero: autónomo vs. equipo | li-primero-autonomo |
-| mar 15 sep | 19:30 | Instagram | 3 promesas de IA que no deberías creerte | ig-promesas-ia |
-| mié 16 sep | 9:00 | LinkedIn | Qué pasa cuando la IA se equivoca (y cómo se previene) | li-cuando-falla |
-| jue 17 sep | 19:30 | Instagram | El coste oculto de las herramientas "gratis" | ig-coste-gratis |
-| vie 18 sep | 9:00 | LinkedIn | Qué automatizan de verdad las pymes de A Coruña | li-coruna |
+**Cambios respecto al plan automático del 7/09:**
+- Mar 15: "3 promesas de IA que no deberías creerte" DESCARTADO por solaparse con
+  "4 preguntas para quien te venda IA" (IG, 2 sep). Sustituido por la plantilla del proceso en 5 líneas.
+- Jue 17: "El coste oculto de las herramientas gratis" DESCARTADO porque ese hueco es el reel.
+  Ambos temas vuelven al banco (punto 5), con aviso de solapamiento.
 
 ### Planificado — semana del 21 al 25 sep (aún NO programado en Buffer)
 
@@ -72,7 +69,7 @@ Plan completo en `entregables/plan-semana-2026-09-21.md` (generado el lun 14/09)
 
 | Borrador | Tema | Estado |
 |---|---|---|
-| Clip A — "¿Cuántas horas pierde tu equipo copiando datos?" | Fricción | ▶ **Va en el hueco del jue 10/09 19:30.** Guion escrito el 7 sep en `entregables/guion-reel-clipA-2026-09-10.md` — Víctor graba el mar 8. La nota interna del borrador aún dice 31/08: ignorarla. **Sustituir también el caption del borrador por el del guion** |
+| Clip A — "¿Cuántas horas pierde tu equipo copiando datos?" | Fricción | ▶ No se grabó para el jue 10. **Candidato natural para el reel del jue 17/09 19:30** (guion en `entregables/guion-reel-clipA-2026-09-10.md`). Víctor graba y pasa el vídeo; Claude edita y sube. Sustituir el caption del borrador por el del guion |
 | Clip C — "Esta web la terminamos antes de que pagara" | Método construir-primero | ▶ **Va en el hueco del mar 22/09 19:30** (plan del 14/09). Su tema salió en LinkedIn el 1 sep. Víctor debe grabarlo antes del lun 21. Si no hay vídeo, el hueco queda vacío |
 
 ## 3. TEMAS QUEMADOS (ya publicados)
@@ -100,11 +97,11 @@ Plan completo en `entregables/plan-semana-2026-09-21.md` (generado el lun 14/09)
 | 5 señales de que tu CRM es una hoja de cálculo con corbata | Instagram | 8 sep |
 | El cliente al que le dije que no necesitaba IA (los 11 mensajes) | LinkedIn | 9 sep |
 | Automatizar no es despedir: qué pasa con el equipo | LinkedIn | 11 sep |
-| Qué automatizar primero: autónomo vs. equipo | LinkedIn | 14 sep (previsto) |
-| 3 promesas de IA que no deberías creerte | Instagram | 15 sep (previsto) |
-| Qué pasa cuando la IA se equivoca (y cómo se previene) | LinkedIn | 16 sep (previsto) |
-| El coste oculto de las herramientas "gratis" | Instagram | 17 sep (previsto) |
-| Qué automatizan de verdad las pymes de A Coruña | LinkedIn | 18 sep (previsto) |
+| Qué automatizar primero: autónomo vs. equipo | LinkedIn | 14 sep |
+| Plantilla: tu proceso en 5 líneas (qué lo dispara → cuándo decides tú) | Instagram | 15 sep |
+| Qué pasa cuando la IA se equivoca: 3 reglas (solo datos que existen, sabe decir no lo sé, registro) | LinkedIn | 16 sep |
+| REEL de Víctor a cámara (tema según lo que grabe) | Instagram | 17 sep (previsto) |
+| Qué automatizan de verdad las pymes de A Coruña (facturar, clasificar, responder, avisar) | LinkedIn | 18 sep |
 | La diferencia entre una automatización y un parche | LinkedIn | 21 sep (previsto) |
 | Reel Clip C: web terminada antes de que pagara (construir-primero) | Instagram | 22 sep (previsto) |
 | La reunión de 20 min: preguntar a quien hace la tarea, no a quien la manda | LinkedIn | 23 sep (previsto) |
@@ -133,6 +130,8 @@ Cada vez que uses uno, muévelo a la tabla del punto 3.
 - Por qué empiezo siempre por escribir el proceso a mano
 
 **Errores y anti-humo**
+- 3 promesas de IA que no deberías creerte (⚠️ cerca de "4 preguntas para quien te venda IA" del 2 sep: no antes de octubre)
+- El coste oculto de las herramientas "gratis" (⚠️ cerca de "cuánto cuesta automatizar" del 7 sep: no antes de octubre)
 - Por qué la mayoría de chatbots de empresa dan vergüenza ajena
   (ojo: no antes de octubre, porque se pisa con "cuando la IA se equivoca" del 16/09)
 
@@ -255,6 +254,23 @@ Tras 2-3 posts seguidos, el composer abre en blanco (0 avatares) y el CDP da tim
 **Cerrar la pestaña y abrir una NUEVA** — recargar no basta. Contar con ello: aparece
 cada 2 o 3 posts. Además, los scripts de más de ~40 s dan timeout: trocear en llamadas
 cortas en vez de una función larga.
+
+### 7.5b Cambios en la interfaz de Buffer (detectados el 14/09/2026)
+
+- Los botones de canal ahora se llaman `Deselect <handle>`: `Deselect victormagoheredia`
+  (LinkedIn) y `Deselect vicwago` (Instagram). Existe además `Deselect all`, que no es un canal.
+- El composer ya no muestra avatares sugeridos. Para añadir un canal: botón `Add channel`
+  → opciones `victormagoheredia(linkedin)` / `vicwago(instagram)`. Luego quitar el sobrante
+  con su `Deselect <handle>`. Al elegir Instagram aparecen los tipos `Post / Reel / Story`.
+- El selector de programación (`schedule-selector-trigger`) es un menú Radix: **se abre con
+  `pointerdown`, no con `click()`**. Después se elige `Set Date and Time`.
+- Si el día elegido es HOY, no hace falta pulsar el día (ya viene marcado): solo cambiar la hora.
+- Abrir el composer y esperar dentro del mismo script cuelga la pestaña. Mejor: una llamada
+  que solo hace clic en `New Post` y otra, 10 s después, que comprueba.
+- Truco que ahorra mucho: guardar los textos y las funciones auxiliares en `localStorage`
+  de publish.buffer.com (`__vm_textos`, `__vm_helpers`) y recuperarlas con
+  `(0,eval)(localStorage.getItem('__vm_helpers'))` tras abrir cada pestaña nueva.
+  Los textos se pasan como JSON con escapes `\uXXXX` (ASCII puro) para evitar problemas de codificación.
 
 ### 7.6 Otros
 
