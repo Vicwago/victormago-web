@@ -1,0 +1,29 @@
+{
+  "numero": 5,
+  "asunto": "Un despacho, una inmobiliaria y una escuela de tenis",
+  "previewText": "Tres negocios que no se parecen en nada y, debajo, exactamente el mismo atasco.",
+  "titular": "Tu sector no es tu problema",
+  "parrafos": [
+    "«Ya, pero es que lo mío es distinto». Lo escucho en casi todas las primeras reuniones, y casi siempre lo dice alguien convencido de que la IA es para empresas de otro tipo. Luego abrimos su semana de verdad y lo que aparece no tiene nada que ver con el sector.",
+    "Un despacho de procuradores de A Coruña arrastraba años de facturación sin conciliar: la puesta al día se hizo en torno al 10% del tiempo que habría llevado a mano. En la escuela de tenis donde entreno, cada torneo mueve entre 60 y 80 jugadores y cada uno preguntaba su horario por teléfono. En una inmobiliaria con la que trabajo, las consultas entraban de noche y se quedaban ahí; desde que las responde un asistente con los datos reales, estiman entre un 20% y un 30% más de leads. Legal, deporte, inmobiliario. Debajo, lo mismo: datos que alguien tenía que mover a mano.",
+    "Así que el ejercicio de esta semana no empieza por la tecnología ni por tu sector. Escribe las tres tareas que repites cada semana y que haría igual un negocio que no se parece en nada al tuyo: pasar datos de un sitio a otro, contestar lo mismo, comprobar si algo llegó. Esas tres son las candidatas. Lo específico de tu sector casi nunca es lo primero que se automatiza, y casi nunca es lo que más tiempo te come."
+  ],
+  "destacado": {
+    "etiqueta": "El artículo de la semana",
+    "titulo": "De la pista de tenis a la IA: 15 años detectando patrones",
+    "url": "https://victormago.com/blog/de-la-pista-de-tenis-a-la-ia"
+  },
+  "encorto": [
+    {
+      "titulo": "Hasta en la danza: IA en un sector donde casi nadie la está usando",
+      "url": "https://victormago.com/casos/nova-galega-de-danza"
+    },
+    {
+      "titulo": "Diagnóstico exprés: 5 preguntas y te digo por dónde empezaría en tu caso",
+      "url": "https://victormago.com/diagnostico"
+    }
+  ],
+  "ps": "Si me respondes con tu sector y una de esas tres tareas, te digo cuál automatizaría yo primero.",
+  "broadcastId": "5837707b-9c46-4f8a-a6d5-5c368f7b6d41",
+  "enviadoAt": "2026-09-11T07:09:10.974Z"
+}

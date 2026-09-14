@@ -1,0 +1,26 @@
+"¿Y si la IA se equivoca con un cliente?"
+
+Es la pregunta buena. Mucho mejor que "¿funciona?".
+
+Porque se va a equivocar alguna vez. Igual que se equivoca una persona que lleva dos semanas en la empresa. La diferencia no está en si falla, sino en lo que pasa el día que falla.
+
+Cuando monto algo que habla con clientes, pongo tres reglas antes de escribir una sola línea:
+
+→ Solo responde con información que existe.
+Si el dato no está en la ficha, en el catálogo o en el documento que le hemos dado, no lo dice. No rellena huecos. No se inventa un precio "aproximado".
+
+→ Sabe decir "esto no lo sé".
+Y en ese momento pasa la conversación a una persona, con todo el contexto, para que el cliente no tenga que repetir nada.
+
+→ Todo queda registrado.
+Qué preguntó el cliente, qué se le contestó y cuándo. Si algo sale mal, se ve en dos minutos y se corrige para la siguiente.
+
+En un asesor virtual que monté para una inmobiliaria, la primera regla fue literal: si no está en la ficha del inmueble, no se dice. Cero datos inventados.
+
+Parece una limitación. En realidad es lo que permite dejarlo funcionando de noche sin estar pendiente: sabes exactamente qué va a hacer y qué no.
+
+Una IA que dice "no lo sé" da menos miedo que una que lo sabe todo.
+
+→ Si hoy pusieras un asistente a hablar con tus clientes, ¿qué es lo que nunca debería decir?
+
+Cada semana mando una idea aplicable así por correo: victormago.com/newsletter

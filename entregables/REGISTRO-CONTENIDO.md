@@ -30,7 +30,7 @@
 
 ## 2. ESTADO ACTUAL DE LA COLA
 
-**Ultima actualizacion: 3 septiembre 2026**
+**Ultima actualizacion: 7 septiembre 2026 (tarde)**
 
 | Fecha | Hora | Canal | Post | Imagen | Estado |
 |---|---|---|---|---|---|
@@ -38,18 +38,42 @@
 | lun 7 sep | 9:00 | LinkedIn | Cuánto cuesta de verdad automatizar | ✅ li-precio | programado |
 | mar 8 sep | 19:30 | Instagram | 5 señales: CRM = hoja de cálculo | ✅ ig-crm-hoja | programado |
 | mié 9 sep | 9:00 | LinkedIn | El cliente al que le dije que no | ✅ li-no-necesitaba | programado |
-| **jue 10 sep** | **19:30** | **Instagram** | **HUECO PARA EL REEL** (Clip A) | vídeo de Víctor | pendiente de grabar |
+| **jue 10 sep** | **19:30** | **Instagram** | **REEL Clip A** — horas copiando datos | vídeo de Víctor | guion listo · Víctor graba el **mar 8** |
 | vie 11 sep | 9:00 | LinkedIn | Automatizar no es despedir | ✅ li-equipo | programado |
 
 **Todos verificados: con imagen propia, con tildes, con CTA a la newsletter (cero WhatsApp)
 y SIN link preview** (ver punto 7: hay que pulsar "Replace link preview with media").
 
+### Planificado — semana del 14 al 18 sep (aún NO programado en Buffer)
+
+Plan completo en `entregables/plan-semana-2026-09-14.md`.
+
+| Fecha | Hora | Canal | Post | Tarjeta sugerida |
+|---|---|---|---|---|
+| lun 14 sep | 9:00 | LinkedIn | Qué automatizar primero: autónomo vs. equipo | li-primero-autonomo |
+| mar 15 sep | 19:30 | Instagram | 3 promesas de IA que no deberías creerte | ig-promesas-ia |
+| mié 16 sep | 9:00 | LinkedIn | Qué pasa cuando la IA se equivoca (y cómo se previene) | li-cuando-falla |
+| jue 17 sep | 19:30 | Instagram | El coste oculto de las herramientas "gratis" | ig-coste-gratis |
+| vie 18 sep | 9:00 | LinkedIn | Qué automatizan de verdad las pymes de A Coruña | li-coruna |
+
+### Planificado — semana del 21 al 25 sep (aún NO programado en Buffer)
+
+Plan completo en `entregables/plan-semana-2026-09-21.md` (generado el lun 14/09).
+
+| Fecha | Hora | Canal | Post | Tarjeta sugerida |
+|---|---|---|---|---|
+| lun 21 sep | 9:00 | LinkedIn | La diferencia entre una automatización y un parche | li-parche |
+| mar 22 sep | 19:30 | Instagram | **REEL Clip C** (Víctor): "Esta web la terminamos antes de que pagara" | vídeo de Víctor |
+| mié 23 sep | 9:00 | LinkedIn | La reunión de 20 min: pregunta a quien hace la tarea, no a quien la manda | li-quien-lo-hace |
+| jue 24 sep | 19:30 | Instagram | IA en un despacho vs. IA en una tienda: qué cambia | ig-despacho-tienda |
+| vie 25 sep | 9:00 | LinkedIn | Lo que me llevo de la pista: antes de mejorar, se empeora | li-antes-de-mejorar |
+
 ### Borradores en Buffer (reels esperando vídeo de Víctor)
 
 | Borrador | Tema | Estado |
 |---|---|---|
-| Clip A — "¿Cuántas horas pierde tu equipo copiando datos?" | Fricción | ▶ **Va en el hueco del jue 10/09 19:30.** La nota interna del borrador aún dice 31/08 (fecha ya pasada): ignorarla |
-| Clip C — "Esta web la terminamos antes de que pagara" | Método construir-primero | ⏸ RESERVADO para la semana del 22/09 (su tema salió en LinkedIn el 1 sep) |
+| Clip A — "¿Cuántas horas pierde tu equipo copiando datos?" | Fricción | ▶ **Va en el hueco del jue 10/09 19:30.** Guion escrito el 7 sep en `entregables/guion-reel-clipA-2026-09-10.md` — Víctor graba el mar 8. La nota interna del borrador aún dice 31/08: ignorarla. **Sustituir también el caption del borrador por el del guion** |
+| Clip C — "Esta web la terminamos antes de que pagara" | Método construir-primero | ▶ **Va en el hueco del mar 22/09 19:30** (plan del 14/09). Su tema salió en LinkedIn el 1 sep. Víctor debe grabarlo antes del lun 21. Si no hay vídeo, el hueco queda vacío |
 
 ## 3. TEMAS QUEMADOS (ya publicados)
 
@@ -76,6 +100,16 @@ y SIN link preview** (ver punto 7: hay que pulsar "Replace link preview with med
 | 5 señales de que tu CRM es una hoja de cálculo con corbata | Instagram | 8 sep |
 | El cliente al que le dije que no necesitaba IA (los 11 mensajes) | LinkedIn | 9 sep |
 | Automatizar no es despedir: qué pasa con el equipo | LinkedIn | 11 sep |
+| Qué automatizar primero: autónomo vs. equipo | LinkedIn | 14 sep (previsto) |
+| 3 promesas de IA que no deberías creerte | Instagram | 15 sep (previsto) |
+| Qué pasa cuando la IA se equivoca (y cómo se previene) | LinkedIn | 16 sep (previsto) |
+| El coste oculto de las herramientas "gratis" | Instagram | 17 sep (previsto) |
+| Qué automatizan de verdad las pymes de A Coruña | LinkedIn | 18 sep (previsto) |
+| La diferencia entre una automatización y un parche | LinkedIn | 21 sep (previsto) |
+| Reel Clip C: web terminada antes de que pagara (construir-primero) | Instagram | 22 sep (previsto) |
+| La reunión de 20 min: preguntar a quien hace la tarea, no a quien la manda | LinkedIn | 23 sep (previsto) |
+| IA en un despacho vs. IA en una tienda: por dónde entra el trabajo | Instagram | 24 sep (previsto) |
+| Del deporte a las empresas: antes de mejorar, se empeora (fase de ajuste) | LinkedIn | 25 sep (previsto) |
 
 ---
 
@@ -93,30 +127,24 @@ y SIN link preview** (ver punto 7: hay que pulsar "Replace link preview with med
 
 Cada vez que uses uno, muévelo a la tabla del punto 3.
 
+> ⚠️ **Banco bajo (14/09):** quedan 6 temas, poco más de una semana. Pedir ideas nuevas a Víctor.
+
 **Método y criterio**
 - Por qué empiezo siempre por escribir el proceso a mano
-- La diferencia entre una automatización y un parche
 
 **Errores y anti-humo**
-- 3 promesas de IA que no deberías creerte
 - Por qué la mayoría de chatbots de empresa dan vergüenza ajena
-- El coste oculto de las herramientas "gratis"
-- Qué pasa cuando la IA se equivoca en tu negocio (y cómo lo previenes)
+  (ojo: no antes de octubre, porque se pisa con "cuando la IA se equivoca" del 16/09)
 
 **Práctico / accionable**
-- Qué automatizar primero si eres autónomo (vs. si tienes equipo)
 - Cómo escribir un proceso para que se pueda automatizar (plantilla)
-- La reunión de 20 minutos que ahorra 20 horas
 
 **Sector / local**
-- Qué automatizan de verdad las pymes de A Coruña (lo que veo)
-- IA en un despacho vs. IA en una tienda: qué cambia
 - Por qué un negocio local compite mejor con IA que uno grande
 
 **Personal / marca**
-- El día que un cliente me dijo que no y tenía razón
-- Cómo aprendo yo (rutina de estudio de alguien que no es ingeniero)
-- Lo que me llevo del deporte al trabajo con empresas (SIN repetir el ángulo "patrones")
+- El día que un cliente me dijo que no y tenía razón (separar 3 semanas del post del 9/09)
+- Cómo aprendo yo (rutina de estudio de alguien que no es ingeniero). **Necesita que Víctor cuente su rutina real**
 
 ---
 
