@@ -1,0 +1,29 @@
+{
+  "numero": 6,
+  "asunto": "¿Qué se quedó parado en agosto porque alguien estaba de vacaciones?",
+  "previewText": "La automatización más rentable de mi lista no lleva IA. Lleva un aviso que insiste.",
+  "titular": "Si tus plazos viven en la cabeza de alguien, no tienes sistema",
+  "parrafos": [
+    "Septiembre es buen mes para hacerse una pregunta incómoda: ¿qué se quedó parado en agosto porque la persona que lo llevaba estaba de vacaciones? Si en la respuesta aparece algún plazo —un presupuesto que caducaba, una renovación, un pago, una entrega—, el problema no fue agosto. Es que ese plazo vive en la cabeza de alguien, en un post-it o en un Excel que hay que acordarse de abrir.",
+    "El sector donde más he visto trabajar al límite del plazo es el de los despachos de procuradores: «esto hay que presentarlo hoy», «esto vence mañana». Ahí un plazo perdido cuesta dinero o un expediente. Y lo que más protege no es lo más vistoso: es un sistema que revisa la lista cada día, avisa a quien toca a 7, 3 y 1 día, vuelve a avisar si nadie lo marca como hecho y, si el responsable no reacciona, sube el aviso a una segunda persona. Ni siquiera necesita IA. Necesita disciplina de calendario.",
+    "El ejercicio de esta semana es de papel, no de tecnología. Junta en una sola hoja todos los plazos que hoy dependen de que alguien se acuerde, con fecha, responsable y estado. Solo eso. Si la hoja te sale larga, ya sabes cuál es tu siguiente automatización. Y recuerda la regla: un aviso único que se pierde entre cuarenta correos no es un sistema de plazos; el que insiste y escala, sí."
+  ],
+  "destacado": {
+    "etiqueta": "El recurso de la semana",
+    "titulo": "Las 5 automatizaciones que toda pyme puede montar ya (la 5ª es la de los plazos)",
+    "url": "https://victormago.com/recursos/automatizaciones-pymes"
+  },
+  "encorto": [
+    {
+      "titulo": "IA en un despacho de procuradores: por dónde empezar de verdad",
+      "url": "https://victormago.com/blog/automatizar-gestion-documental-procuradores"
+    },
+    {
+      "titulo": "Diagnóstico exprés: 5 preguntas y te digo por dónde empezaría en tu caso",
+      "url": "https://victormago.com/diagnostico"
+    }
+  ],
+  "ps": "Si me respondes con cuántos plazos te han salido en la hoja, te digo si yo los automatizaría ya o esperaría.",
+  "broadcastId": "cefbf58f-7501-420a-9c6f-b5c6d2073f5f",
+  "enviadoAt": "2026-09-18T07:08:37.859Z"
+}

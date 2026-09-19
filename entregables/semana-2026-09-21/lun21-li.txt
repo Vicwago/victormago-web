@@ -1,0 +1,28 @@
+La mayoría de "automatizaciones" que me enseñan no son automatizaciones. Son parches.
+
+Y la diferencia no se ve el día que se montan. Se ve el día que se rompen.
+
+Un parche se reconoce por tres cosas:
+
+→ Depende de que alguien se acuerde. De darle a un botón, de revisar una carpeta, de lanzar el proceso los días 1 y 15.
+
+→ No tiene dueño. Lo montó alguien que ya no está, o el sobrino de un socio, o un comercial que vino un martes. Nadie sabe dónde mirar si falla.
+
+→ Falla en silencio. Ese es el peor. Deja de funcionar un jueves y te enteras tres semanas después, cuando un cliente pregunta por algo que nadie le envió.
+
+Una automatización de verdad es lo contrario:
+
+El proceso está escrito en algún sitio donde alguien más lo puede leer. Tiene una persona responsable con nombre y apellidos. Y cuando algo no cuadra, avisa. No espera a que lo descubras tú.
+
+Esa es la prueba, y es de una sola pregunta:
+
+Si esto se rompiera hoy, ¿cuánto tardarías en enterarte?
+
+Si la respuesta es "en cuanto pase, me llega un aviso", tienes un sistema.
+Si es "pues... cuando alguien se diera cuenta", tienes un parche.
+
+Los parches no son malos. A veces son lo que necesitas esta semana. El problema es creer que ya tienes resuelto algo que en realidad está colgando de un hilo.
+
+→ ¿Cuántos parches tienes funcionando ahora mismo en tu negocio?
+
+Cada semana mando una idea aplicable así por correo: victormago.com/newsletter
