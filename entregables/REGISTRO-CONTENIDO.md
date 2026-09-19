@@ -32,9 +32,9 @@
 
 **Última actualización: sábado 19 septiembre 2026 (noche)**
 
-La semana del 14-18 sep se publicó entera. ❓ Pendiente de confirmar con Víctor si el reel
-del jue 17 llegó a salir: Buffer marca 93 enviados (4 programados + 1 más que subió él),
-pero la vista "Sent" no carga y los 2 borradores de reel (Clip A y Clip C) siguen ahí.
+De la semana del 14-18 sep salieron los 4 posts programados. **El reel del jue 17 NO se grabó
+ni se publicó** (confirmado por Víctor el 19/09): ese hueco de Instagram quedó vacío. Van dos
+huecos de reel perdidos (jue 10 y jue 17), así que el del mar 22 es el tercer intento.
 
 ### Semana del 21 al 25 sep — PROGRAMADA y verificada en Buffer
 
@@ -95,7 +95,6 @@ construyendo ahora.
 | Qué automatizar primero: autónomo vs. equipo | LinkedIn | 14 sep |
 | Plantilla: tu proceso en 5 líneas (qué lo dispara → cuándo decides tú) | Instagram | 15 sep |
 | Qué pasa cuando la IA se equivoca: 3 reglas (solo datos que existen, sabe decir no lo sé, registro) | LinkedIn | 16 sep |
-| REEL de Víctor a cámara (tema según lo que grabe) | Instagram | 17 sep (previsto) |
 | Qué automatizan de verdad las pymes de A Coruña (facturar, clasificar, responder, avisar) | LinkedIn | 18 sep |
 | La diferencia entre una automatización y un parche (si se rompe y nadie se entera) | LinkedIn | 21 sep |
 | Reel Clip C: web terminada antes de que pagara (construir-primero) | Instagram | 22 sep (previsto) |
