@@ -30,47 +30,42 @@
 
 ## 2. ESTADO ACTUAL DE LA COLA
 
-**Última actualización: lunes 14 septiembre 2026 (mediodía)**
+**Última actualización: sábado 19 septiembre 2026 (noche)**
 
-La semana del 7-11 sep ya se publicó. El Clip A NO llegó a grabarse para el jue 10.
+La semana del 14-18 sep se publicó entera. ❓ Pendiente de confirmar con Víctor si el reel
+del jue 17 llegó a salir: Buffer marca 93 enviados (4 programados + 1 más que subió él),
+pero la vista "Sent" no carga y los 2 borradores de reel (Clip A y Clip C) siguen ahí.
 
-### Semana del 14 al 18 sep — PROGRAMADA y verificada en Buffer
+### Semana del 21 al 25 sep — PROGRAMADA y verificada en Buffer
 
 | Fecha | Hora | Canal | Post | Imagen | Estado |
 |---|---|---|---|---|---|
-| lun 14 sep | **17:30** | LinkedIn | Qué automatizar primero: autónomo vs. equipo | ✅ li-primero-autonomo | programado (a las 17:30 porque se subió a mediodía) |
-| mar 15 sep | 19:30 | Instagram | Plantilla: tu proceso en 5 líneas | ✅ ig-proceso-5-lineas | programado |
-| mié 16 sep | 9:00 | LinkedIn | Qué pasa cuando la IA se equivoca (3 reglas) | ✅ li-cuando-falla | programado |
-| **jue 17 sep** | **19:30** | **Instagram** | **REEL de Víctor** (graba y Claude lo edita) | vídeo | pendiente del vídeo |
-| vie 18 sep | 9:00 | LinkedIn | Qué automatizan de verdad las pymes de A Coruña | ✅ li-coruna | programado |
+| lun 21 sep | 9:00 | LinkedIn | La diferencia entre una automatización y un parche | ✅ li-parche | programado |
+| **mar 22 sep** | **19:30** | **Instagram** | **REEL Clip C** — "la web antes de la factura" | vídeo | pendiente de grabar |
+| mié 23 sep | 9:00 | LinkedIn | Pregunta a quien lo hace, no a quien lo manda | ✅ li-quien-lo-hace | programado |
+| jue 24 sep | 19:30 | Instagram | Despacho vs. tienda: por dónde entra el trabajo | ✅ ig-despacho-tienda | programado |
+| vie 25 sep | 9:00 | LinkedIn | Antes de mejorar, se empeora (de la pista) | ✅ li-antes-de-mejorar | programado |
 
-Verificado: 4 posts, cada uno con su tarjeta, tildes correctas, CTA a la newsletter, cero WhatsApp y cero link previews.
-Copys en `entregables/semana-2026-09-14/`.
+Verificado: 4 posts, cada uno con su tarjeta, tildes correctas, CTA a la newsletter,
+cero WhatsApp y cero link previews. Copys en `entregables/semana-2026-09-21/`.
 
-**Cambios respecto al plan automático del 7/09:**
-- Mar 15: "3 promesas de IA que no deberías creerte" DESCARTADO por solaparse con
-  "4 preguntas para quien te venda IA" (IG, 2 sep). Sustituido por la plantilla del proceso en 5 líneas.
-- Jue 17: "El coste oculto de las herramientas gratis" DESCARTADO porque ese hueco es el reel.
-  Ambos temas vuelven al banco (punto 5), con aviso de solapamiento.
+**Ajuste respecto al plan del 14/09:** el post del jueves NO usa la cifra de notificaciones
+al día del despacho. No está publicada en victormago.com y la regla 6 solo permite cifras
+ya publicadas. Se dice "llegan a montones", sin número.
 
-### Planificado — semana del 21 al 25 sep (aún NO programado en Buffer)
+### ⚠️ El banco de temas se agota
 
-Plan completo en `entregables/plan-semana-2026-09-21.md` (generado el lun 14/09).
-
-| Fecha | Hora | Canal | Post | Tarjeta sugerida |
-|---|---|---|---|---|
-| lun 21 sep | 9:00 | LinkedIn | La diferencia entre una automatización y un parche | li-parche |
-| mar 22 sep | 19:30 | Instagram | **REEL Clip C** (Víctor): "Esta web la terminamos antes de que pagara" | vídeo de Víctor |
-| mié 23 sep | 9:00 | LinkedIn | La reunión de 20 min: pregunta a quien hace la tarea, no a quien la manda | li-quien-lo-hace |
-| jue 24 sep | 19:30 | Instagram | IA en un despacho vs. IA en una tienda: qué cambia | ig-despacho-tienda |
-| vie 25 sep | 9:00 | LinkedIn | Lo que me llevo de la pista: antes de mejorar, se empeora | li-antes-de-mejorar |
+Tras esta semana quedan 6 temas libres (punto 5), y dos llevan aviso de solapamiento.
+Da para una semana y media. **Hace falta que Víctor aporte 5-6 ideas o una nota de voz**
+para cubrir octubre: casos nuevos, objeciones que le repitan los clientes, o qué está
+construyendo ahora.
 
 ### Borradores en Buffer (reels esperando vídeo de Víctor)
 
 | Borrador | Tema | Estado |
 |---|---|---|
-| Clip A — "¿Cuántas horas pierde tu equipo copiando datos?" | Fricción | ▶ No se grabó para el jue 10. **Candidato natural para el reel del jue 17/09 19:30** (guion en `entregables/guion-reel-clipA-2026-09-10.md`). Víctor graba y pasa el vídeo; Claude edita y sube. Sustituir el caption del borrador por el del guion |
-| Clip C — "Esta web la terminamos antes de que pagara" | Método construir-primero | ▶ **Va en el hueco del mar 22/09 19:30** (plan del 14/09). Su tema salió en LinkedIn el 1 sep. Víctor debe grabarlo antes del lun 21. Si no hay vídeo, el hueco queda vacío |
+| Clip A — "¿Cuántas horas pierde tu equipo copiando datos?" | Fricción | Sin grabar desde el 10/09. Guion en `entregables/guion-reel-clipA-2026-09-10.md`. Sigue disponible para el primer hueco de reel libre |
+| Clip C — "Esta web la terminamos antes de que pagara" | Método construir-primero | ▶ **Hueco del mar 22/09 19:30.** Su tema salió en LinkedIn el 1 sep, así que ya se cumplen las 3 semanas. Si no hay vídeo, el hueco queda vacío: no se rellena con otro tema |
 
 ## 3. TEMAS QUEMADOS (ya publicados)
 
@@ -102,11 +97,11 @@ Plan completo en `entregables/plan-semana-2026-09-21.md` (generado el lun 14/09)
 | Qué pasa cuando la IA se equivoca: 3 reglas (solo datos que existen, sabe decir no lo sé, registro) | LinkedIn | 16 sep |
 | REEL de Víctor a cámara (tema según lo que grabe) | Instagram | 17 sep (previsto) |
 | Qué automatizan de verdad las pymes de A Coruña (facturar, clasificar, responder, avisar) | LinkedIn | 18 sep |
-| La diferencia entre una automatización y un parche | LinkedIn | 21 sep (previsto) |
+| La diferencia entre una automatización y un parche (si se rompe y nadie se entera) | LinkedIn | 21 sep |
 | Reel Clip C: web terminada antes de que pagara (construir-primero) | Instagram | 22 sep (previsto) |
-| La reunión de 20 min: preguntar a quien hace la tarea, no a quien la manda | LinkedIn | 23 sep (previsto) |
-| IA en un despacho vs. IA en una tienda: por dónde entra el trabajo | Instagram | 24 sep (previsto) |
-| Del deporte a las empresas: antes de mejorar, se empeora (fase de ajuste) | LinkedIn | 25 sep (previsto) |
+| La reunión de 20 min: preguntar a quien hace la tarea, no a quien la manda | LinkedIn | 23 sep |
+| IA en un despacho vs. IA en una tienda: por dónde entra el trabajo | Instagram | 24 sep |
+| Del deporte a las empresas: antes de mejorar, se empeora (fase de ajuste) | LinkedIn | 25 sep |
 
 ---
 
