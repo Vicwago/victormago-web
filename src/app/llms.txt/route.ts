@@ -1,6 +1,7 @@
 import { SITE_URL } from '@/lib/site'
 import { casos } from '@/lib/casos'
 import { posts } from '@/lib/blog'
+import { servicios } from '@/lib/servicios'
 
 // GEO: /llms.txt — resumen estructurado del sitio para modelos de lenguaje
 // (estándar emergente llmstxt.org). Se genera desde los datos reales del sitio.
@@ -9,6 +10,9 @@ export const dynamic = 'force-static'
 export async function GET() {
   const casosMd = casos
     .map(c => `- [${c.alias}](${SITE_URL}/casos/${c.slug}): ${c.resumen}`)
+    .join('\n')
+  const serviciosMd = servicios
+    .map(sv => `- [${sv.nombre}](${SITE_URL}/${sv.slug}): ${sv.metaDescription}`)
     .join('\n')
   const postsMd = posts
     .map(p => `- [${p.titulo}](${SITE_URL}/blog/${p.slug}): ${p.descripcion}`)
@@ -20,6 +24,10 @@ export async function GET() {
 
 Contacto: victor@norteia.es · +34 637 90 58 66 · Reserva 20 min gratis: ${SITE_URL}/contacto
 Área de servicio: A Coruña, Galicia y toda España (remoto).
+
+## Servicios
+
+${serviciosMd}
 
 ## Páginas principales
 
@@ -43,7 +51,7 @@ ${postsMd}
 - EU AI Act: obligación de alfabetización (Art. 4) vigente desde el 2 de febrero de 2025.
 - EU AI Act: aplicación general del Reglamento (UE) 2024/1689 el 2 de agosto de 2026; sanciones de hasta 35 M€ o el 7% de la facturación mundial.
 - El "Digital Omnibus" solo aplazó las obligaciones de alto riesgo (Anexo III → dic 2027, Anexo I → ago 2028); no afecta a alfabetización ni transparencia.
-- Los proyectos se ejecutan con el equipo de NorteIA (norteia.es), cofundada con Luis Salgado (salgadoia.com).
+- Víctor Mago es el interlocutor del cliente: hace el diagnóstico y dirige cada proyecto. La ejecución se hace con el equipo de NorteIA (norteia.es), empresa de IA que Víctor cofundó con Luis Salgado.
 `
 
   return new Response(body, {

@@ -11,6 +11,7 @@ import ScoreBoard from '@/components/ScoreBoard'
 import Tilt from '@/components/Tilt'
 import ProductShowcase, { type Producto } from '@/components/ProductShowcase'
 import { casosDestacados } from '@/lib/casos'
+import { servicios } from '@/lib/servicios'
 import { DEFAULT_DESCRIPTION, CTA_LABEL, ctaHref, CAL_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -73,11 +74,11 @@ const faqs = [
   },
   {
     q: '¿Qué es el EU AI Act y por qué me afecta?',
-    a: 'Es el reglamento europeo que regula el uso de la IA. Algunas obligaciones ya están vigentes desde febrero de 2025 y la aplicación general llega el 2 de agosto de 2026. Afecta a cualquier empresa que use IA en Europa, con multas de hasta 35 millones de euros o el 7% de la facturación mundial.',
+    a: 'Es el reglamento europeo que regula el uso de la IA. La obligación de formar al personal en IA está vigente desde febrero de 2025 y el Reglamento se aplica con carácter general desde el 2 de agosto de 2026. Afecta a cualquier empresa que use IA en Europa, con multas de hasta 35 millones de euros o el 7% de la facturación mundial.',
   },
   {
     q: '¿Trabajas con empresas de cualquier sector?',
-    a: 'Sí. Tengo especial experiencia con despachos legales, comercio local, inmobiliario y sector cultural. La IA no entiende de sectores: entiende de procesos repetitivos, y esos existen en todas partes.',
+    a: 'Sí. Tengo especial experiencia con despachos de procuradores, inmobiliarias y clubes deportivos. La IA no entiende de sectores: entiende de procesos repetitivos, y esos existen en todas partes.',
   },
   {
     q: '¿Qué pasa después de la primera llamada?',
@@ -319,6 +320,13 @@ export default function Home() {
             ))}
             <div style={{ borderTop: '1.5px solid var(--border)' }} />
           </div>
+          <nav aria-label="Servicios" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 28px', marginTop: 28 }}>
+            {servicios.map(sv => (
+              <Link key={sv.slug} href={`/${sv.slug}`} style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.06em', color: 'var(--accent)', textUnderlineOffset: 4 }}>
+                {sv.nombre} →
+              </Link>
+            ))}
+          </nav>
         </div>
       </section>
 

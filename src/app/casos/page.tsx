@@ -10,7 +10,7 @@ import { casos } from '@/lib/casos'
 export const metadata: Metadata = {
   title: 'Casos reales de IA y automatización',
   description:
-    'Casos reales de automatización e IA en despachos legales, inmobiliarias, comercio local y cultura: el problema, lo que construimos y el resultado.',
+    'Casos reales de automatización e IA en despachos de procuradores, inmobiliarias y clubes deportivos: el problema, lo que construimos y el resultado.',
   alternates: { canonical: '/casos' },
 }
 

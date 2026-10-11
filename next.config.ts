@@ -29,6 +29,9 @@ const nextConfig: NextConfig = {
       { source: '/servicios/eu-ai-act', destination: '/blog/eu-ai-act-pymes', permanent: true },
       { source: '/servicios/:path*', destination: '/', permanent: true },
       { source: '/servicios', destination: '/', permanent: true },
+      // Casos retirados el 01/10/2026 (no se entregaron): sus URLs ya estaban indexadas
+      { source: '/casos/tulook-estilistas', destination: '/casos', permanent: true },
+      { source: '/casos/nova-galega-de-danza', destination: '/casos', permanent: true },
       { source: '/demo/:path*', destination: '/', permanent: true },
       { source: '/demo', destination: '/', permanent: true },
     ]

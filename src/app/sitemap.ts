@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/site'
 import { casos } from '@/lib/casos'
 import { posts } from '@/lib/blog'
+import { servicios } from '@/lib/servicios'
 
 // Sitemap generado en build. Incluye todas las rutas públicas indexables.
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -30,5 +31,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly',
   }))
 
-  return [...staticRoutes, ...casoRoutes, ...postRoutes]
+  const servicioRoutes: MetadataRoute.Sitemap = servicios.map(sv => ({
+    url: `${SITE_URL}/${sv.slug}`,
+    priority: 0.9,
+    changeFrequency: 'monthly',
+  }))
+
+  return [...staticRoutes, ...servicioRoutes, ...casoRoutes, ...postRoutes]
 }

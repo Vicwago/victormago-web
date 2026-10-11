@@ -3,6 +3,7 @@ import { C } from '@/lib/theme'
 import { SOCIAL, NAP } from '@/lib/site'
 import NewsletterForm from '@/components/NewsletterForm'
 import CookiePrefsButton from '@/components/CookiePrefsButton'
+import { servicios } from '@/lib/servicios'
 
 const navLinks = [
   { label: 'Sobre mí', href: '/sobre-mi' },
@@ -57,6 +58,17 @@ export default function Footer() {
               {navLinks.map(l => (
                 <Link key={l.href} href={l.href} style={{ fontFamily: C.fontBody, fontSize: 13, color: C.mutedLight, textDecoration: 'none', letterSpacing: '0.04em' }}>
                   {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p style={{ fontFamily: C.fontBody, fontSize: 10, fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: C.muted, marginBottom: 16 }}>Servicios</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {servicios.map(sv => (
+                <Link key={sv.slug} href={`/${sv.slug}`} style={{ fontFamily: C.fontBody, fontSize: 13, color: C.mutedLight, textDecoration: 'none', letterSpacing: '0.04em' }}>
+                  {sv.nombre}
                 </Link>
               ))}
             </div>
