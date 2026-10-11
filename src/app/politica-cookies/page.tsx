@@ -31,6 +31,11 @@ export default function CookiesPage() {
         </li>
       </ul>
       <p>
+        Además, el recuento de visitas de Vercel Web Analytics (Vercel Inc., EE. UU.) no usa
+        cookies ni guarda nada en tu navegador: cuenta páginas vistas de forma agregada y anónima,
+        sin identificarte ni seguirte entre sitios.
+      </p>
+      <p>
         No se usan cookies publicitarias ni de perfilado. Los vídeos incrustados usan el dominio
         youtube-nocookie.com y no cargan nada hasta que pulsas reproducir.
       </p>

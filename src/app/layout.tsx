@@ -3,6 +3,7 @@ import { Archivo, Public_Sans, Chivo_Mono } from 'next/font/google'
 import JsonLd from '@/components/JsonLd'
 import ChatWidget from '@/components/ChatWidget'
 import CookieConsent from '@/components/CookieConsent'
+import { Analytics } from '@vercel/analytics/next'
 import { SITE_URL, SITE_NAME, DEFAULT_DESCRIPTION, SOCIAL, NAP } from '@/lib/site'
 import './globals.css'
 
@@ -123,6 +124,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ChatWidget />
         {/* GA4 solo se carga si el usuario acepta cookies en el banner */}
         <CookieConsent gaId={GA_ID} />
+        {/* Vercel Web Analytics: recuento agregado de visitas sin cookies ni identificadores,
+            no depende del banner (GA4 solo cuenta a quien acepta, y casi nadie acepta) */}
+        <Analytics />
       </body>
     </html>
   )

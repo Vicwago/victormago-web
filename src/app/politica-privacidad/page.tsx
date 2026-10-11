@@ -49,7 +49,7 @@ export default function PrivacidadPage() {
       <h2>3. Destinatarios y encargados de tratamiento</h2>
       <p>Los datos se tratan con proveedores que actúan como encargados del tratamiento:</p>
       <ul>
-        <li><strong>Vercel Inc.</strong> (EE. UU.): alojamiento del sitio web.</li>
+        <li><strong>Vercel Inc.</strong> (EE. UU.): alojamiento del sitio web y recuento agregado y anónimo de visitas, sin cookies (Vercel Web Analytics).</li>
         <li><strong>Resend</strong> (EE. UU.): envío de emails transaccionales y newsletter.</li>
         <li><strong>Anthropic</strong> (EE. UU.): procesamiento de las conversaciones del asistente de chat.</li>
         <li><strong>Sistema de gestión interno (CRM)</strong>: los datos de contacto pueden registrarse en el CRM de NorteIA para el seguimiento comercial.</li>
