@@ -26,6 +26,7 @@
   --font-mono: var(--font-chivo), ui-monospace, Consolas, monospace;
   --radius-pill: 999px;
   --radius-card: 16px;
+  --ease-expo: cubic-bezier(.16, 1, .3, 1);
 }
 
 /* Secciones "noche": el partido bajo los focos (casos, marcador) */
@@ -268,6 +269,71 @@
 @media (prefers-reduced-motion: reduce) {
   .ball-arc { stroke-dashoffset: 0; animation: none; }
   .rise { opacity: 1; animation: none; }
+}
+
+/* ── Titulares: líneas que suben desde detrás de una máscara ──
+   (técnica "mask reveal" — el denominador común de las webs premiadas
+   con tipografía extrema; se repite en 00 SAQUE, 02 TRAYECTORIA y
+   06 BOLA DE PARTIDO para que sea un sistema, no un efecto suelto). */
+.mask-line {
+  display: block;
+  overflow: hidden;
+}
+.mask-line > span {
+  display: inline-block;
+  transform: translateY(112%);
+  animation: line-up 0.85s var(--ease-expo) forwards;
+  animation-delay: var(--d, 0s);
+  will-change: transform;
+}
+@keyframes line-up {
+  to { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mask-line > span { animation: none; transform: translateY(0); }
+}
+
+/* Variante para titulares bajo el pliegue: el trazo sube al entrar en
+   viewport (mismo sistema que .tilt-in/.scale-in), no al cargar la página. */
+.mask-line-view > span {
+  display: inline-block;
+  transform: translateY(0);
+}
+@supports (animation-timeline: view()) {
+  .mask-line-view > span {
+    transform: translateY(112%);
+    animation: line-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 55%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mask-line-view > span { animation: none; transform: translateY(0); }
+}
+
+/* ── Trazo bajo enlaces: mismo lenguaje que el arco de bola (T-stroke) ── */
+.link-stroke {
+  position: relative;
+  padding-bottom: 2px;
+}
+.link-stroke::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease-expo);
+}
+.link-stroke:hover::after,
+.link-stroke:focus-visible::after {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .link-stroke::after { transition: none; }
 }
 
 /* ── Botones pill ── */

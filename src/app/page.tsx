@@ -183,7 +183,7 @@ export default function Home() {
                 Consultor de IA · A Coruña — Galicia — España
               </p>
 
-              <h1 className="rise rise-2" style={{
+              <h1 style={{
                 fontFamily: 'var(--font-display)',
                 fontStretch: '118%',
                 fontWeight: 800,
@@ -194,7 +194,9 @@ export default function Home() {
                 marginBottom: 'clamp(20px, 3vh, 30px)',
                 maxWidth: '17ch',
               }}>
-                Implemento sistemas de IA que ahorran cientos de horas a tu equipo<span style={{ color: 'var(--accent)' }}>.</span>
+                <span className="mask-line"><span style={{ ['--d' as string]: '0.1s' }}>Implemento sistemas de IA</span></span>
+                <span className="mask-line"><span style={{ ['--d' as string]: '0.22s' }}>que ahorran cientos de</span></span>
+                <span className="mask-line"><span style={{ ['--d' as string]: '0.34s' }}>horas a tu equipo<span style={{ color: 'var(--accent)' }}>.</span></span></span>
               </h1>
 
               <p className="rise rise-3" style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(15px, 1.8vw, 18px)', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '48ch', marginBottom: 'clamp(26px, 3.5vh, 38px)' }}>
@@ -322,7 +324,7 @@ export default function Home() {
           </div>
           <nav aria-label="Servicios" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 28px', marginTop: 28 }}>
             {servicios.map(sv => (
-              <Link key={sv.slug} href={`/${sv.slug}`} style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.06em', color: 'var(--accent)', textUnderlineOffset: 4 }}>
+              <Link key={sv.slug} href={`/${sv.slug}`} className="link-stroke" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.06em', color: 'var(--accent)' }}>
                 {sv.nombre} →
               </Link>
             ))}
@@ -346,7 +348,8 @@ export default function Home() {
               Trayectoria
             </p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '120%', fontWeight: 800, fontSize: 'clamp(34px, 5.6vw, 74px)', lineHeight: 0.98, letterSpacing: '-0.03em', textTransform: 'uppercase', color: 'var(--text)', maxWidth: '16ch', marginBottom: 'clamp(44px, 6vw, 80px)' }}>
-              Del análisis de alto rendimiento a la IA en producción<span style={{ color: 'var(--accent-light)' }}>.</span>
+              <span className="mask-line-view"><span>Del análisis de alto rendimiento</span></span>
+              <span className="mask-line-view"><span>a la IA en producción<span style={{ color: 'var(--accent-light)' }}>.</span></span></span>
             </h2>
           </Reveal>
 
@@ -374,7 +377,7 @@ export default function Home() {
               <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(18px, 2.3vw, 26px)', letterSpacing: '-0.015em', lineHeight: 1.3, color: 'var(--text)', maxWidth: '32ch' }}>
                 "Cada proyecto lo diseño contigo y lo despliego con mi equipo de NorteIA. Un solo interlocutor, de la estrategia a producción."
               </p>
-              <Link href="/sobre-mi" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--accent-light)', marginLeft: 'auto' }}>
+              <Link href="/sobre-mi" className="link-stroke" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--accent-light)', marginLeft: 'auto' }}>
                 Mi historia →
               </Link>
             </div>
@@ -391,7 +394,7 @@ export default function Home() {
               <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '118%', fontWeight: 750, fontSize: 'clamp(30px, 4.6vw, 58px)', lineHeight: 1.02, letterSpacing: '-0.025em', color: 'var(--text)' }}>
                 Resultados reales<span style={{ color: 'var(--accent)' }}>.</span>
               </h2>
-              <Link href="/casos" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--accent)' }}>
+              <Link href="/casos" className="link-stroke" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--accent)' }}>
                 Ver todos los casos →
               </Link>
             </div>
@@ -521,7 +524,8 @@ export default function Home() {
               Hablemos
             </p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontStretch: '122%', fontWeight: 800, fontSize: 'clamp(36px, 6.4vw, 84px)', lineHeight: 0.98, letterSpacing: '-0.03em', textTransform: 'uppercase', color: 'var(--text)', marginBottom: 26 }}>
-              No dejes que tu rival te gane<span style={{ color: 'var(--accent)' }}>.</span>
+              <span className="mask-line-view"><span>No dejes que tu rival</span></span>
+              <span className="mask-line-view"><span>te gane<span style={{ color: 'var(--accent)' }}>.</span></span></span>
             </h2>
             <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(15px, 1.8vw, 18px)', color: 'var(--text-muted)', lineHeight: 1.75, maxWidth: '48ch', marginBottom: 40 }}>
               Tu competencia ya está probando la IA. 20 minutos, gratis y sin compromiso:
@@ -532,7 +536,7 @@ export default function Home() {
               {ctaExternal
                 ? <a className="btn-primary" href={ctaHref()} target="_blank" rel="noopener noreferrer">{CTA_LABEL}</a>
                 : <Link className="btn-primary" href={ctaHref()}>{CTA_LABEL}</Link>}
-              <a className="btn-ghost" style={{ borderColor: 'var(--text)', color: 'var(--text)' }} href="mailto:victor@norteia.es">victor@norteia.es</a>
+              <a className="btn-ghost link-stroke" style={{ borderColor: 'var(--text)', color: 'var(--text)' }} href="mailto:victor@norteia.es">victor@norteia.es</a>
             </div>
           </div>
         </Reveal>
