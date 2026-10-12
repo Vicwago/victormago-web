@@ -115,7 +115,7 @@ export default function Navbar() {
 
       {/* ── Menú móvil ── */}
       {isMobile && (
-        <div style={{
+        <div data-lenis-prevent style={{
           position: 'fixed', top: 64, left: 0, right: 0, bottom: 0, zIndex: 99,
           background: 'color-mix(in srgb, var(--bg) 98%, transparent)',
           backdropFilter: 'blur(16px)',

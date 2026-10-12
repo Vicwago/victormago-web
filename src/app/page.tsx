@@ -8,6 +8,7 @@ import Faq from '@/components/Faq'
 import LeadForm from '@/components/LeadForm'
 import ParticleBall from '@/components/ParticleBall'
 import ScoreBoard from '@/components/ScoreBoard'
+import SmoothScroll from '@/components/SmoothScroll'
 import Tilt from '@/components/Tilt'
 import ProductShowcase, { type Producto } from '@/components/ProductShowcase'
 import { casosDestacados } from '@/lib/casos'
@@ -162,6 +163,7 @@ export default function Home() {
 
   return (
     <div style={{ background: 'var(--bg)', minHeight: '100vh', color: 'var(--text)' }} className="paper-grain">
+      <SmoothScroll />
       <Navbar />
       <ScoreBoard />
 
