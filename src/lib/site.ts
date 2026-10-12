@@ -13,6 +13,8 @@ export const SOCIAL = {
   linkedin: 'https://www.linkedin.com/in/victormagoheredia/',
   instagram: 'https://www.instagram.com/vicwago/',
   norteia: 'https://norteia.es',
+  // Perfil de LinkedIn de NorteIA (confirmado por Víctor 13/10/2026)
+  norteiaLinkedin: 'https://www.linkedin.com/in/norte-ia-41002a39b/',
   email: 'victor@norteia.es',
 }
 

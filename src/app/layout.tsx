@@ -94,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 '@type': 'Organization',
                 name: 'NorteIA',
                 url: SOCIAL.norteia,
+                sameAs: [SOCIAL.norteiaLinkedin],
               },
               address: {
                 '@type': 'PostalAddress',
