@@ -53,6 +53,7 @@ export default function WebinarPage() {
   return (
     <div style={{ background: C.bg, minHeight: '100vh', color: C.white }}>
       <Navbar />
+      <main>
 
       {/* Header */}
       <section style={{ padding: 'clamp(120px, 15vh, 160px) clamp(24px, 5vw, 64px) clamp(60px, 8vw, 80px)', textAlign: 'center', position: 'relative' }}>
@@ -136,8 +137,11 @@ export default function WebinarPage() {
                     { id: 'empresa', label: 'Empresa (opcional)', type: 'text', value: form.empresa, key: 'empresa' as const },
                   ].map(f => (
                     <div key={f.id}>
-                      <label style={{ display: 'block', fontFamily: 'var(--font-outfit)', fontSize: 11, fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.mutedLight, marginBottom: 8 }}>{f.label}</label>
+                      <label htmlFor={`webinar-${f.id}`} style={{ display: 'block', fontFamily: 'var(--font-outfit)', fontSize: 11, fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.mutedLight, marginBottom: 8 }}>{f.label}</label>
                       <input
+                        id={`webinar-${f.id}`}
+                        name={f.id}
+                        autoComplete={f.id === 'name' ? 'name' : f.id === 'email' ? 'email' : 'organization'}
                         type={f.type}
                         required={f.id !== 'empresa'}
                         value={f.value}
@@ -200,6 +204,7 @@ export default function WebinarPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   )

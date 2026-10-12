@@ -74,6 +74,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           '@context': 'https://schema.org',
           '@graph': [
             {
+              '@type': 'WebSite',
+              '@id': `${SITE_URL}/#website`,
+              name: SITE_NAME,
+              url: SITE_URL,
+              inLanguage: 'es',
+              publisher: { '@id': `${SITE_URL}/#service` },
+            },
+            {
               '@type': 'Person',
               '@id': `${SITE_URL}/#person`,
               name: 'Víctor Mago',
@@ -99,6 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@id': `${SITE_URL}/#service`,
               name: NAP.name,
               url: SITE_URL,
+              image: `${SITE_URL}/victor-mago.webp`,
               telephone: '+34637905866',
               email: 'victor@norteia.es',
               founder: { '@id': `${SITE_URL}/#person` },

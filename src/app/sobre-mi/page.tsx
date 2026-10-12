@@ -7,7 +7,7 @@ import CtaButton from '@/components/CtaButton'
 import { C, mix } from '@/lib/theme'
 
 export const metadata: Metadata = {
-  title: 'Sobre mí — de la pista de tenis a la consultoría de IA',
+  title: 'Sobre mí: del tenis a la consultoría de IA',
   description:
     '15 años como entrenador de tenis me enseñaron a leer el juego y anticiparme. Hoy aplico esa misma habilidad a los procesos de las empresas con IA. Esta es mi historia.',
   alternates: { canonical: '/sobre-mi' },
@@ -49,6 +49,7 @@ export default function SobreMiPage() {
   return (
     <div style={{ background: C.bg, minHeight: '100vh', color: C.white }}>
       <Navbar />
+      <main>
 
       {/* Header */}
       <section style={{ padding: 'clamp(120px, 15vh, 160px) clamp(24px, 5vw, 64px) clamp(48px, 6vw, 72px)', position: 'relative', overflow: 'hidden' }}>
@@ -122,6 +123,7 @@ export default function SobreMiPage() {
         </Reveal>
       </section>
 
+      </main>
       <Footer />
     </div>
   )

@@ -6,7 +6,7 @@ import DiagnosticoForm from '@/components/DiagnosticoForm'
 import { C } from '@/lib/theme'
 
 export const metadata: Metadata = {
-  title: 'Diagnóstico exprés — qué automatizaría en tu empresa',
+  title: 'Diagnóstico exprés de automatización con IA',
   description:
     '5 preguntas, 3 minutos: te digo qué patrón veo en tu empresa, por dónde empezaría a automatizar y cuál es el siguiente paso. Gratis y al momento.',
   alternates: { canonical: '/diagnostico' },
@@ -16,6 +16,7 @@ export default function DiagnosticoPage() {
   return (
     <div style={{ background: C.bg, minHeight: '100vh', color: C.white }} className="paper-grain">
       <Navbar />
+      <main>
 
       <section style={{ padding: 'clamp(120px, 15vh, 150px) clamp(24px, 5vw, 64px) clamp(64px, 8vw, 96px)' }}>
         <div style={{ maxWidth: 680, margin: '0 auto' }}>
@@ -37,6 +38,7 @@ export default function DiagnosticoPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   )

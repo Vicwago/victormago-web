@@ -30,7 +30,7 @@
   {
     "n": "03",
     "titulo": "Respuestas automáticas a las consultas repetitivas",
-    "dolor": "Horario, precio, disponibilidad, \"¿cómo va lo mío?\". El 70% de las consultas de cualquier negocio son las mismas diez preguntas, y las contesta una persona, una a una, también a las diez de la noche (o no las contesta, y ese cliente se va).",
+    "dolor": "Horario, precio, disponibilidad, \"¿cómo va lo mío?\". En los negocios con los que trabajo, casi todas las consultas son las mismas diez preguntas, y las contesta una persona, una a una, también a las diez de la noche (o no las contesta, y ese cliente se va).",
     "proceso": [
       "Reúne las preguntas que de verdad os hacen (revisa el correo y el WhatsApp del último mes: salen solas).",
       "Monta un asistente que responde SOLO con tu información verificada: tus tarifas, tus horarios, tus servicios. Si no sabe algo, lo dice y pasa la conversación a una persona.",

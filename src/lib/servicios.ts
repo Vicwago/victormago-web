@@ -33,7 +33,7 @@ export const servicios: Servicio[] = [
   {
     slug: 'ia-para-procuradores',
     nombre: 'IA para despachos de procuradores',
-    metaTitle: 'IA para despachos de procuradores en A Coruña y Galicia',
+    metaTitle: 'IA para procuradores en A Coruña y Galicia',
     metaDescription:
       'Automatización con IA para despachos de procuradores: notificaciones de LexNET, correo, control de plazos y facturación, sin cambiar vuestro programa de gestión. Caso real en A Coruña.',
     eyebrow: 'Despachos de procuradores',

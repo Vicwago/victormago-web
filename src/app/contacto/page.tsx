@@ -17,6 +17,7 @@ export default function ContactoPage() {
   return (
     <div style={{ background: C.bg, minHeight: '100vh', color: C.white }}>
       <Navbar />
+      <main>
 
       {/* Header */}
       <section style={{ padding: 'clamp(120px, 15vh, 160px) clamp(24px, 5vw, 64px) clamp(48px, 6vw, 72px)', textAlign: 'center' }}>
@@ -92,6 +93,7 @@ export default function ContactoPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   )
