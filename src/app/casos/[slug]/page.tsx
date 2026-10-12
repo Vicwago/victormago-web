@@ -20,10 +20,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const caso = getCaso(slug)
   if (!caso) return {}
   return {
-    title: `${caso.alias} — caso de automatización con IA`,
+    title: `${caso.alias}: caso de IA`,
     description: caso.resumen,
     alternates: { canonical: `/casos/${caso.slug}` },
-    openGraph: { title: caso.titulo, description: caso.resumen, type: 'article' },
+    // El openGraph de una página SUSTITUYE al del layout (no se fusiona): sin images aquí, el caso salía sin og:image
+    openGraph: {
+      title: caso.titulo,
+      description: caso.resumen,
+      type: 'article',
+      publishedTime: caso.publicado,
+      modifiedTime: caso.actualizado,
+      images: [{ url: '/og.png', width: 1200, height: 630, alt: caso.titulo }],
+    },
   }
 }
 
@@ -48,9 +56,15 @@ export default async function CasoPage({ params }: { params: Promise<{ slug: str
       <JsonLd data={{
         '@context': 'https://schema.org',
         '@type': 'Article',
+        '@id': `${SITE_URL}/casos/${caso.slug}#article`,
         headline: caso.titulo,
         description: caso.resumen,
-        author: { '@type': 'Person', name: 'Víctor Mago', url: SITE_URL },
+        image: [`${SITE_URL}/og.png`],
+        datePublished: caso.publicado,
+        dateModified: caso.actualizado,
+        inLanguage: 'es',
+        author: { '@id': `${SITE_URL}/#person` },
+        publisher: { '@id': `${SITE_URL}/#service` },
         mainEntityOfPage: `${SITE_URL}/casos/${caso.slug}`,
       }} />
       <JsonLd data={{
@@ -64,6 +78,7 @@ export default async function CasoPage({ params }: { params: Promise<{ slug: str
       }} />
       <Navbar />
 
+      <main>
       {/* Header */}
       <section style={{ padding: 'clamp(120px, 15vh, 150px) clamp(24px, 5vw, 64px) clamp(40px, 5vw, 56px)' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
@@ -85,6 +100,12 @@ export default async function CasoPage({ params }: { params: Promise<{ slug: str
           </h1>
           <p style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(17px, 2vw, 21px)', fontStyle: 'italic', color: C.mutedLight, lineHeight: 1.6 }}>
             {caso.resumen}
+          </p>
+          <p style={{ fontFamily: C.fontMono, fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: C.muted, marginTop: 20 }}>
+            Publicado el <time dateTime={caso.publicado}>{new Date(caso.publicado).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+            {caso.actualizado !== caso.publicado && (
+              <> · Actualizado el <time dateTime={caso.actualizado}>{new Date(caso.actualizado).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></>
+            )}
           </p>
         </div>
       </section>
@@ -173,6 +194,7 @@ export default async function CasoPage({ params }: { params: Promise<{ slug: str
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

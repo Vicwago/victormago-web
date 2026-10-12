@@ -15,7 +15,13 @@ export const servicioMetadata = (s: Servicio): Metadata => ({
   title: s.metaTitle,
   description: s.metaDescription,
   alternates: { canonical: `/${s.slug}` },
-  openGraph: { title: s.metaTitle, description: s.metaDescription, type: 'website' },
+  // El openGraph de una página SUSTITUYE al del layout: sin images aquí, la página salía sin og:image
+  openGraph: {
+    title: s.metaTitle,
+    description: s.metaDescription,
+    type: 'website',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: s.metaTitle }],
+  },
 })
 
 const Etiqueta = ({ children }: { children: React.ReactNode }) => (
@@ -79,6 +85,7 @@ export default function ServicioPage({ s }: { s: Servicio }) {
       }} />
       <Navbar />
 
+      <main>
       {/* Cabecera */}
       <section style={{ padding: 'clamp(120px, 15vh, 150px) clamp(24px, 5vw, 64px) clamp(40px, 5vw, 56px)' }}>
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
@@ -183,6 +190,7 @@ export default function ServicioPage({ s }: { s: Servicio }) {
           </p>
         </Reveal>
       </section>
+      </main>
 
       <Footer />
     </div>

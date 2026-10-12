@@ -21,11 +21,16 @@ export default function ArticleLayout({ slug, children }: { slug: string; childr
           <JsonLd data={{
             '@context': 'https://schema.org',
             '@type': 'Article',
+            '@id': `${SITE_URL}/blog/${post.slug}#article`,
             headline: post.titulo,
             description: post.descripcion,
+            image: [`${SITE_URL}${post.imagen}`],
             datePublished: post.fecha,
+            dateModified: post.actualizado,
             inLanguage: 'es',
-            author: { '@type': 'Person', name: 'Víctor Mago', url: SITE_URL },
+            // Referencia al nodo Person canónico del layout: hereda su sameAs (LinkedIn, Instagram)
+            author: { '@id': `${SITE_URL}/#person` },
+            publisher: { '@id': `${SITE_URL}/#service` },
             mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
           }} />
           <JsonLd data={{
@@ -41,6 +46,7 @@ export default function ArticleLayout({ slug, children }: { slug: string; childr
       )}
       <Navbar />
 
+      <main>
       <article style={{ padding: 'clamp(120px, 15vh, 150px) clamp(24px, 5vw, 64px) clamp(64px, 8vw, 96px)' }}>
         <div style={{ maxWidth: 720, margin: '0 auto' }}>
           <nav aria-label="Miga de pan" style={{ marginBottom: 28 }}>
@@ -52,7 +58,10 @@ export default function ArticleLayout({ slug, children }: { slug: string; childr
           {post && (
             <header style={{ marginBottom: 'clamp(36px, 5vw, 56px)' }}>
               <p style={{ fontFamily: C.fontBody, fontSize: 12, letterSpacing: '0.12em', textTransform: 'uppercase', color: C.muted, marginBottom: 16 }}>
-                {new Date(post.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}
+                <time dateTime={post.fecha}>{new Date(post.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+                {post.actualizado !== post.fecha && (
+                  <> · Actualizado el <time dateTime={post.actualizado}>{new Date(post.actualizado).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></>
+                )}
                 {post.borrador && ' · Borrador'}
               </p>
               <h1 style={{ fontFamily: C.fontDisplay, fontSize: 'clamp(30px, 4.5vw, 50px)', fontWeight: 400, lineHeight: 1.15, color: C.white, marginBottom: 16 }}>
@@ -87,6 +96,7 @@ export default function ArticleLayout({ slug, children }: { slug: string; childr
           </div>
         </div>
       </article>
+      </main>
 
       <Footer />
     </div>

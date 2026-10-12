@@ -4,15 +4,25 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Reveal from '@/components/Reveal'
 import LeadForm from '@/components/LeadForm'
+import JsonLd from '@/components/JsonLd'
 import { C } from '@/lib/theme'
 import { automatizaciones } from '@/lib/automatizaciones'
+import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: '5 automatizaciones que cualquier pyme puede montar esta semana',
+  title: '5 automatizaciones para pymes (PDF gratis)',
   description:
-    'PDF gratuito: 5 automatizaciones concretas para pymes — el proceso que resuelve cada una, la herramienta con la que se monta y el resultado que puedes esperar. Sin teoría.',
+    'PDF gratuito: 5 automatizaciones concretas para pymes, con el proceso que resuelve cada una, la herramienta con la que se monta y el resultado que puedes esperar. Sin teoría.',
   alternates: { canonical: '/recursos/automatizaciones-pymes' },
+  // El openGraph de una página SUSTITUYE al del layout: sin images aquí no habría og:image
+  openGraph: {
+    title: '5 automatizaciones que cualquier pyme puede montar esta semana',
+    type: 'article',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: '5 automatizaciones para pymes' }],
+  },
 }
+
+const URL_RECURSO = `${SITE_URL}/recursos/automatizaciones-pymes`
 
 // TODO-VÍCTOR: el contenido del PDF. Cuando esté maquetado, subirlo a
 // public/recursos/5-automatizaciones-pymes.pdf (ver api/lead-magnet).
@@ -27,7 +37,32 @@ const contenido = [
 export default function RecursoPymesPage() {
   return (
     <div style={{ background: C.bg, minHeight: '100vh', color: C.white }} className="paper-grain">
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        '@id': `${URL_RECURSO}#article`,
+        headline: '5 automatizaciones que cualquier pyme puede montar esta semana',
+        description: metadata.description,
+        image: [`${SITE_URL}/og.png`],
+        // Fechas sacadas de git: alta del recurso (31/07) y ultima edicion de contenido (03/08)
+        datePublished: '2026-07-31',
+        dateModified: '2026-08-03',
+        inLanguage: 'es',
+        author: { '@id': `${SITE_URL}/#person` },
+        publisher: { '@id': `${SITE_URL}/#service` },
+        mainEntityOfPage: URL_RECURSO,
+      }} />
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: '5 automatizaciones para pymes', item: URL_RECURSO },
+        ],
+      }} />
       <Navbar />
+
+      <main>
 
       <section style={{ position: 'relative', padding: 'clamp(120px, 15vh, 160px) clamp(24px, 5vw, 64px) clamp(64px, 8vw, 96px)', overflow: 'hidden' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto', position: 'relative', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 'clamp(40px, 5vw, 72px)', alignItems: 'center' }}>
@@ -124,6 +159,7 @@ export default function RecursoPymesPage() {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

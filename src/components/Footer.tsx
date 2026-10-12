@@ -11,6 +11,8 @@ const navLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'Diagnóstico exprés', href: '/diagnostico' },
   { label: 'Recursos gratis', href: '/recursos/automatizaciones-pymes' },
+  { label: 'Newsletter', href: '/newsletter' },
+  { label: 'Webinar', href: '/webinar' },
   { label: 'Contacto', href: '/contacto' },
 ]
 

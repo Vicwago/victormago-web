@@ -7,6 +7,8 @@ export type Post = {
   titulo: string
   descripcion: string
   fecha: string // ISO — fecha de publicación
+  /** ISO — última edición de CONTENIDO (no cuentan cambios de metadatos). Actualizar al reescribir. */
+  actualizado: string
   keywords: string[]
   /** Portada del artículo (ruta en /public). Alt descriptivo aparte. */
   imagen: string
@@ -22,6 +24,7 @@ export const posts: Post[] = [
     descripcion:
       'Cómo encontrar tu cuello de botella real (LexNET, correo o redacción), por dónde empezar con IA en un despacho de procuradores y qué resultados esperar. Con un caso real de A Coruña.',
     fecha: '2026-08-07',
+    actualizado: '2026-10-13',
     keywords: ['IA para despachos de procuradores', 'automatizar LexNET', 'automatización despacho procuradores', 'IA despachos legales Galicia'],
     imagen: '/blog/foto-procuradores.webp',
     imagenAlt: 'Manos firmando documentos en un despacho profesional',
@@ -33,6 +36,7 @@ export const posts: Post[] = [
     descripcion:
       'Quince años entrenando tenis me enseñaron que las personas repiten patrones donde se sienten cómodas. Las empresas hacen exactamente lo mismo. Cómo pasé de la pista a automatizar procesos con IA.',
     fecha: '2026-08-07',
+    actualizado: '2026-08-07',
     keywords: ['cambiar de sector a la IA', 'consultor IA A Coruña', 'aprender inteligencia artificial sin ser ingeniero', 'marca personal IA'],
     imagen: '/blog/foto-tenis.webp',
     imagenAlt: 'Jugador de tenis sacando en una pista de tierra batida, vista cenital',
@@ -44,6 +48,7 @@ export const posts: Post[] = [
     descripcion:
       'El Reglamento europeo de IA entró en aplicación general el 2 de agosto de 2026 y la alfabetización obligatoria lleva vigente desde febrero de 2025. Qué te obliga hoy, qué se aplazó y qué hacer esta semana.',
     fecha: '2026-08-07',
+    actualizado: '2026-10-13',
     keywords: ['EU AI Act pymes qué hacer', 'reglamento IA 2026', 'alfabetización IA artículo 4', 'sanciones EU AI Act', 'cumplimiento IA empresas España'],
     imagen: '/blog/foto-euaiact.webp',
     imagenAlt: 'Hemiciclo de un parlamento europeo durante una sesión',
@@ -55,6 +60,7 @@ export const posts: Post[] = [
     descripcion:
       'Mission Control prospecta, hace seguimiento y hasta construye webs de demostración solo. Qué hace sin que yo toque nada, qué decido yo a mano y qué parte puedes copiar en tu negocio.',
     fecha: '2026-08-08',
+    actualizado: '2026-08-09',
     keywords: ['CRM con agentes IA', 'automatizar prospección con IA', 'agentes IA empresa', 'automatizar seguimiento comercial'],
     imagen: '/productos/mission-control-dashboard.webp',
     imagenAlt: 'Panel general de Mission Control con el pipeline comercial y los leads en cartera',
@@ -71,7 +77,8 @@ export function articleMetadata(slug: string) {
   if (!p) return {}
   const url = `https://victormago.com/blog/${p.slug}`
   return {
-    title: p.titulo,
+    // absolute: los titulares ya rondan los 60 caracteres; con " · Víctor Mago" se cortaban en Google
+    title: { absolute: p.titulo },
     description: p.descripcion,
     alternates: { canonical: `/blog/${p.slug}` },
     openGraph: {
@@ -79,6 +86,7 @@ export function articleMetadata(slug: string) {
       description: p.descripcion,
       type: 'article',
       publishedTime: p.fecha,
+      modifiedTime: p.actualizado,
       url,
       images: [{ url: `https://victormago.com${p.imagen}`, alt: p.imagenAlt }],
     },

@@ -30,6 +30,10 @@ export type Caso = {
   destacado: boolean
   /** TODO-VÍCTOR: vídeo del caso (YouTube ID) cuando exista. */
   youtubeId: string | null
+  /** ISO — salida a producción del caso (lanzamiento de la web: 4/08/2026). Sacado de git, no inventado. */
+  publicado: string
+  /** ISO — última edición de CONTENIDO del caso (git blame del bloque). Actualizar al reescribir. */
+  actualizado: string
 }
 
 export const casos: Caso[] = [
@@ -63,6 +67,8 @@ export const casos: Caso[] = [
     testimonio: { texto: 'Nos puso al día años de facturación en semanas.', autor: 'Sánchez García Procuradores' },
     destacado: true,
     youtubeId: null,
+    publicado: '2026-08-04',
+    actualizado: '2026-08-07',
   },
   {
     slug: 'fincastyle-asesor-inmobiliario',
@@ -93,6 +99,8 @@ export const casos: Caso[] = [
     testimonio: { texto: 'Hemos aumentado el interés y las reservas en nuestras fincas entre un 20% y un 30%.', autor: 'Fincastyle' },
     destacado: true,
     youtubeId: null,
+    publicado: '2026-08-04',
+    actualizado: '2026-08-07',
   },
   {
     slug: 'app-tenis-marineda',
@@ -123,6 +131,8 @@ export const casos: Caso[] = [
     testimonio: { texto: 'Nos ha ahorrado muchísimo tiempo en la organización de torneos, la planificación y la información a los jugadores.', autor: 'Escuela de Tenis Marineda' },
     destacado: true,
     youtubeId: null,
+    publicado: '2026-08-04',
+    actualizado: '2026-08-07',
   },
   {
     slug: 'coachdesk-saas-tenis',
@@ -152,6 +162,8 @@ export const casos: Caso[] = [
     // Solo en la vitrina "No solo lo cuento: lo fabrico" — el destacado de la home es la app de Marineda
     destacado: false,
     youtubeId: null,
+    publicado: '2026-08-04',
+    actualizado: '2026-08-06',
   },
 ]
 
